@@ -4,7 +4,19 @@
 
 ---
 
-## 2026-04-10
+## 2026-04-10 (run: April 10, 2026)
+
+### Angular 21.2.7 (April 1, 2026)
+- Patch release with stability and security fixes
+- Latest stable on the 21.2.x line; all 21.x users should upgrade
+- Angular 19.x LTS ends **May 19, 2026** — teams still on Angular 19 should plan migration to 21.x
+
+### Nuxt UI v4.6.1 (April 3, 2026) / v4.6.0 (March 23, 2026)
+- **New `Sidebar` component** — responsive application sidebar with three variants (`sidebar`, `floating`, `inset`) and three collapsible modes (`offcanvas`, `icon`, `none`)
+- **New AI Chat components**: `ChatReasoning` (collapsible thinking blocks), `ChatTool` (tool invocation rows), `ChatShimmer` (streaming animation primitive) — integrate with the Vercel AI SDK
+- Bug fixes for streaming detection and modal/slideover warnings
+
+## 2026-04-08
 
 ### Next.js 16.2.3 (April 8, 2026) 🔒 Security Release
 - **CVE-2026-23869** security vulnerability patched — all users on 16.x should upgrade immediately

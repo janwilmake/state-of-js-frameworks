@@ -4,10 +4,11 @@
 
 ## Latest Version
 
-**21.2.x** (February 23, 2026) — Current stable minor  
-**21.1.0** (January 14, 2026) — Previous minor  
+**21.2.7** (April 1, 2026) — Current stable patch  
+**21.2.0** (February 23, 2026) — Current stable minor  
 **21.0.0** (November 19, 2025) — Major release  
-**v22.0** — Expected ~June 1, 2026
+**v22.0** — Expected ~June 1, 2026  
+⚠️ **Angular 19.x LTS ends May 19, 2026** — teams on v19 should upgrade to v21 before then
 
 ## Key Features
 

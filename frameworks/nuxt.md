@@ -20,7 +20,7 @@
 - **Accessibility announcer** (new in 4.4) — built-in route-change announcements for screen readers
 - **Typed layout props** (new in 4.4) — type-safe props for Nuxt layouts
 - **Build profiling** (new in 4.4) — `nuxi build --profile` for bundle analysis
-- **Nuxt UI v4** — fully open-source component library (100+ components) backed by Vercel
+- **Nuxt UI v4** — fully open-source component library (100+ components) backed by Vercel; **v4.6** (March–April 2026) adds a new `Sidebar` component and AI Chat components (`ChatReasoning`, `ChatTool`, `ChatShimmer`) for building AI chat interfaces
 - **NuxtLabs joins Vercel** (July 2025) — Nuxt now part of the Vercel ecosystem; development accelerated
 
 ## Rendering Modes
