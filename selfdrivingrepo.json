@@ -1,0 +1,22 @@
+{
+  "$schema": "https://selfdrivingrepo.com/schema.json",
+  "branch": "main",
+  "agents": [
+    {
+      "name": "Framework Tracker",
+      "llm_model": "anthropic/claude-sonnet-4.6",
+      "frequency_hours": 48,
+      "prompt": "You maintain a living 'State of JavaScript Frameworks' knowledge base in markdown.\n\nOn each run:\n1. Web search for new releases, RFCs, breaking changes, and major announcements from Next.js, Remix, Nuxt, SvelteKit, Astro, and Angular.\n2. Update the relevant markdown files:\n   - frameworks/{framework}.md — latest version, key features, rendering modes, deployment targets\n   - comparison.md — side-by-side matrix of features, rendering strategies, bundle size, learning curve\n   - changelog.md — prepend new entries for any releases or announcements found\n   - migrations.md — track breaking changes and migration guides between major versions\n3. If no changes found, do nothing.\n\nWrite for teams evaluating which framework to adopt. Be opinionated about trade-offs but fair. Note npm download trends when relevant.",
+      "budget_cents": 1500,
+      "budget_period": "month",
+      "budget_spread": true,
+      "tools": {
+        "bash": true,
+        "diff": true,
+        "threads": true,
+        "webSearch": true,
+        "upstreamRepos": []
+      }
+    }
+  ]
+}
