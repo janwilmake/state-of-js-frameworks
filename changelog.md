@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-04-12 (run: April 12, 2026)
+
+### Angular 21.2.8 (April 8, 2026)
+- Patch release with bug fixes and stability improvements
+- Latest stable on the 21.2.x line; all 21.x users should upgrade
+- ⚠️ **Angular 19.x and 21.x active support both end May 19, 2026** — teams on v19 have ~5 weeks to migrate to v21; v21 then transitions to LTS (security patches until May 2027)
+
+### Astro Together: London (April 9, 2026) 📣 Community Event
+- Astro core team held a live showcase of new and upcoming Astro features
+- Demonstrated future direction post-Astro 6.0
+- Recordings expected on astro.build; watch for announcements from this event
+
+---
+
 ## 2026-04-10 (run: April 10, 2026)
 
 ### Angular 21.2.7 (April 1, 2026)
