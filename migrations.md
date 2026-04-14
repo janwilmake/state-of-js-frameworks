@@ -96,6 +96,25 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 
 ---
 
+### React Router v7 → v8 (Planned — 2026)
+
+**Status:** In planning (GitHub Discussion #14468, opened October 2025)  
+**Effort:** Low–Medium (mostly tooling changes)
+
+#### Anticipated Breaking Changes
+- **ESM only** — CJS builds dropped; requires Node 20.19+ / 22.12+ or Bun for `require(esm)` support
+- **Drop Node 20 support** — Node 20 is EOL April 2026; Node 22 becomes the minimum
+- **Vite 7+ required** — Vite 7 went ESM-only; v8 aligns with this
+
+#### What Stays the Same
+- Loaders, actions, nested routing, file-based routing
+- All adapters and deployment targets
+- RSC Framework Mode (may graduate from unstable to stable in v8)
+
+No migration codemod announced yet. Monitor the [React Router v8 discussion](https://github.com/remix-run/react-router/discussions/14468) for timeline updates.
+
+---
+
 ### Remix v1 → v2
 
 **Released:** September 2023  

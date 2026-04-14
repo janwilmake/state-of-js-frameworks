@@ -51,12 +51,18 @@ Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, ma
 
 ## v4.4 Highlights (March 12, 2026)
 
-- **Custom `useFetch`/`useAsyncData` factories** — define project-specific fetch composables with shared configuration
-- **Vue Router v5 upgrade** — improved type safety and performance in routing
-- **Built-in accessibility announcer** — `<NuxtRouteAnnouncer>` automatically announces navigation for assistive technologies
+- **Custom `useFetch`/`useAsyncData` factories** — `createUseFetch` / `createUseAsyncData` for project-specific fetch composables with shared configuration
+- **Vue Router v5 upgrade** — upgraded from Vue Router v4; improved type safety and performance in routing
+- **Built-in accessibility announcer** — new `useAnnouncer` composable + `<NuxtRouteAnnouncer>` automatically announces navigation for assistive technologies
 - **Typed layout props** — layouts can now declare typed `defineProps` for strongly typed parent-to-layout communication
-- **Build profiling** — `nuxi analyze` / `nuxi build --profile` improvements
-- **Smarter payload handling** — reduced payload size, better deduplication
+- **Better import protection** — server-only import violations now show a full **trace** of the import chain and copy-pasteable fix suggestions (inspired by TanStack Start)
+- **View Transitions types** — TypeScript types for View Transitions API added
+- **`useCookie` refresh option** — new `refresh` option in `useCookie` composable
+- **`useState` reset to default** — new helper to reset state to its default value
+- **Build profiling** — `nuxi analyze` / `nuxi build --profile` generates flame graphs and Chrome traces for bundle analysis
+- **Smarter payload handling** — reduced payload size, better deduplication; `payloadExtraction: 'client'` will be default in `compatibilityVersion: 5`
+- **Improved `optimizeDeps` hints** — Nuxt now shows a clear, copy-pasteable `nuxt.config.ts` snippet when Vite discovers new dependencies at runtime
+- **Normalised page component names (experimental)** — more predictable component naming
 - **Extended v3 support** — Nuxt v3 EOL extended from Jan 31, 2026 to **July 31, 2026**
 - **Nuxt 5 preparation** — `main` branch will begin receiving Nuxt 5 (Nitro v3) commits; upgrade path via `future.compatibilityVersion: 5`
 

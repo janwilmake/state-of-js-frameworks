@@ -64,7 +64,11 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 - **Arrow functions in templates** — inline arrow functions; reduces need for component methods
 - **Exhaustive `@switch` type-checking** — compile-time validation of switch completeness
 - **`ChangeDetectionStrategy.Eager`** — new change detection strategy optimized for Signals components
-- **Signal Forms improvements** — `FormRoot`, `transformedValue`, and additional composability APIs
+- **Signal Forms improvements** — `FormRoot`, `transformedValue`, `submit()` returns `Promise<boolean>`, additional composability APIs
+- **Prettier integration in Angular CLI** — new projects now include Prettier as a dev dependency with a `.prettierrc` file; `ng generate` and `ng update` automatically format changed files
+- **TypeScript 6 beta support** — peer dependency range updated to include TypeScript 6 pre-releases
+- **Resource composition** — `ResourceSnapshot` and resource composition APIs added
+- **Location strategy trailing slash** — new location strategy option for trailing slash handling
 
 ## v22 Preview (Expected June 2026)
 

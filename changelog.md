@@ -4,6 +4,28 @@
 
 ---
 
+## 2026-04-14 (run: April 14, 2026)
+
+### React Router v7.14.1 (April 13, 2026)
+- TypeScript 6 peer dependency support added to `@react-router/dev`
+- Fix potential race condition in `HydrateFallback` rendering
+- Normalize double-slashes in redirect paths
+- **React Router v8 planning** — ESM-only, Node 20 dropped, RSC Framework Mode stabilization; expected sometime 2026
+
+### React Router v7.14.0 (April 2, 2026)
+- **Vite 8 support** added — aligns with Vite's ESM-first future
+- Memory leak fix in `turbo-stream` encoding (`AbortSignal` listener not removed)
+- Pre-rendering support for multiple server bundles via `v8_viteEnvironmentApi`
+- Unstable RSC Framework Mode: pre-rendering + SPA mode, new route module exports, `<Link prefetch>` support
+
+### Angular 21.2.x — Additional v21.2 Details
+- **Prettier integration in Angular CLI** — new projects include Prettier as a dev dependency with `.prettierrc`; `ng generate` and `ng update` auto-format files
+- **TypeScript 6 beta support** — `@angular/core` peer dep range now includes TypeScript 6 pre-releases
+- **`ResourceSnapshot`** — new resource composition API for Signals
+- **Location strategy trailing slash** — new trailing-slash location strategy option
+
+---
+
 ## 2026-04-12 (run: April 12, 2026)
 
 ### Angular 21.2.8 (April 8, 2026)
