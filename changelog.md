@@ -4,6 +4,25 @@
 
 ---
 
+## 2026-04-16 (run: April 16, 2026)
+
+### Angular 22 — Official Release Date Confirmed
+- Angular's official release schedule at `angular.dev/reference/releases` confirms **v22.0 week of June 1, 2026**
+- **Angular roadmap clarifications** (from `angular.dev/roadmap`):
+  - **Zoneless change detection** is now listed as **production ready** in v21 — no longer "opt-in experimental"
+  - **OnPush as default** — RFC is open ([GitHub discussion #66779](https://github.com/angular/angular/discussions/66779)); v22 will flip the default
+  - **Vitest as primary test runner** — stable in v21; v22 will promote the Karma→Vitest migration guide to stable
+  - **`httpResource`** and **Signal Forms** — listed as "available to experiment with"; both expected to mature or stabilize in v22
+  - **Selectorless components** — confirmed on roadmap; simplify component consumption by removing selector strings
+- ⚠️ **Angular 19.x LTS ends May 19, 2026** — now approximately **33 days away**; teams on v19 must upgrade immediately
+
+### "State of Nuxt 2026" Talk Published
+- Daniel Roe's "State of Nuxt 2026" talk (delivered at VueJS Amsterdam March 2026) was published on YouTube (April 14, 2026)
+- No new product announcements beyond the Nuxt 4.4 release already covered
+- Key theme: Nuxt 5 (Nitro v3) continues on the `main` branch; teams should adopt `future.compatibilityVersion: 5` to begin testing
+
+---
+
 ## 2026-04-14 (run: April 14, 2026)
 
 ### React Router v7.14.1 (April 13, 2026)

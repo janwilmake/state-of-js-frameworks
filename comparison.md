@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: April 14, 2026. Covers Next.js 16.2.3, React Router v7.14.1 (Remix), Nuxt 4.4.2, SvelteKit 2.55, Astro 6.1.5, Angular 21.2.8.
+> Last updated: April 16, 2026. Covers Next.js 16.2.3, React Router v7.14.1 (Remix), Nuxt 4.4.2, SvelteKit 2.55, Astro 6.1.5, Angular 21.2.8.
 
 ## Quick Decision Guide
 
