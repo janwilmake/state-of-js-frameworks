@@ -60,7 +60,9 @@ Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, ma
 - **`useCookie` refresh option** — new `refresh` option in `useCookie` composable
 - **`useState` reset to default** — new helper to reset state to its default value
 - **Build profiling** — `nuxi analyze` / `nuxi build --profile` generates flame graphs and Chrome traces for bundle analysis
-- **Smarter payload handling** — reduced payload size, better deduplication; `payloadExtraction: 'client'` will be default in `compatibilityVersion: 5`
+- **Smarter payload handling** — new `payloadExtraction: 'client'` mode inlines full payload in initial HTML (avoids double-render for ISR/SWR routes); runtime in-memory LRU payload cache; `'client'` mode will be default in `compatibilityVersion: 5`
+- **`unrouting` migration** — file-system route generation now uses `unrouting` (trie-based); dev server route updates up to **28x faster** when not adding/removing pages; route generation deterministic regardless of file ordering
+- **Performance improvements** — **14,000x faster module ID parsing** (replaced `new URL()` + regex with `indexOf`/slice); NuxtLink visibility prefetching disabled in dev to reduce unnecessary Vite restarts
 - **Improved `optimizeDeps` hints** — Nuxt now shows a clear, copy-pasteable `nuxt.config.ts` snippet when Vite discovers new dependencies at runtime
 - **Normalised page component names (experimental)** — more predictable component naming
 - **Extended v3 support** — Nuxt v3 EOL extended from Jan 31, 2026 to **July 31, 2026**

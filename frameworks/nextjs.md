@@ -4,7 +4,7 @@
 
 ## Latest Version
 
-**16.2.3** (April 8, 2026) — Latest stable patch  
+**16.2.4** (April 15, 2026) — Latest stable patch  
 **16.x** is the current LTS major (released October 21, 2025)  
 **15.5.15** (April 8, 2026) — Latest 15.x security patch (LTS until October 2026)
 
@@ -12,11 +12,13 @@
 
 - **App Router** (stable since v13) — file-system routing with React Server Components, layouts, nested routing, Server Actions
 - **Pages Router** — now in maintenance mode; still fully supported
-- **Turbopack** — Rust-based bundler; stable for `next dev`; production builds in beta on 16.x
+- **Turbopack** — Rust-based bundler; stable for both `next dev` and `next build` (production builds stable as of 16.x); default bundler for all new projects
 - **React Server Components (RSC)** — first-class support; the default rendering model in App Router
-- **Partial Prerendering (PPR)** — experimental static shell + streaming dynamic content in one response
+- **Cache Components** — replaced experimental PPR in Next.js 16; static shell + streaming dynamic content; uses `"use cache"` directive
+- **React Compiler (stable)** — automatic memoization of components; enabled via `reactCompiler: true` in `next.config.ts`; no manual `useMemo`/`useCallback` needed
 - **Server Actions** — production-ready for forms and mutations
-- **React 19** — required for Next.js 16.x
+- **React 19.2** — required for Next.js 16.x; includes View Transitions, `useEffectEvent`, and Activity component
+- **`proxy.ts`** — replaces deprecated `middleware.ts`; clarifies network boundary; Node.js runtime only (edge runtime continues to use `middleware.ts`)
 
 ## Rendering Modes
 
@@ -74,7 +76,8 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 
 ## Security Notes
 
-- **CVE-2026-23869** — security vulnerabilities patched in 16.2.3 and 15.5.15 (April 8, 2026); all users should upgrade
+- **16.2.4** (April 15, 2026) — bug-fix patch: Turbopack fixes (Windows ARM64 Google Fonts, symlink watcher), compiler `defines` boolean/number support, various Turbopack stability fixes
+- **CVE-2026-23869** — security vulnerabilities patched in 16.2.3 and 15.5.15 (April 8, 2026)
 - **CVE-2025-66478** — critical RCE in RSC protocol (December 2025); patched in 15.x and 16.x
 - **CVE-2025-55184 / CVE-2025-55183** — DoS and source code exposure in RSC (December 2025); patched
 

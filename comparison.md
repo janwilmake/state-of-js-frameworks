@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: April 16, 2026. Covers Next.js 16.2.3, React Router v7.14.1 (Remix), Nuxt 4.4.2, SvelteKit 2.55, Astro 6.1.5, Angular 21.2.8.
+> Last updated: April 18, 2026. Covers Next.js 16.2.4, React Router v7.14.1 (Remix), Nuxt 4.4.2, SvelteKit 2.55, Astro 6.1.5, Angular 21.2.8.
 
 ## Quick Decision Guide
 
@@ -17,14 +17,14 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.3 | React Router v7.14 | Nuxt 4.4.2 | SvelteKit 2.55 | Astro 6.1.5 | Angular 21.2.8 |
+| Feature | Next.js 16.2.4 | React Router v7.14 | Nuxt 4.4.2 | SvelteKit 2.55 | Astro 6.1.5 | Angular 21.2.8 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
 | **SSR** | ✅ | ✅ | ✅ | ✅ | ✅ (opt-in) | ✅ (Angular Universal) |
 | **SSG** | ✅ | ⚠️ (manual cache) | ✅ | ✅ | ✅ (default) | ✅ |
 | **ISR** | ✅ | ❌ | ✅ (`routeRules`) | ❌ | ❌ | ❌ |
-| **PPR/Streaming** | ✅ (experimental PPR) | ✅ (`defer()`) | ⚠️ (partial) | ⚠️ (partial) | ❌ | ❌ |
+| **PPR/Streaming** | ✅ (Cache Components, stable) | ✅ (`defer()`) | ⚠️ (partial) | ⚠️ (partial) | ❌ | ❌ |
 | **Islands Architecture** | ❌ | ❌ | ❌ | ❌ | ✅ (first-class) | ❌ |
 | **File-based Routing** | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ (component router) |
 | **Server Actions/Mutations** | ✅ (Server Actions) | ✅ (Actions) | ✅ (server functions) | ✅ (Form Actions) | ✅ (Actions) | ⚠️ (manual) |
@@ -47,7 +47,7 @@
 
 | Framework | Default Mode | ISR | PPR | Streaming | Edge |
 |---|---|---|---|---|---|
-| **Next.js** | SSR (App Router) | ✅ | ✅ (exp.) | ✅ | ✅ |
+| **Next.js** | SSR (App Router) | ✅ | ✅ (Cache Components) | ✅ | ✅ |
 | **React Router v7** | SSR | ❌ | ❌ | ✅ (`defer`) | ✅ |
 | **Nuxt** | SSR | ✅ (`routeRules`) | ❌ | ⚠️ | ✅ |
 | **SvelteKit** | SSR | ❌ | ❌ | ⚠️ | ✅ |

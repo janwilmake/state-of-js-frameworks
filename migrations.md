@@ -12,11 +12,16 @@
 **Effort:** Medium (2–4 hours for most projects)
 
 #### Breaking Changes
-- **React 19 required** — must upgrade from React 18; React 19 introduces breaking changes of its own (see React 19 migration guide)
+- **React 19.2 required** — must upgrade from React 18; React 19 introduces breaking changes of its own (see React 19 migration guide)
 - **`params` and `searchParams` are now Promises** — in App Router pages and layouts, `params` and `searchParams` props must be `await`ed; use the automated codemod
-- **Minimum Node.js version** — Node.js 18.18+ required (Node 16/17 dropped)
+- **Minimum Node.js 20.9+** — Node.js 18 and older Node 20 versions dropped; TypeScript 5.1+ required
 - **Caching defaults changed** — `fetch()` requests are no longer cached by default; must explicitly opt in to caching with `cache: 'force-cache'` or `next: { revalidate: n }`
 - **`cookies()` and `headers()` are now async** — must `await` these APIs
+- **`middleware.ts` deprecated → `proxy.ts`** — rename your `middleware.ts` file to `proxy.ts` and the exported function from `middleware` to `proxy`; the `edge` runtime is NOT supported in `proxy` (keeps using `middleware.ts` if you need edge runtime)
+- **PPR (`experimental.ppr`) removed** — replaced by Cache Components (`"use cache"` directive); remove `experimental.ppr: true` from `next.config`; wait for migration guide before converting PPR code
+- **Turbopack is now the default bundler** — `next dev` and `next build` use Turbopack by default; opt out with `--webpack` flag if custom webpack config is needed
+- **Parallel routes require explicit `default.js`** — all parallel route slots need a `default.js`; build fails without them
+- **`images.minimumCacheTTL` default changed** — from 60s to 4 hours (14400s)
 
 #### Migration Steps
 ```bash
@@ -31,9 +36,15 @@ Key codemods available:
 - `next-async-request-api` — converts `params`, `searchParams`, `cookies()`, `headers()` to async
 - `next-og-import` — updates `next/server` ImageResponse imports
 
+```bash
+# Rename middleware file
+mv middleware.ts proxy.ts
+# Update the exported function name inside the file from `middleware` to `proxy`
+```
+
 #### Notes
 - Pages Router users: no breaking changes; Pages Router is in maintenance mode but fully supported
-- Turbopack is stable for `next dev` in 16.x; opt in with `--turbopack` flag
+- React Compiler (stable in 16.x) is opt-in; enable with `reactCompiler: true` in `next.config.ts`
 
 ---
 

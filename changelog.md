@@ -4,6 +4,30 @@
 
 ---
 
+## 2026-04-18 (run: April 18, 2026)
+
+### Next.js 16.2.4 (April 15, 2026)
+- Bug-fix backport patch; does **not** include canary features
+- **Turbopack fixes**: Windows ARM64 Google Fonts fix (bumped `reqwest` to 0.13.2), filesystem watcher `follow_symlinks` config now correctly applied
+- **Compiler fix**: `next.config` `defines` now supports boolean and number primitives (previously string-only)
+- **Pages Router**: Safari `?ts=` cache-buster scoped to CSS/font assets only (was incorrectly applied to all assets)
+- **Turbopack stability**: fixed recomputation loop via cell cleanup on error, shorter error messages for two internal graph operations
+- Latest stable on the 16.x line; all 16.x users should upgrade
+
+### Next.js 16 — Notable Features Recap (captured from v16.0 blog)
+- **`middleware.ts` deprecated → `proxy.ts`** — rename clarifies network boundary; `proxy` runs in Node.js runtime only; `middleware.ts` with `edge` runtime continues to work
+- **Cache Components** — replaced experimental PPR (`experimental.ppr`); uses `"use cache"` directive; enables static shells with streamed dynamic content
+- **React Compiler (stable)** — auto-memoizes components at compile time (zero manual `useMemo`/`useCallback`); enabled via `reactCompiler: true`; follows React Compiler 1.0 stable release
+- **React 19.2** — View Transitions, `useEffectEvent`, `Activity` (hide UI with `display:none` while maintaining state)
+- **Turbopack default** — now default bundler for all new projects (dev + production); 2–5× faster production builds; 10× faster Fast Refresh
+
+### Nuxt 4.4 — Additional Performance Details (from official blog post)
+- **`unrouting` migration** — file-system route generation now uses `unrouting` (trie-based data structure); dev server route updates up to **28× faster** when not adding/removing pages; ~15% faster even when adding/removing; route generation is now deterministic (no longer sensitive to file ordering)
+- **Smarter payload handling** — new `payloadExtraction: 'client'` experimental mode inlines full payload in initial HTML; avoids a second lambda spin-up for ISR/SWR cached routes in serverless environments; runtime in-memory LRU payload cache; `'client'` mode becomes default in `compatibilityVersion: 5`
+- **14,000× faster module ID parsing** — single `indexOf` + slice replaces `new URL()` + regex chain; NuxtLink visibility prefetching disabled in dev (reduces unnecessary Vite dep-discovery restarts)
+
+---
+
 ## 2026-04-16 (run: April 16, 2026)
 
 ### Angular 22 — Official Release Date Confirmed
