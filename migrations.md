@@ -204,6 +204,26 @@ Key changes:
 
 ## SvelteKit
 
+### SvelteKit 2.55.x → 2.56.x (Remote Functions Breaking Changes)
+
+**Released:** May 2026  
+**Effort:** Low–Medium (only affects projects using experimental Remote Functions)
+
+#### Breaking Changes (Remote Functions only)
+- **`run()` method added to queries; awaiting queries outside render is now disallowed** — calls to `await query()` must be inside a component render or `$effect`; use `.run()` for imperative invocations
+- **Client-requested query refreshes require server permission** — the server must now explicitly grant or deny client-side refresh requests; protects against unbounded refresh storms
+- **Object key sorting for remote function caching** — cache keys are now stable regardless of property insertion order; may invalidate existing caches on first deploy
+- **`requested` API change** — now requires a `limit` option and yields `{ arg, query }` entries instead of validated args directly
+- These changes only affect code in `.remote.ts` files using the experimental `remoteFunctions` feature; standard `load()`, `form actions`, and server endpoints are unaffected
+
+#### Migration Steps
+If you use Remote Functions, review the [SvelteKit 2.56.0 release notes](https://github.com/sveltejs/kit/releases/tag/%40sveltejs%2Fkit%402.56.0) and update:
+1. Replace any `await query(...)` calls outside component render with `query(...).run()`
+2. Add `limit` option to `requested` handlers and update destructuring to `{ arg, query }`
+3. Review any client-side refresh logic to ensure server grants permission
+
+---
+
 ### Svelte 4 → Svelte 5 (Runes)
 
 **Released:** October 2024  
@@ -257,6 +277,32 @@ npx svelte-migrate sveltekit-2
 
 ## Astro
 
+### Astro 6.x → 7.x (Alpha — Not Yet Stable)
+
+**Status:** Alpha preview (April 30, 2026); stable release expected mid-2026  
+**Effort:** Low for most users; Medium for integration authors
+
+#### Breaking Changes (from alpha)
+- **Vite 8 upgrade** — breaking for Astro integrations that depend on Vite internal APIs; most project-level code is unaffected
+- **Rust compiler is now the default and only compiler** — the previous Go compiler and `experimental.rustCompiler` flag are removed:
+  - **More strict HTML parsing** — unclosed HTML tags now throw errors instead of being silently ignored
+  - **Semantically invalid HTML is no longer corrected** — Astro 7 leaves invalid HTML to the browser, similar to `document.write()`
+  - **Action required:** Remove `experimental.rustCompiler: true` from your `astro.config.mjs` (was the opt-in flag)
+
+#### Migration Steps
+```bash
+# Test the alpha (not for production)
+npm install astro@alpha
+
+# When stable: remove the old experimental flag
+# In astro.config.mjs, delete:
+# experimental: { rustCompiler: true }  ← no longer needed
+```
+
+The `@astrojs/upgrade` CLI will handle this automatically when stable is released.
+
+---
+
 ### Astro 5.x → 6.x
 
 **Released:** March 10, 2026  
@@ -307,6 +353,31 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 ---
 
 ## Angular
+
+### Angular 21 → 22 (Upcoming — Week of June 1, 2026)
+
+**Status:** Scheduled; **not yet released**  
+**Effort:** Low–Medium (breaking changes are tool-assisted via `ng update`)
+
+#### Expected Breaking Changes
+- **OnPush as default change detection** — the Angular CLI will generate new components with `ChangeDetectionStrategy.OnPush`; existing components are unaffected; `ng update` schematic will handle new project templates
+- **Zoneless as default for new projects** — `zone.js` removed from new project scaffolding by default; existing projects using Zone.js continue to work; migration is opt-in
+- **Signal Forms graduation from developer preview** — if you depend on Signal Forms APIs marked `@developerPreview`, review for any API surface changes
+
+#### Anticipated Migration
+```bash
+# Run after Angular 22 is released
+ng update @angular/core@22 @angular/cli@22
+```
+
+The Angular CLI schematic handles template and component updates. Review the official [Angular Update Guide](https://angular.dev/update-guide) for v21 → v22.
+
+#### What Should Stay the Same
+- Existing Zone.js projects work without changes
+- Existing `ChangeDetectionStrategy.Default` components work without changes
+- All existing Signal Forms code in developer preview will continue to function (API may have minor changes)
+
+---
 
 ### Angular 20 → 21
 

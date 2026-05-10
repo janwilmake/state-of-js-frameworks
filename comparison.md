@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: April 18, 2026. Covers Next.js 16.2.4, React Router v7.14.1 (Remix), Nuxt 4.4.2, SvelteKit 2.55, Astro 6.1.5, Angular 21.2.8.
+> Last updated: May 10, 2026. Covers Next.js 16.2.6, React Router v7.14.1 / Remix 3 beta (Remix), Nuxt 4.4.4, SvelteKit 2.57, Astro 6.2.2, Angular 21.2.8 (v22 imminent).
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.4 | React Router v7.14 | Nuxt 4.4.2 | SvelteKit 2.55 | Astro 6.1.5 | Angular 21.2.8 |
+| Feature | Next.js 16.2.6 | React Router v7.14 | Nuxt 4.4.4 | SvelteKit 2.57 | Astro 6.2.2 | Angular 21.2.8 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -34,7 +34,7 @@
 | **Built-in Image Optimization** | ✅ | ❌ | ✅ (Nuxt Image) | ❌ | ✅ | ❌ |
 | **Built-in Font Optimization** | ✅ | ❌ | ✅ | ❌ | ✅ (v6) | ❌ |
 | **TypeScript DX** | ✅ | ✅ | ✅ | ✅ (excellent) | ✅ | ✅✅ (mandatory) |
-| **AI/MCP Tooling** | ✅ (AGENTS.md, DevTools) | ❌ | ❌ | ✅ (Svelte MCP) | ❌ | ✅ (Angular MCP) |
+| **AI/MCP Tooling** | ✅ (AGENTS.md, DevTools) | ❌ | ✅ (Nuxt Agent + MCP) | ✅ (Svelte MCP) | ✅ (Experimental Logger) | ✅ (Angular MCP) |
 | **Built-in UI Library** | ❌ | ❌ | ✅ (Nuxt UI v4) | ❌ | ❌ | ✅ (Angular Material) |
 | **Dependency Injection** | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ (built-in DI) |
 | **Built-in Forms** | ❌ (Server Actions) | ✅ (Actions) | ❌ | ✅ (Form Actions) | ✅ (Actions) | ✅ (Reactive + Signal Forms) |
@@ -94,8 +94,8 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 
 | Metric | Next.js | React Router | Nuxt | SvelteKit | Astro | Angular |
 |---|---|---|---|---|---|---|
-| **npm weekly downloads** | ~26M | ~28M (react-router) | ~2M | ~1.5M | ~1.3M | ~2.5M |
-| **GitHub Stars** | ~138K | ~54K (RR) | ~56K | ~19K (kit) | ~57K | ~100K |
+| **npm weekly downloads** | ~26M | ~28M (react-router) | ~2M | ~1.5–2M | ~1.5M | ~2.5M |
+| **GitHub Stars** | ~138K | ~54K (RR) | ~60K | ~21K (kit) | ~57K | ~100K |
 | **Stack Overflow questions** | Very High | High | Medium | Medium | Medium | Very High |
 | **Job postings** | ⭐⭐⭐⭐ Very High | ⭐⭐⭐ High | ⭐⭐ Medium | ⭐⭐ Medium | ⭐ Low | ⭐⭐⭐⭐ Very High |
 | **Component library ecosystem** | ⭐⭐⭐⭐ Excellent | ⭐⭐⭐ Good | ⭐⭐⭐ Good (Nuxt UI v4) | ⭐⭐ Growing | ⭐⭐ Limited | ⭐⭐⭐ Good (Material) |
@@ -149,10 +149,12 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  
 ❌ **Avoid for:** Large teams requiring a broad hiring pool, projects with heavy React library dependencies
 
-### Astro 6
+### Astro 6 / Astro 7 (alpha)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  
-❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications
+❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications  
+⚡ **Watch:** Astro 7 alpha (April 2026) ships Vite 8 + stable Rust compiler; stable release expected mid-2026
 
-### Angular 21
+### Angular 21 → 22 (June 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
-❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps
+❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
+⚡ **Watch:** Angular 22 (week of June 1, 2026) — Signal Forms stable, OnPush as default, selectorless components, Zoneless as default for new projects

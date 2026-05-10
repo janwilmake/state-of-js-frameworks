@@ -8,8 +8,8 @@
 **21.2.0** (February 23, 2026) — Current stable minor  
 **21.0.0** (November 19, 2025) — Major release  
 **v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`)  
-⚠️ **Angular 19.x LTS ends May 19, 2026** — ~5 weeks away; teams on v19 should upgrade to v21 immediately  
-⚠️ **Angular 21.x active support ends May 19, 2026** — v21 transitions to LTS (security patches only until May 2027); Angular 22 expected ~June 1, 2026
+🔴 **Angular 19.x reached EOL on May 19, 2026** — no more patches from Google; teams on v19 must upgrade immediately  
+⚠️ **Angular 21.x active support ended May 19, 2026** — v21 is now in LTS (security patches only until May 2027); Angular 22 expected week of June 1, 2026
 
 ## Key Features
 
@@ -120,8 +120,9 @@ This trajectory is genuine. Angular is no longer the "legacy enterprise choice" 
 
 | Release | Status | Active Ends | LTS Ends |
 |---|---|---|---|
-| 21.x | Active | May 19, 2026 | May 19, 2027 |
+| 22.x | Expected ~June 1, 2026 | ~Nov 2026 | ~May 2028 |
+| 21.x | **LTS** (as of May 19, 2026) | May 19, 2026 | May 19, 2027 |
 | 20.x | LTS | Nov 19, 2025 | Nov 28, 2026 |
-| 19.x | LTS | May 28, 2025 | May 19, 2026 |
+| 19.x | **EOL** (May 19, 2026) | May 28, 2025 | May 19, 2026 |
 
 Angular releases a new major version every 6 months. Each major version receives 6 months of active support followed by 12 months of LTS (security patches only). This predictable schedule is a significant advantage for enterprise planning.

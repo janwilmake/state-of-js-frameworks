@@ -4,8 +4,9 @@
 
 ## Latest Version
 
-**6.1.5** (April 8, 2026) — Current stable patch  
-**6.0.0** (March 10, 2026) — Major release  
+**6.2.2** (May 4, 2026) — Current stable patch  
+**6.2.0** (April 30, 2026) — Latest minor release  
+**7.0.0-alpha.0** (April 30, 2026) — Pre-release preview (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
 Backed by **Cloudflare** (acquired January 16, 2026)
 
@@ -22,6 +23,10 @@ Backed by **Cloudflare** (acquired January 16, 2026)
 - **Experimental Rust compiler** (new in 6.0) — successor to the Go-based `.astro` compiler; already shows significant performance gains
 - **Experimental Queued Rendering** — render pages in a controlled queue for large static builds
 - **Experimental Route Caching** — cache route data across builds
+- **Experimental custom logger** (new in 6.2) — structured JSON logging for AI coding agents and CI pipelines
+- **SVG optimizer API** (new in 6.2) — first-class SVG optimization with configurable Svgo integration
+- **`getFontFileURL()` helper** (experimental, new in 6.2) — resolve font file URLs from `fontData`; useful for Open Graph image generation with Satori
+- **`server.allowedHosts` for preview servers** (new in 6.2) — prevents DNS rebinding attacks when previewing Cloudflare builds locally
 - **Starlight** — official documentation site framework built on Astro
 - **Framework-agnostic** — use React, Vue, Svelte, Solid, Preact, or plain HTML in the same project
 
@@ -45,6 +50,18 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Node.js** — `@astrojs/node`
 - **Deno** — `@astrojs/deno`
 - **Static** — default; output HTML to any CDN/S3
+
+## v6.2 Highlights (April 30, 2026)
+
+- **SVG optimizer** — `experimental.svgOptimizer` passes `.astro` SVG imports through configurable Svgo optimization
+- **Experimental Logger** — structured JSON logging via `experimental.logger`; integrates cleanly with AI agents and log aggregation pipelines
+- **Experimental `getFontFileURL()`** — exported from `astro:assets`; resolves font file URLs from font data objects for use with Satori Open Graph image generation
+- **`allowedHosts` for preview servers** — `server.allowedHosts` is now forwarded to adapter preview servers; prevents DNS rebinding attacks; important for `@astrojs/cloudflare` users
+- **`"jsx"` option for `compressHTML`** — strips whitespace using JSX rules for consistent behavior across `.astro` and `.tsx` files
+- **Astro 7 alpha launched** — `astro@7.0.0-alpha.0` released same day as 6.2:
+  - **Vite 8 upgrade** — breaking for integrations depending on Vite internals; most user code unaffected
+  - **Rust compiler is now the default and only compiler** — Go compiler removed; `experimental.rustCompiler` flag no longer needed; significantly faster build times
+  - Install with `npm install astro@alpha` to test
 
 ## v6.0 Breaking Changes (March 10, 2026)
 

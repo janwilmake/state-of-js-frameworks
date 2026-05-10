@@ -75,16 +75,19 @@ React Router v8 is in active planning (discussion opened October 2025). Expected
 
 ---
 
-## Remix 3 (Experimental — Not Production Ready)
+## Remix 3 (Beta — Not Production Ready)
 
-Remix 3 is a ground-up rebuild on Preact. Key points:
-- **No React dependency** — uses Preact as the UI layer
-- **No migration path** from Remix v2 or React Router v7
-- **Batteries-included, bundler-free** design philosophy
-- Expected early 2026 (pre-release); follow [remix.run](https://remix.run) for updates
-- **Backed by Shopify** — well-funded but a significant architectural bet
+Remix 3 shipped its **beta preview on April 30, 2026**. Key points:
+- **No React dependency** — built on Preact; components use web-native `EventTarget` patterns instead of React hooks
+- **No migration path** from Remix v2 or React Router v7 — this is a net-new framework
+- **Full-stack batteries-included** — routes, request handlers, middleware, sessions, auth, forms, uploads, assets, data/database management, UI components, theming, networking, tests — **one dependency**
+- **"Unbundling"** — the runtime is the source of truth; no pre-runtime bundle analysis step; works naturally with AI coding agents because routes, controllers, middleware, tables, forms, and frames all have clear, predictable shapes
+- **Native DOM mixins** — Remix provides DOM mixins instead of a React-like reconciler; works seamlessly with web components and third-party libraries
+- **New brand & website** (May 6, 2026) — remix.run rebuilt on Remix 3 alpha itself, dropping React entirely for the production site; uses Three.js + GLSL shaders
+- **Backed by Shopify** — well-funded; beta signals serious intent
+- `npx remix@next new` to scaffold a Remix 3 project (beta)
 
-**Recommendation:** Do not adopt Remix 3 for new production projects until it reaches stable release and the ecosystem matures.
+**Recommendation:** Do not adopt Remix 3 for production until stable. Teams on Remix v2 should migrate to **React Router v7**, not Remix 3. Monitor [remix.run/blog](https://remix.run/blog) for stability updates.
 
 ## npm Download Trend
 

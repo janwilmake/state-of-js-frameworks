@@ -4,9 +4,9 @@
 
 ## Latest Version
 
-**SvelteKit 2.55.0** (April 2026) — Current stable  
-**Svelte 5.55.0** (April 2026) — Underlying compiler  
-Built on **Vite**; no webpack dependency
+**SvelteKit 2.57.0** (May 2026) — Current stable  
+**Svelte 5.x** (May 2026) — Underlying compiler  
+Built on **Vite 8** compatible; no webpack dependency
 
 ## Key Features
 
@@ -19,6 +19,10 @@ Built on **Vite**; no webpack dependency
 - **Type-narrowed params** (new in kit@2.55.0) — matcher-constrained params are now properly narrowed in `$app/types`, `$app/state`, and hooks
 - **`svelte.config.js` functions** (new in svelte@5.54.0) — `css`, `runes`, `customElement` options can now be functions for per-file configuration
 - **Svelte MCP** — Model Context Protocol integration for AI-assisted development via `sv` CLI and OpenCode
+- **TypeScript 6.0 support** (new in kit@2.56.0) — SvelteKit now supports TypeScript 6.0
+- **Remote Functions `query.live`** (new, experimental) — `query.live()` enables real-time streaming queries via async generators; server sends continuous updates to the client; `connected` property and `reconnect()` method expose connection state; multiple component instances share a single connection
+- **Remote Functions improvements** (kit@2.56.0 — breaking changes) — `run()` method added to queries; `hydratable` transport for richer data types; `field.as(type, value)` for default form field values; server-gated client refreshes; several API stabilization changes
+- **`form.submit` returns `boolean`** (new in kit@2.57.0) — indicates submission validity for enhanced remote form functions
 - **Adapter system** — deploy anywhere via first-party and community adapters
 - **Vite integration** — fast HMR, clear config, predictable build performance
 
@@ -46,8 +50,17 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 - **Bun** — experimental via `@sveltejs/adapter-vercel` Bun runtime
 - **Auto** — `@sveltejs/adapter-auto` detects environment at deploy time
 
+## May 2026 Highlights
+
+- **`query.live` — Real-time streaming queries** — `kit@2.57` ships `query.live()` using async generators; enables real-time subscriptions (e.g., live notifications, live clocks) without WebSocket boilerplate; the server streams data, SvelteKit manages the connection lifecycle; community reception is very positive
+- **`form.submit` returns `boolean`** — `kit@2.57.0` — form submit now signals validation outcome, reducing boilerplate in conditional submission flows
+- **Svelte CLI Community Add-ons** (experimental, May 2026) — `sv` CLI now supports experimental community-contributed plugins; ecosystem extensibility without official package overhead; featured at ThoughtWorks Technology Radar May 2026
+- **ThoughtWorks Technology Radar** — Svelte featured in the May 2026 edition as a framework to adopt
+
 ## April 2026 Highlights
 
+- **TypeScript 6.0 support** — `kit@2.56.0` — SvelteKit now supports TypeScript 6.0
+- **Remote Functions breaking changes (2.56.0)** — `run()` method added to queries; `hydratable` transport for richer data types; server-gated client-driven refreshes; `field.as(type, value)` default form field values; users upgrading from 2.55.x to 2.56.x must review the breaking change list
 - **Server-side error boundaries** — `kit@2.54.0` allows error boundaries to catch errors thrown on the server during SSR, closing a long-standing gap with React's error boundary model
 - **Type-narrowed params with matchers** — `kit@2.55.0` properly narrows param types when route matchers are used (e.g., `[id=integer]` narrows `id` to `string` matching the integer pattern)
 - **Svelte MCP in OpenCode** — `sv@0.12.6` ships the Svelte MCP plugin config in `.opencode/` for AI-assisted development

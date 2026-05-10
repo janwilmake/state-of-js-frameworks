@@ -4,9 +4,9 @@
 
 ## Latest Version
 
-**16.2.4** (April 15, 2026) — Latest stable patch  
+**16.2.6** (May 7, 2026) — Latest stable patch ⚠️ Critical security release  
 **16.x** is the current LTS major (released October 21, 2025)  
-**15.5.15** (April 8, 2026) — Latest 15.x security patch (LTS until October 2026)
+**15.5.18** (May 7, 2026) — Latest 15.x security patch (LTS until October 2026)
 
 ## Key Features
 
@@ -76,7 +76,18 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 
 ## Security Notes
 
-- **16.2.4** (April 15, 2026) — bug-fix patch: Turbopack fixes (Windows ARM64 Google Fonts, symlink watcher), compiler `defines` boolean/number support, various Turbopack stability fixes
+- **16.2.6 / 15.5.18** (May 7, 2026) — ⚠️ **UPGRADE IMMEDIATELY** — Coordinated release addressing **13 security advisories** including:
+  - **CVE-2026-23870** — High: DoS in React Server Components (upstream React issue); patched in `react-server-dom-*` 19.x.6
+  - **CVE-2026-44578** — High: SSRF in applications using WebSocket upgrades
+  - **CVE-2026-44574** — High: Middleware/proxy bypass via dynamic route parameter injection (no WAF mitigation possible)
+  - **CVE-2026-44581** — High: XSS via CSP nonces in App Router
+  - Middleware/proxy bypass via App Router segment-prefetch routes (GHSA-267c-6grr-h53f)
+  - Middleware/proxy bypass via Pages Router i18n (additional advisory)
+  - DoS via connection exhaustion in Cache Components (GHSA-mg66-mrh9-m8jx)
+  - DoS via Image Optimization API (GHSA-h64f-5h5j-jqjh)
+  - Cache poisoning and additional XSS vectors
+  - ⚠️ **WAF rules are not sufficient** — Vercel explicitly states these vulnerabilities cannot be reliably blocked at the WAF layer; patching is the only complete mitigation
+  - **Next.js 13.x and 14.x are also affected** — no patches planned; users must upgrade to 15.5.18 or 16.2.6
 - **CVE-2026-23869** — security vulnerabilities patched in 16.2.3 and 15.5.15 (April 8, 2026)
 - **CVE-2025-66478** — critical RCE in RSC protocol (December 2025); patched in 15.x and 16.x
 - **CVE-2025-55184 / CVE-2025-55183** — DoS and source code exposure in RSC (December 2025); patched

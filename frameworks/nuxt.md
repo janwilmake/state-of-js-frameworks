@@ -4,8 +4,8 @@
 
 ## Latest Version
 
-**4.4.2** (March 12, 2026) — Current stable (latest)  
-**3.21.2** (March 12, 2026) — Maintenance; EOL extended to **July 31, 2026**  
+**4.4.4** (April 29, 2026) — Current stable (latest)  
+**3.21.4** (April 29, 2026) — Maintenance; EOL extended to **July 31, 2026**  
 **Nuxt 5** — in early development; targets Nitro v3 upgrade; no release date confirmed
 
 ## Key Features
@@ -21,6 +21,7 @@
 - **Typed layout props** (new in 4.4) — type-safe props for Nuxt layouts
 - **Build profiling** (new in 4.4) — `nuxi build --profile` for bundle analysis
 - **Nuxt UI v4** — fully open-source component library (100+ components) backed by Vercel; **v4.6** (March–April 2026) adds a new `Sidebar` component and AI Chat components (`ChatReasoning`, `ChatTool`, `ChatShimmer`) for building AI chat interfaces
+- **Nuxt Agent** (beta, April 29, 2026) — official AI agent at nuxt.com; grounded in the Nuxt MCP server (official docs, modules catalog, blog, deployment guides, GitHub issues); built with the AI SDK and Nuxt UI; accessible via `⌘I` or `/chat`
 - **NuxtLabs joins Vercel** (July 2025) — Nuxt now part of the Vercel ecosystem; development accelerated
 
 ## Rendering Modes
@@ -48,6 +49,12 @@ The `routeRules` hybrid model is one of Nuxt's strongest differentiators — no 
 - **Deno Deploy** — via Nitro Deno preset
 
 Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, many targets.
+
+## v4.4.3/4.4.4 Patch (April 29, 2026)
+
+- **Performance fixes** — Nitro: directly import `nuxt` package version; Vite/webpack: use vfs for manifest + vite node server; skip key watcher when `useAsyncData` key is static; batch-resolve TypeScript hoist paths with cached base roots
+- **Parallelise module load + cache jiti instances** (`@nuxt/kit`) — faster startup in complex projects
+- v4.4.4 was published immediately after v4.4.3 with no changes due to a release script issue; both are identical
 
 ## v4.4 Highlights (March 12, 2026)
 

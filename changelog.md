@@ -4,6 +4,101 @@
 
 ---
 
+## 2026-05-10 (run: May 10, 2026)
+
+### Next.js 16.2.6 / 15.5.18 (May 7, 2026) 🔒 Critical Security Release
+
+⚠️ **UPGRADE IMMEDIATELY** — This coordinated release addresses **13 security advisories** across denial of service, middleware/proxy bypass, SSRF, cache poisoning, and XSS. One advisory (CVE-2026-23870) is an upstream React Server Components vulnerability.
+
+**Key CVEs:**
+- **CVE-2026-23870** (High) — DoS in React Server Components; also patched in `react-server-dom-*` 19.0.6, 19.1.7, 19.2.6
+- **CVE-2026-44574** (High) — Middleware/proxy bypass via dynamic route parameter injection; **no WAF mitigation possible**
+- **CVE-2026-44578** (High) — SSRF in applications handling WebSocket upgrade requests
+- **CVE-2026-44581** (High) — XSS via CSP nonces in App Router applications
+- Middleware bypass via App Router segment-prefetch (GHSA-267c-6grr-h53f) and Pages Router i18n
+- DoS via Cache Components connection exhaustion (GHSA-mg66-mrh9-m8jx) and Image Optimization API
+- Additional cache poisoning and XSS vectors
+
+**Critical note:** Vercel explicitly states WAF rules are **not sufficient** mitigation — patching is the only fix. Next.js 13.x and 14.x are affected with **no patches planned**; users must upgrade to 15.5.18 or 16.2.6.
+
+```bash
+npm install next@latest   # installs 16.2.6 (or pin to 15.5.18 for LTS)
+```
+
+---
+
+### Angular 19 Reaches EOL (May 19, 2026)
+
+- Angular 19.x officially reached end-of-life on **May 19, 2026**
+- Google will no longer ship security patches, bug fixes, or updates for 19.x
+- Teams still on Angular 19 are now running unsupported software; migrate to Angular 21 immediately
+- **Angular 21.x active support also ended May 19, 2026** — v21 transitions to LTS (security patches only until May 2027)
+- **Angular 22 expected week of June 1, 2026** — selectorless components, stable Signal Forms, OnPush as default, Zoneless as default for new projects, TypeScript 5.9 support
+
+---
+
+### Remix 3 Beta Preview (April 30, 2026) + New Brand (May 6, 2026)
+
+- **Remix 3 beta preview released April 30, 2026** — the first testable release of the ground-up Preact-based rebuild
+  - Full-stack batteries included: routes, middleware, sessions, auth, forms, uploads, database management, UI components, testing — one dependency
+  - "Unbundling" philosophy — runtime is the source of truth; no pre-runtime bundle analysis step; explicitly designed to work well with AI coding agents
+  - `npx remix@next new` to scaffold a project
+  - **Not production ready**; no migration path from Remix v2 or React Router v7
+- **A Brand New Remix (May 6, 2026)** — new remix.run website launched; built on Remix 3 alpha itself (no React on the site); features a Three.js + GLSL shader particle cloud
+
+---
+
+### Nuxt 4.4.4 / 4.4.3 (April 29, 2026)
+
+- Patch release with performance improvements: Nitro direct import of `nuxt` package version, vfs manifest + vite node server, 14,000× faster module ID parsing via cached roots, parallelised module load with cached jiti instances
+- v4.4.4 published immediately after v4.4.3 with no code changes (release script issue)
+- **Nuxt 3.21.4** — corresponding maintenance backport for v3
+
+---
+
+### Nuxt Agent Beta (April 29, 2026) 🤖 New Feature
+
+- Official AI agent at **nuxt.com** launched in Beta
+- Grounded in the Nuxt MCP server (official docs, modules catalog, blog, deployment guides, GitHub issues across `nuxt`, `nuxt-modules`, `nuxt-content`)
+- Built using the Vercel AI SDK and Nuxt UI components; accessible via `⌘I` on any nuxt.com page or at `/chat`
+- Has native tools rendering as UI: module/template cards, hosting provider cards, blog post previews, StackBlitz playground links, GitHub issue search
+- Web search via Anthropic's `web_search` used as a fallback only (not for doc-answerable questions)
+- Plans: user accounts, persistent chat history, deeper site integration
+
+---
+
+### Astro 6.2 (April 30, 2026) + Astro 7 Alpha
+
+- **Astro 6.2.0 released April 30, 2026**:
+  - **SVG optimizer** (`experimental.svgOptimizer`) — pass imported SVGs through configurable Svgo
+  - **Experimental Logger** — structured JSON output; integrates with AI coding agents and log aggregation
+  - **Experimental `getFontFileURL()`** — resolve font file URLs from `fontData` for Satori OG image generation
+  - **`allowedHosts` for preview servers** — forwarded to adapter preview; prevents DNS rebinding attacks
+  - **`"jsx"` option for `compressHTML`** — JSX whitespace rules for consistent `.astro`/`.tsx` behavior
+- **Astro 7.0.0-alpha.0 released April 30, 2026** (pre-release, not production ready):
+  - **Vite 8 upgrade** — breaking for integrations depending on Vite internals
+  - **Rust compiler is now the default and only compiler** — Go compiler removed; `experimental.rustCompiler` flag no longer needed; faster and more strict (unclosed HTML tags now throw errors)
+  - `npm install astro@alpha` to test
+- **Astro 6.2.2** (May 4, 2026) — patch: fix head metadata propagation in dev for Cloudflare adapter; fix build crash on animated AVIF images
+
+---
+
+### SvelteKit 2.57.0 / 2.56.0 (May 2026)
+
+- **`query.live()` — Real-time streaming queries** — `query.live()` uses async generators to stream continuous updates from server to client; shared connection across component instances; `connected` property and `reconnect()` method; passive exponential-backoff reconnection; SSR returns the first yielded value and closes the stream
+- **`form.submit` returns `boolean`** (2.57.0) — indicates submission validity for enhanced remote form functions
+- **TypeScript 6.0 support** (2.56.0) — SvelteKit now supports TypeScript 6.0
+- **Remote Functions breaking changes (2.56.0)**:
+  - `run()` method added to queries; awaiting queries outside render is now disallowed
+  - `hydratable` transport for richer data types in query results
+  - Client-requested query refreshes must obtain server permission
+  - `field.as(type, value)` for default form field values
+  - `requested` now requires `limit` and yields `{ arg, query }` entries
+- **Svelte CLI Community Add-ons** (experimental) — community-contributed `sv` plugins now supported
+- **Svelte featured in ThoughtWorks Technology Radar** (May 2026) — in the "Adopt" section
+
+---
+
 ## 2026-04-18 (run: April 18, 2026)
 
 ### Next.js 16.2.4 (April 15, 2026)
