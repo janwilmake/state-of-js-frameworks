@@ -4,7 +4,7 @@
 
 ## Latest Version
 
-**SvelteKit 2.57.0** (May 2026) — Current stable  
+**SvelteKit 2.58.0** (April 23, 2026) — Current stable  
 **Svelte 5.x** (May 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
 
@@ -57,8 +57,9 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 - **Svelte CLI Community Add-ons** (experimental, May 2026) — `sv` CLI now supports experimental community-contributed plugins; ecosystem extensibility without official package overhead; featured at ThoughtWorks Technology Radar May 2026
 - **ThoughtWorks Technology Radar** — Svelte featured in the May 2026 edition as a framework to adopt
 
-## April 2026 Highlights
+## April 2026 Highlights (latest: SvelteKit 2.58.0 — April 23, 2026)
 
+- **`requested` API stabilization (2.58.0)** — `requested` in remote query handlers now requires a `limit` option and yields `{ arg, query }` entries instead of validated args directly; `RemoteQueryFunction` gains an optional third generic `Validated` for post-validation argument types; FOUC fix for CSR-only pages; form results correctly reset on redirect
 - **TypeScript 6.0 support** — `kit@2.56.0` — SvelteKit now supports TypeScript 6.0
 - **Remote Functions breaking changes (2.56.0)** — `run()` method added to queries; `hydratable` transport for richer data types; server-gated client-driven refreshes; `field.as(type, value)` default form field values; users upgrading from 2.55.x to 2.56.x must review the breaking change list
 - **Server-side error boundaries** — `kit@2.54.0` allows error boundaries to catch errors thrown on the server during SSR, closing a long-standing gap with React's error boundary model

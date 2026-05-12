@@ -171,7 +171,7 @@ export default defineNuxtConfig({
 Enable this flag in a Nuxt 3 project, fix any resulting errors, then upgrade to Nuxt 4.
 
 #### Preparing for Nuxt 5
-Nuxt 5 (Nitro v3) is in early development. Teams can begin preparing via:
+Nuxt 5 (Nitro v3) is in **active beta development** as of March 11, 2026. Teams can begin preparing via:
 ```ts
 export default defineNuxtConfig({
   future: {
@@ -180,9 +180,16 @@ export default defineNuxtConfig({
 })
 ```
 
+**Nitro v3 breaking changes to anticipate for Nuxt 5:**
+- **Node 16 dropped** — ensure Node 18+ (likely Node 20+ at Nuxt 5 stable time)
+- **App config functionality removed** — moved to the Nuxt layer system
+- **Default caching behavior changed** — review any Nitro-level cache configuration
+- **H3 v2 request handling** — web-standard `Request`/`Response` APIs replace some H3 v1 patterns; server routes using low-level H3 APIs may need updates
+- Task-based patterns in `server/tasks/` replace some workarounds for background jobs
+
 #### EOL Notes
 - Nuxt 3 support extended to **July 31, 2026** (was January 31, 2026)
-- Teams should target Nuxt 4 by July 2026
+- Teams should target Nuxt 4 by July 2026; Nuxt 5 is not yet available for migration
 
 ---
 

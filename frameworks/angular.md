@@ -4,12 +4,13 @@
 
 ## Latest Version
 
-**21.2.8** (April 8, 2026) — Current stable patch  
+**21.2.12** (May 6, 2026) — Current stable patch  
 **21.2.0** (February 23, 2026) — Current stable minor  
 **21.0.0** (November 19, 2025) — Major release  
 **v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`)  
+**22.0.0-next.12** (May 8, 2026) — Latest pre-release canary  
 🔴 **Angular 19.x reached EOL on May 19, 2026** — no more patches from Google; teams on v19 must upgrade immediately  
-⚠️ **Angular 21.x active support ended May 19, 2026** — v21 is now in LTS (security patches only until May 2027); Angular 22 expected week of June 1, 2026
+⚠️ **Angular 21.x active support ends May 19, 2026** — v21 transitions to LTS (security patches only until May 2027); Angular 22 expected week of June 1, 2026
 
 ## Key Features
 
@@ -58,6 +59,16 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 - **Regular expressions in templates** — `@let isValid = /\d+/.test(val)`
 - **CLDR v47 upgrade** — improved currency and date formatting
 - **Animation improvements** — enter/leave DOM animations API
+
+## v21.2.12 Patch (May 6, 2026)
+
+- **Signal input transform read-generic fix** — `allow explicit read generic with signal input transforms` for better type inference
+- **i18n flags no longer leak on errors** — bug fix for internationalization-related error state propagation
+- **`ngSkipHydration` respected in LContainers** — SSR hydration fix for projected nodes inside LContainers
+- **Sanitizer typings fix** — improved sanitizer type signatures
+- **Signal security** — `validate security-sensitive attributes in i18n bindings` improvement
+- **Signal Forms** — `prohibit concurrent submits in signal forms` (prevents double-submit race conditions)
+- **22.0.0-next.12** (May 8, 2026) — latest pre-release canary actively in development
 
 ## v21.2 Highlights (February 23, 2026)
 

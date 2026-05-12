@@ -4,6 +4,41 @@
 
 ---
 
+## 2026-05-12 (run: May 12, 2026)
+
+### Angular 21.2.12 (May 6, 2026) — Latest Stable Patch
+
+- **Signal input transform read-generic** — allow explicit `read` generic with signal input transforms for better type inference on transformed values
+- **i18n flags no longer leak on errors** — fixed a bug where i18n flags propagated incorrectly on error paths
+- **`ngSkipHydration` fix for LContainers** — SSR non-destructive hydration now correctly respects `ngSkipHydration` on components with projectable nodes inside `LContainer`
+- **Sanitizer typings** — improved type signatures for the DOM sanitizer APIs
+- **Security** — validate security-sensitive attributes in i18n bindings
+- **Signal Forms: prohibit concurrent submits** — race condition fix; submitting a signal form while a submission is already in-flight is now blocked
+- 📋 **22.0.0-next.12** (May 8, 2026) — latest pre-release canary; Angular 22 development actively progressing toward the June 1, 2026 stable target
+
+---
+
+### SvelteKit 2.58.0 (April 23, 2026) — `requested` API Stabilized
+
+- **`requested` API finalized (breaking for 2.56/2.57 users)** — `requested` in remote query handlers now requires a `limit` option (as originally designed) and yields `{ arg, query }` entry objects instead of validated arguments directly; `RemoteQueryFunction` type gains an optional third generic `Validated` representing the post-validation argument type
+- **FOUC fix for CSR-only pages** — styles and fonts are now loaded before client-side rendering starts, eliminating Flash of Unstyled Content
+- **Form result reset on redirect** — form action results are correctly cleared when the response is a redirect
+- **`resolve()` external URL guard** — calling `resolve` with an external URL now throws an error instead of silently misbehaving
+- **SSI comment false-positive fix** — server-side include HTML comments (`<!-- virtual="..." -->`) no longer trigger false Svelte hydration mismatch warnings in `transformPageChunk`
+- **`RemoteFormFields` nullable array typing** — correct type restored for nullable array fields when using `.as('checkbox')`
+
+---
+
+### Nitro v3 Beta (March 11, 2026) — Powers the Future Nuxt 5
+
+- **Nitro v3 beta released** — ~280K weekly npm downloads already on the beta; adopted by TanStack Start, Vercel Workflows, and production apps like T3Chat
+- **New features**: Rolldown + Vite 8 integration, H3 v2 with `srvx` (web-standard `Request`/`Response`), built-in task runner (`server/tasks/`), scheduled cron jobs, cross-environment WebSocket support
+- **Breaking changes**: Node 16 dropped, app config removed, default caching behavior changed
+- **Nuxt 5 dependency**: Nuxt 5 will ship with Nitro v3 and H3 v2; teams can prepare via `future.compatibilityVersion: 5` in Nuxt 4
+- Progress tracked at [github.com/nuxt/nuxt/discussions/34504](https://github.com/nuxt/nuxt/discussions/34504)
+
+---
+
 ## 2026-05-10 (run: May 10, 2026)
 
 ### Next.js 16.2.6 / 15.5.18 (May 7, 2026) 🔒 Critical Security Release

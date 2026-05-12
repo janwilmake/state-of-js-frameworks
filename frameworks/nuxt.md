@@ -6,7 +6,7 @@
 
 **4.4.4** (April 29, 2026) — Current stable (latest)  
 **3.21.4** (April 29, 2026) — Maintenance; EOL extended to **July 31, 2026**  
-**Nuxt 5** — in early development; targets Nitro v3 upgrade; no release date confirmed
+**Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
 
 ## Key Features
 
@@ -74,6 +74,24 @@ Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, ma
 - **Normalised page component names (experimental)** — more predictable component naming
 - **Extended v3 support** — Nuxt v3 EOL extended from Jan 31, 2026 to **July 31, 2026**
 - **Nuxt 5 preparation** — `main` branch will begin receiving Nuxt 5 (Nitro v3) commits; upgrade path via `future.compatibilityVersion: 5`
+
+## Nitro v3 Beta (March 11, 2026) — Powers Nuxt 5
+
+Nitro v3 entered public beta on March 11, 2026. It is the server engine that will power Nuxt 5 and represents the biggest Nitro update since its creation. ~280K weekly npm downloads already on the beta.
+
+**New features:**
+- **Rolldown + Vite 8 integration** — first-class support; replaces the old Rollup/Vite pipeline for significantly faster builds
+- **H3 v2 with `srvx`** — web-standard request handling (`Request`/`Response`-first); leaner APIs
+- **Built-in task runner** — define and run tasks (`server/tasks/*.ts`) via CLI or API
+- **Scheduled cron jobs** — built-in cron support (`scheduledTasks` in Nitro config); adapts per platform (Node uses Croner; Cloudflare uses Cron Triggers)
+- **Cross-environment WebSocket support** — unified WebSocket API across all deployment targets
+
+**Breaking changes in Nitro v3:**
+- Node 16 dropped
+- App config functionality removed (moved to Nuxt layer)
+- Default caching behavior changed
+
+**Status:** Nuxt 5 will ship with Nitro v3 once it's stable. Teams can already experiment with Nitro v3 APIs directly. Follow progress at [github.com/nuxt/nuxt/discussions/34504](https://github.com/nuxt/nuxt/discussions/34504).
 
 ## npm Download Trend
 

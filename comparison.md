@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: May 10, 2026. Covers Next.js 16.2.6, React Router v7.14.1 / Remix 3 beta (Remix), Nuxt 4.4.4, SvelteKit 2.57, Astro 6.2.2, Angular 21.2.8 (v22 imminent).
+> Last updated: May 12, 2026. Covers Next.js 16.2.6, React Router v7.14.1 / Remix 3 beta (Remix), Nuxt 4.4.4, SvelteKit 2.58.0, Astro 6.2.2, Angular 21.2.12 (v22 scheduled June 1, 2026).
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.6 | React Router v7.14 | Nuxt 4.4.4 | SvelteKit 2.57 | Astro 6.2.2 | Angular 21.2.8 |
+| Feature | Next.js 16.2.6 | React Router v7.14 | Nuxt 4.4.4 | SvelteKit 2.58 | Astro 6.2.2 | Angular 21.2.12 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -154,7 +154,7 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications  
 ⚡ **Watch:** Astro 7 alpha (April 2026) ships Vite 8 + stable Rust compiler; stable release expected mid-2026
 
-### Angular 21 → 22 (June 2026)
+### Angular 21 → 22 (June 1, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
 ❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
-⚡ **Watch:** Angular 22 (week of June 1, 2026) — Signal Forms stable, OnPush as default, selectorless components, Zoneless as default for new projects
+⚡ **Watch:** Angular 22 (week of June 1, 2026) — Signal Forms stable, OnPush as default, selectorless components, Zoneless as default for new projects. Angular 22.0.0-next.12 is actively in canary (May 8, 2026).
