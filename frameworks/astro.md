@@ -4,11 +4,12 @@
 
 ## Latest Version
 
-**6.2.2** (May 4, 2026) — Current stable patch  
-**6.2.0** (April 30, 2026) — Latest minor release  
+**6.3.2** (May 13, 2026) — Current stable patch  
+**6.3.0** (May 7, 2026) — Latest minor release  
 **7.0.0-alpha.0** (April 30, 2026) — Pre-release preview (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
-Backed by **Cloudflare** (acquired January 16, 2026)
+Backed by **Cloudflare** (acquired January 16, 2026)  
+**~2.73M weekly npm downloads** (May 2026)
 
 ## Key Features
 
@@ -51,6 +52,14 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Deno** — `@astrojs/deno`
 - **Static** — default; output HTML to any CDN/S3
 
+## v6.3 Highlights (May 7, 2026)
+
+- **Experimental Advanced Routing** — full control over the request pipeline via a `FetchState`-based app entry point (`src/app.ts`); compose individual handlers, bring your own framework (e.g., Hono), proxy specific paths to external services and let Astro handle the rest; follows the `fetch` handler pattern used by Cloudflare Workers, Deno, Bun, and Hono
+- **Support redirects on external image URLs** — Astro now correctly follows redirects when processing external image URLs; previously external images returning 3xx would fail silently
+- **SVG image processing disabled by default** — SVG images are no longer processed through the image pipeline by default; opt in explicitly with `image.svg: true` to avoid unintended transformations of SVG files
+- **`consume()` method on `AstroCookies`** — new instance method marks cookies as consumed and returns `Set-Cookie` header values; replaces the now-deprecated `AstroCookies.consume(cookies)` static method
+- **6.3.2 patch** (May 13) — rejects double-encoded URL paths with 400 instead of silently partial-decoding; fixes `&` showing as raw entity in `<meta>` tags in link previews; fixes `assetsPrefix` not available on `astro:config/server` build event
+
 ## v6.2 Highlights (April 30, 2026)
 
 - **SVG optimizer** — `experimental.svgOptimizer` passes `.astro` SVG imports through configurable Svgo optimization
@@ -83,7 +92,7 @@ On January 16, 2026, the Astro Technology Company team joined Cloudflare. Key im
 
 ## npm Download Trend
 
-~1.33M weekly downloads (March 2026). Growing steadily but remains significantly below Next.js and React Router. Downloads understate adoption because Astro users often build static sites that don't update frequently. GitHub stars: ~57K and growing. The Cloudflare acquisition signals Astro is here for the long term.
+~2.73M weekly downloads (May 2026) — growing significantly faster than most frameworks in this cohort; up from ~1.33M in March 2026. Downloads understate adoption because Astro users often build static sites that don't need frequent deploys. GitHub stars: ~59K and growing. The Cloudflare acquisition and continued major releases signal long-term viability.
 
 ## Trade-Off Assessment
 

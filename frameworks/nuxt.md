@@ -4,8 +4,8 @@
 
 ## Latest Version
 
-**4.4.4** (April 29, 2026) — Current stable (latest)  
-**3.21.4** (April 29, 2026) — Maintenance; EOL extended to **July 31, 2026**  
+**4.4.5** (May 10, 2026) — Current stable (latest)  
+**3.21.5** (May 10, 2026) — Maintenance; EOL extended to **July 31, 2026**  
 **Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
 
 ## Key Features
@@ -49,6 +49,12 @@ The `routeRules` hybrid model is one of Nuxt's strongest differentiators — no 
 - **Deno Deploy** — via Nitro Deno preset
 
 Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, many targets.
+
+## v4.4.5 / v3.21.5 Patch (May 10, 2026)
+
+- Freeze head during island plugin phase (prevents edge-case head state mutation in SSR islands)
+- Inline CSS imported from non-Vue JS modules (Vite config fix for third-party CSS imports)
+- Maintenance patch for the v3.21.x line with same fixes backported
 
 ## v4.4.3/4.4.4 Patch (April 29, 2026)
 

@@ -4,6 +4,61 @@
 
 ---
 
+## 2026-05-14 (run: May 14, 2026)
+
+### Astro 6.3 (May 7, 2026) + 6.3.2 patch (May 13, 2026) 🚀 New Minor
+
+- **Experimental Advanced Routing** — the headline feature of 6.3; full control over the request pipeline via a `FetchState`-based app entry point (`src/app.ts`); compose handlers, proxy paths to external services, and use any fetch-handler-style framework (e.g., **Hono**); follows the same pattern as Cloudflare Workers, Deno, and Bun
+  ```ts
+  import { FetchState, astro } from 'astro/fetch';
+  export default {
+    fetch(request: Request) {
+      const state = new FetchState(request);
+      if (state.url.pathname.startsWith('/api')) {
+        return fetch(new URL(state.url.pathname, 'https://api.example.com'));
+      }
+      return astro(state);
+    }
+  };
+  ```
+- **Support redirects on external image URLs** — Astro now follows 3xx redirects when fetching external images
+- **SVG image processing disabled by default** — SVG files are no longer processed through the image pipeline by default; opt in with `image.svg: true`
+- **New `AstroCookies.consume()` instance method** — replaces the deprecated static version; marks cookies consumed and returns `Set-Cookie` header values
+- **6.3.2 patch** (May 13) — rejects double-encoded URL paths with 400 response; fixes `&` entity rendering in `<meta>` tags; fixes `assetsPrefix` missing on build config events
+- **~2.73M weekly npm downloads** — significant growth from ~1.33M in March 2026; Astro is now within reach of Angular and SvelteKit in raw download volume
+
+---
+
+### Nuxt 4.4.5 / 3.21.5 (May 10, 2026)
+
+- Freeze head during island plugin phase — prevents edge-case head mutation bug in components islands during SSR
+- Inline CSS imported from non-Vue JS modules — Vite config fix for third-party CSS import edge cases
+- Maintenance backport to v3.21.5 for the same fixes
+- **Latest stable: `npm install nuxt@latest` → 4.4.5**
+
+---
+
+### SvelteKit 2.59.1 / 2.59.0 (May 5, 2026)
+
+- **`RemoteCommand` output type fix** — `Promise` wrapper correctly unwrapped in output type inference
+- **`form.fields.foo.as('checkbox', default_value)` fix** — default value now correctly applied for checkbox fields
+- **Remote form default value reset** — forms with `field.as('text', defaultValue)` now correctly reset to the provided default value after submission (not to null)
+- **Queries correctly started** — edge case where queries could fail to initialize resolved
+- **Plain functions as overrides** — `updates` now accepts plain functions as overrides (not just factory functions)
+- **Windows drive-letter path fix** (2.59.1) — resolves paths to route files containing a Windows drive letter correctly
+- **Latest stable: `npm install @sveltejs/kit@latest` → 2.59.1**
+
+---
+
+### Angular 22 — Signal Forms Officially Confirmed STABLE (May 6, 2026)
+
+- The Angular team (via angular.love and the Angular DevKit team) **officially confirmed** that Signal Forms will ship as **stable** in Angular 22 (week of June 1, 2026)
+- This is the biggest Angular forms news since Reactive Forms in v6 — Signal Forms provide fine-grained per-field updates instead of full-form invalidation, aligning perfectly with Zoneless change detection
+- ⚠️ **Angular 19.x EOL is May 19, 2026** — now only 5 days away; teams still on Angular 19 must upgrade to 21.x immediately
+- Angular 22.0.0-next.12 (May 8, 2026) — latest canary continues active pre-release development
+
+---
+
 ## 2026-05-12 (run: May 12, 2026)
 
 ### Angular 21.2.12 (May 6, 2026) — Latest Stable Patch

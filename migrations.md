@@ -284,6 +284,22 @@ npx svelte-migrate sveltekit-2
 
 ## Astro
 
+### Astro 6.2.x → 6.3.x (Non-Breaking Minor)
+
+**Released:** May 7, 2026  
+**Effort:** Near-zero — all new features are opt-in experimental flags
+
+#### Changes
+- **Experimental Advanced Routing** — new `src/app.ts` entry point opt-in; existing projects unaffected unless you add this file
+- **SVG processing disabled by default** — if your project relied on SVG images being processed by Astro's image pipeline, add `image: { svg: true }` to `astro.config.mjs`
+- `AstroCookies.consume(cookies)` static method deprecated in favour of the instance method — adapters using the static form will see a deprecation warning; update when convenient
+
+```bash
+npx @astrojs/upgrade  # safe — no breaking changes
+```
+
+---
+
 ### Astro 6.x → 7.x (Alpha — Not Yet Stable)
 
 **Status:** Alpha preview (April 30, 2026); stable release expected mid-2026  
@@ -363,7 +379,8 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 
 ### Angular 21 → 22 (Upcoming — Week of June 1, 2026)
 
-**Status:** Scheduled; **not yet released**  
+**Status:** Scheduled; **not yet released** (17 days away as of May 14, 2026)  
+**Confirmed stable in v22:** Signal Forms (officially announced May 6, 2026)  
 **Effort:** Low–Medium (breaking changes are tool-assisted via `ng update`)
 
 #### Expected Breaking Changes

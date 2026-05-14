@@ -9,8 +9,9 @@
 **21.0.0** (November 19, 2025) — Major release  
 **v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`)  
 **22.0.0-next.12** (May 8, 2026) — Latest pre-release canary  
-🔴 **Angular 19.x reached EOL on May 19, 2026** — no more patches from Google; teams on v19 must upgrade immediately  
-⚠️ **Angular 21.x active support ends May 19, 2026** — v21 transitions to LTS (security patches only until May 2027); Angular 22 expected week of June 1, 2026
+🔴 **Angular 19.x EOL on May 19, 2026** — 5 days away; no more patches from Google after that date; teams on v19 must upgrade immediately  
+⚠️ **Angular 21.x active support ends May 19, 2026** — v21 transitions to LTS (security patches only until May 2027); Angular 22 expected week of June 1, 2026  
+✅ **Signal Forms going STABLE in Angular 22** — confirmed by the Angular team (week of June 1, 2026)
 
 ## Key Features
 
@@ -83,13 +84,15 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 
 ## v22 Preview (Scheduled Week of June 1, 2026)
 
-Based on the official Angular roadmap (`angular.dev/roadmap`) and community signals:
-- **Selectorless components** — define components without a `selector`; use directly in templates; improves refactorability and type safety
-- **Stable Signal Forms** — graduation from developer preview expected; will become the recommended form API
-- **OnPush as default** — Angular CLI will generate new components with `ChangeDetectionStrategy.OnPush`; an RFC discussion is open for feedback
-- **Zoneless as default** — `Zone.js` removed from new projects by default; Zoneless was shipped as production-ready in v21
+Based on the official Angular roadmap (`angular.dev/roadmap`), confirmed team announcements, and community signals:
+- **Stable Signal Forms** — **officially confirmed stable** (angular.love / Angular team, May 6, 2026); fine-grained updates for large forms; aligned with Zoneless change detection; replaces `ReactiveFormsModule` as the recommended form API going forward
+- **Selectorless components** — define components without a `selector`; use directly in templates; improves refactorability and type safety; reduces cognitive overhead of managing string selectors
+- **OnPush as default** — Angular CLI will generate new components with `ChangeDetectionStrategy.OnPush`; RFC discussion open; existing components unaffected
+- **Zoneless as default for new projects** — `Zone.js` removed from new project scaffolding; Zoneless was production-ready in v21; existing Zone.js projects continue to work unchanged
 - **TypeScript 5.9 support**
-- **Vitest as primary test runner (stable)** — Vitest graduated to stable in Angular v21; v22 will promote the Karma→Vitest migration tool to stable
+- **`debounced()` signal primitive** — native debouncing for signals without bridging to RxJS; simplifies typeahead and search patterns
+- **`resource()` improvements** — stronger signal-native async data loading story; reduces `toObservable`/`toSignal` bridging
+- **Vitest as primary test runner (stable)** — Vitest graduated to stable in Angular v21; v22 will promote the Karma→Vitest migration tool to stable and make Vitest the default in new projects
 - **Angular MCP Server enhancements** — continued investment; Google AI Studio, Gemini CLI, and Antigravity IDE integrations planned
 - **`httpResource`** — new HTTP composable built on the Resource API; in "available to experiment with" status
 - **Route-level render mode** — configure SSR/pre-render/CSR per individual route (already production-ready; expected as prominent in v22 docs)

@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: May 12, 2026. Covers Next.js 16.2.6, React Router v7.14.1 / Remix 3 beta (Remix), Nuxt 4.4.4, SvelteKit 2.58.0, Astro 6.2.2, Angular 21.2.12 (v22 scheduled June 1, 2026).
+> Last updated: May 14, 2026. Covers Next.js 16.2.6, React Router v7.14.1 / Remix 3 beta (Remix), Nuxt 4.4.5, SvelteKit 2.59.1, Astro 6.3.2, Angular 21.2.12 (v22 + stable Signal Forms scheduled week of June 1, 2026).
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.6 | React Router v7.14 | Nuxt 4.4.4 | SvelteKit 2.58 | Astro 6.2.2 | Angular 21.2.12 |
+| Feature | Next.js 16.2.6 | React Router v7.14 | Nuxt 4.4.5 | SvelteKit 2.59.1 | Astro 6.3.2 | Angular 21.2.12 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -94,7 +94,7 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 
 | Metric | Next.js | React Router | Nuxt | SvelteKit | Astro | Angular |
 |---|---|---|---|---|---|---|
-| **npm weekly downloads** | ~26M | ~28M (react-router) | ~2M | ~1.5–2M | ~1.5M | ~2.5M |
+| **npm weekly downloads** | ~26M | ~28M (react-router) | ~2M | ~1.5–2M | ~2.7M | ~2.5M |
 | **GitHub Stars** | ~138K | ~54K (RR) | ~60K | ~21K (kit) | ~57K | ~100K |
 | **Stack Overflow questions** | Very High | High | Medium | Medium | Medium | Very High |
 | **Job postings** | ⭐⭐⭐⭐ Very High | ⭐⭐⭐ High | ⭐⭐ Medium | ⭐⭐ Medium | ⭐ Low | ⭐⭐⭐⭐ Very High |
@@ -152,9 +152,9 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Astro 6 / Astro 7 (alpha)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  
 ❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications  
-⚡ **Watch:** Astro 7 alpha (April 2026) ships Vite 8 + stable Rust compiler; stable release expected mid-2026
+⚡ **Watch:** Astro 6.3 (May 7, 2026) — experimental advanced routing with Hono support; Astro 7 alpha ships Vite 8 + Rust-only compiler; ~2.73M weekly npm downloads and growing fast
 
 ### Angular 21 → 22 (June 1, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
 ❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
-⚡ **Watch:** Angular 22 (week of June 1, 2026) — Signal Forms stable, OnPush as default, selectorless components, Zoneless as default for new projects. Angular 22.0.0-next.12 is actively in canary (May 8, 2026).
+⚡ **Watch:** Angular 22 (week of June 1, 2026) — **Signal Forms officially going stable** (confirmed May 6), OnPush as default, selectorless components, Zoneless as default for new projects. Angular 22.0.0-next.12 actively in canary. ⚠️ Angular 19.x EOL May 19, 2026 (5 days).

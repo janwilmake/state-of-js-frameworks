@@ -4,7 +4,7 @@
 
 ## Latest Version
 
-**SvelteKit 2.58.0** (April 23, 2026) — Current stable  
+**SvelteKit 2.59.1** (May 5, 2026) — Current stable  
 **Svelte 5.x** (May 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
 
@@ -52,6 +52,7 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 
 ## May 2026 Highlights
 
+- **SvelteKit 2.59.1** (May 5, 2026) — Windows drive-letter path resolution fix for route files; minor `RemoteCommand` output type fix; fixes for `form.fields.foo.as('checkbox', default_value)` and remote form default value resets on submit
 - **`query.live` — Real-time streaming queries** — `kit@2.57` ships `query.live()` using async generators; enables real-time subscriptions (e.g., live notifications, live clocks) without WebSocket boilerplate; the server streams data, SvelteKit manages the connection lifecycle; community reception is very positive
 - **`form.submit` returns `boolean`** — `kit@2.57.0` — form submit now signals validation outcome, reducing boilerplate in conditional submission flows
 - **Svelte CLI Community Add-ons** (experimental, May 2026) — `sv` CLI now supports experimental community-contributed plugins; ecosystem extensibility without official package overhead; featured at ThoughtWorks Technology Radar May 2026
