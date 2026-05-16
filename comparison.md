@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: May 14, 2026. Covers Next.js 16.2.6, React Router v7.14.1 / Remix 3 beta (Remix), Nuxt 4.4.5, SvelteKit 2.59.1, Astro 6.3.2, Angular 21.2.12 (v22 + stable Signal Forms scheduled week of June 1, 2026).
+> Last updated: May 16, 2026. Covers Next.js 16.2.6, React Router v7.14.1 / Remix 3 beta (Remix), Nuxt 4.4.5, SvelteKit 2.59.1, Astro 6.3.2, Angular 21.2.12 (v22 + stable Signal Forms scheduled week of June 1, 2026 — 16 days away; Angular 19 EOL May 19, now 3 days away).
 
 ## Quick Decision Guide
 
@@ -157,4 +157,4 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Angular 21 → 22 (June 1, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
 ❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
-⚡ **Watch:** Angular 22 (week of June 1, 2026) — **Signal Forms officially going stable** (confirmed May 6), OnPush as default, selectorless components, Zoneless as default for new projects. Angular 22.0.0-next.12 actively in canary. ⚠️ Angular 19.x EOL May 19, 2026 (5 days).
+⚡ **Watch:** Angular 22 (week of June 1, 2026, **16 days away**) — **Signal Forms officially going stable** (confirmed May 6), OnPush as default, selectorless components, Zoneless as default for new projects. Angular 22.0.0-next.12 actively in canary. ⚠️ **Angular 19.x EOL May 19, 2026 (3 days away)** — upgrade to 21.x immediately.

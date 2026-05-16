@@ -4,6 +4,25 @@
 
 ---
 
+## 2026-05-16 (run: May 16, 2026)
+
+### Angular 19 EOL Imminent — 3 Days Away (May 19, 2026) ⚠️
+
+- **Angular 19.x reaches official end-of-life on May 19, 2026** — now just 3 days away. Google will issue **no further security patches, bug fixes, or updates** for any Angular 19.x release after this date. Teams still running Angular 19 in production are operating unsupported software.
+- **Angular 21.x active support also ends May 19, 2026** — Angular 21 transitions to LTS status (security-only patches until May 19, 2027). No new features will ship on the v21 line.
+- **Angular 22 targeted for the week of June 1, 2026** — 16 days away; currently at `22.0.0-next.12` canary (May 8). Expected features: stable Signal Forms, selectorless components, OnPush as default for new projects, Zoneless as default for new projects, Vitest migration tool promoted to stable.
+- **No new stable releases across any major framework** since May 14: latest stable versions remain Next.js 16.2.6, React Router v7.14.1, Nuxt 4.4.5, SvelteKit 2.59.1, Astro 6.3.2, Angular 21.2.12.
+
+### SvelteKit "What's New in Svelte: May 2026" (May 1, 2026)
+
+- Official monthly Svelte recap published; highlights already captured in prior runs:
+  - TypeScript 6.0 support (`kit@2.56.0`)
+  - Community add-ons in the `sv` CLI (experimental) — first batch of community-contributed CLI plugins
+  - Remote Functions: `form.submit()` returns `boolean` (`kit@2.57.0`), `field.as(type, value)` defaults
+  - Svelte featured in the May 2026 **ThoughtWorks Technology Radar** (Adopt tier)
+
+---
+
 ## 2026-05-14 (run: May 14, 2026)
 
 ### Astro 6.3 (May 7, 2026) + 6.3.2 patch (May 13, 2026) 🚀 New Minor
