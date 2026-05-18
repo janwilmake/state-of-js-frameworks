@@ -107,9 +107,9 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 
 ---
 
-### React Router v7 → v8 (Planned — 2026)
+### React Router v7 → v8 (Imminent — Mid-2026)
 
-**Status:** In planning (GitHub Discussion #14468, opened October 2025)  
+**Status:** Expected "in the next month or two" per official v7.15.0 release notes (May 5, 2026); v7.15.x stabilization work is the final preparation  
 **Effort:** Low–Medium (mostly tooling changes)
 
 #### Anticipated Breaking Changes
@@ -379,9 +379,11 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 
 ### Angular 21 → 22 (Upcoming — Week of June 1, 2026)
 
-**Status:** Scheduled; **not yet released** (16 days away as of May 16, 2026)  
+**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026  
 **Confirmed stable in v22:** Signal Forms (officially announced May 6, 2026)  
 **Effort:** Low–Medium (breaking changes are tool-assisted via `ng update`)
+
+> ⚠️ Angular 19.x reached EOL on May 19, 2026. Angular 21 is now in LTS (security-only until May 2027). Teams on v19 should upgrade to v21 now; plan for v22 when it ships.
 
 #### Expected Breaking Changes
 - **OnPush as default change detection** — the Angular CLI will generate new components with `ChangeDetectionStrategy.OnPush`; existing components are unaffected; `ng update` schematic will handle new project templates

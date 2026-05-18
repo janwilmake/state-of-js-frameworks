@@ -4,7 +4,7 @@
 
 ## Latest Version
 
-**6.3.2** (May 13, 2026) — Current stable patch  
+**6.3.3** (May 14, 2026) — Current stable patch  
 **6.3.0** (May 7, 2026) — Latest minor release  
 **7.0.0-alpha.0** (April 30, 2026) — Pre-release preview (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
@@ -59,6 +59,7 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **SVG image processing disabled by default** — SVG images are no longer processed through the image pipeline by default; opt in explicitly with `image.svg: true` to avoid unintended transformations of SVG files
 - **`consume()` method on `AstroCookies`** — new instance method marks cookies as consumed and returns `Set-Cookie` header values; replaces the now-deprecated `AstroCookies.consume(cookies)` static method
 - **6.3.2 patch** (May 13) — rejects double-encoded URL paths with 400 instead of silently partial-decoding; fixes `&` showing as raw entity in `<meta>` tags in link previews; fixes `assetsPrefix` not available on `astro:config/server` build event
+- **6.3.3 patch** (May 14) — minor bug fixes
 
 ## v6.2 Highlights (April 30, 2026)
 

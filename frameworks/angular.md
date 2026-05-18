@@ -4,13 +4,13 @@
 
 ## Latest Version
 
-**21.2.12** (May 6, 2026) — Current stable patch  
+**21.2.13** (May 13, 2026) — Current stable patch  
 **21.2.0** (February 23, 2026) — Current stable minor  
 **21.0.0** (November 19, 2025) — Major release  
 **v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`)  
-**22.0.0-next.12** (May 8, 2026) — Latest pre-release canary  
-🔴 **Angular 19.x EOL on May 19, 2026** — **3 days away** (today is May 16); no more patches from Google after that date; teams on v19 must upgrade immediately  
-⚠️ **Angular 21.x active support ends May 19, 2026** — v21 transitions to LTS (security patches only until May 2027); Angular 22 expected week of June 1, 2026 (16 days away)  
+**22.0.0-rc.0** (May 13, 2026) — Release Candidate; Angular 22 is now in RC 🚀  
+🔴 **Angular 19.x reached EOL on May 19, 2026** — Google will issue no further security patches; teams on v19 are running unsupported software  
+⚠️ **Angular 21.x active support ended May 19, 2026** — v21 now in LTS (security patches only until May 19, 2027); Angular 22 stable expected week of June 1, 2026  
 ✅ **Signal Forms going STABLE in Angular 22** — confirmed by the Angular team (week of June 1, 2026)
 
 ## Key Features
@@ -61,6 +61,11 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 - **CLDR v47 upgrade** — improved currency and date formatting
 - **Animation improvements** — enter/leave DOM animations API
 
+## v21.2.13 Patch (May 13, 2026)
+
+- Stability and bug fixes on the 21.x LTS line
+- **Angular CLI 22.0.0-rc.0** released same day (May 13, 2026) — Angular 22 is now in Release Candidate; no new features will be added before stable; `ng update @angular/core@22 @angular/cli@22` will be the upgrade path once stable lands
+
 ## v21.2.12 Patch (May 6, 2026)
 
 - **Signal input transform read-generic fix** — `allow explicit read generic with signal input transforms` for better type inference
@@ -69,7 +74,6 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 - **Sanitizer typings fix** — improved sanitizer type signatures
 - **Signal security** — `validate security-sensitive attributes in i18n bindings` improvement
 - **Signal Forms** — `prohibit concurrent submits in signal forms` (prevents double-submit race conditions)
-- **22.0.0-next.12** (May 8, 2026) — latest pre-release canary actively in development
 
 ## v21.2 Highlights (February 23, 2026)
 
@@ -135,7 +139,7 @@ This trajectory is genuine. Angular is no longer the "legacy enterprise choice" 
 | Release | Status | Active Ends | LTS Ends |
 |---|---|---|---|
 | 22.x | Expected ~June 1, 2026 | ~Nov 2026 | ~May 2028 |
-| 21.x | **LTS** (as of May 19, 2026) | May 19, 2026 | May 19, 2027 |
+| 21.x | **LTS** (since May 19, 2026) | May 19, 2026 | May 19, 2027 |
 | 20.x | LTS | Nov 19, 2025 | Nov 28, 2026 |
 | 19.x | **EOL** (May 19, 2026) | May 28, 2025 | May 19, 2026 |
 

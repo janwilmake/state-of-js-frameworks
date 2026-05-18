@@ -4,6 +4,32 @@
 
 ---
 
+## 2026-05-18 (run: May 18, 2026)
+
+### Angular 19 EOL Has Passed — Angular 21 Now in LTS ⚠️
+
+- **Angular 19.x officially reached end-of-life on May 19, 2026** (yesterday) — Google has issued no further security patches for any 19.x release. Teams still running Angular 19 in production are on entirely unsupported software.
+- **Angular 21.x active support ended May 19, 2026** — v21 now transitions fully to LTS (security patches only until May 19, 2027). No new features will ship on the v21 line.
+- **Angular CLI 22.0.0-rc.0 released May 13, 2026** — Angular 22 is now in Release Candidate. The RC milestone means no new features will be added; only critical bug fixes and stability work remain before the **week-of-June-1, 2026** stable release.
+- **Angular 21.2.13** (May 13, 2026) — latest stable patch on the 21.x line; upgrade immediately.
+
+### React Router v7.15.1 (May 14, 2026) + v7.15.0 (May 5, 2026) 🚀 New Releases
+
+**v7.15.0 (May 5, 2026):**
+- **API stabilizations in preparation for React Router v8** — the team explicitly flagged this as a pre-v8 stabilization release. APIs previously marked as `unstable_` have been promoted to stable. If you were using any unstable APIs, this is the release to audit.
+- **15–30% server-side route matching performance improvement** — cached flattened/ranked route branches during server-side matching; avoids redundant `matchRoutes` calls in Data/Framework Mode
+- Route matching optimization for Framework/Data Mode (built on the fix for the earlier regression in 7.6.0)
+
+**v7.15.1 (May 14, 2026):**
+- **`unstable_useRouterState()` hook** — new consolidated hook (Data/Framework/RSC Mode) providing a single access point for both active and pending router states; designed to replace a collection of individual hooks (`useNavigation()`, `useFormAction()`, etc.) that will likely be deprecated in v8 and possibly removed in v9
+  ```ts
+  let { active, pending } = unstable_useRouterState();
+  // replaces: useNavigation().formData, useNavigation().json, etc.
+  ```
+- **React Router v8 now expected "in the next month or two"** (per official v7.15.0 release notes — May 5, 2026); the stabilization work in 7.15.x is the final preparation; ESM-only, Node 20 dropped, RSC Framework Mode stabilization expected
+
+---
+
 ## 2026-05-16 (run: May 16, 2026)
 
 ### Angular 19 EOL Imminent — 3 Days Away (May 19, 2026) ⚠️

@@ -13,10 +13,11 @@ For teams evaluating "Remix", the practical question is: **React Router v7 in Fr
 
 ## React Router v7 — Latest Version
 
-**v7.14.1** (April 13, 2026) — Current stable  
-**v7.14.0** (April 2, 2026) — Added Vite 8 support  
+**v7.15.1** (May 14, 2026) — Current stable  
+**v7.15.0** (May 5, 2026) — API stabilizations; 15–30% route matching performance improvement  
 28M+ weekly npm downloads (react-router package)  
-Backed by **Shopify** (powers Hydrogen, Admin)
+Backed by **Shopify** (powers Hydrogen, Admin)  
+⚡ **React Router v8 expected "in the next month or two"** (per v7.15.0 release notes, May 5, 2026)
 
 ## Key Features (React Router v7 Framework Mode)
 
@@ -59,19 +60,21 @@ No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 
 | Version | Date | Highlights |
 |---|---|---|
+| v7.15.1 | May 14, 2026 | `unstable_useRouterState()` hook — consolidated active + pending router state access |
+| v7.15.0 | May 5, 2026 | **API stabilizations pre-v8**; 15–30% server-side route matching perf improvement |
 | v7.14.1 | April 13, 2026 | TypeScript 6 peer dep support, race condition fix in `HydrateFallback`, normalize double-slashes in redirects |
 | v7.14.0 | April 2, 2026 | **Vite 8 support**, memory leak fix in `turbo-stream`, pre-rendering with `v8_viteEnvironmentApi`, unstable RSC Framework Mode improvements |
 | v7.13.2 | March 23, 2026 | Bug fixes |
 | v7.13.0 | January 23, 2026 | `crossOrigin` prop on `<Links>`, origin check returns 400, glob matching fix |
 | v7.12.0 | January 7, 2026 | 🔒 Security: CSRF protection, XSS fixes, CSRF in ScrollRestoration; `allowedActionOrigins` config |
 
-## React Router v8 — In Planning
+## React Router v8 — Imminent
 
-React Router v8 is in active planning (discussion opened October 2025). Expected changes:
+React Router v8 is now expected **"in the next month or two"** per the official v7.15.0 release notes (May 5, 2026). The stabilization work in 7.15.x was the final preparation. Expected changes:
 - **ESM only** — drop CJS builds (Vite 7+ and Node 20.19+/22.12+ `require(esm)` enable this)
 - **Drop Node 20** support (EOL April 2026)
-- **React Server Components (RSC) Framework Mode** — experimental RSC support being developed for stabilization
-- Expected sometime in 2026 once future flags stabilize
+- **React Server Components (RSC) Framework Mode** — stabilization is the primary driver of the v8 release
+- **APIs stabilized in 7.15.x** will be the final public API surface for v8; the `unstable_useRouterState()` hook added in 7.15.1 is a hint of the v8 API direction
 
 ---
 
