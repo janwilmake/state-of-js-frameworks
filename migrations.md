@@ -143,6 +143,20 @@ Use future flags in Remix v1 to incrementally adopt v2 behaviors before migratin
 
 ## Nuxt
 
+### Nuxt 4.4.5 → 4.4.6 (Security Patch — May 18, 2026)
+
+**Effort:** Near-zero — `npm install nuxt@latest`
+
+⚠️ **Upgrade immediately.** Multiple security vulnerabilities were patched in 4.4.6. Netlify's changelog (May 19, 2026) disclosed that Nuxt 4.4.5 and earlier contain security issues patched in 4.4.6+. `@nuxt/rspack-builder` is also patched in the corresponding release.
+
+No API changes or breaking changes in this patch. Simply upgrade:
+```bash
+npm install nuxt@latest          # 4.x → 4.4.6
+npx nuxt upgrade                  # alternative via nuxi
+```
+
+---
+
 ### Nuxt 3.x → Nuxt 4.x
 
 **Released:** July 16, 2025  
@@ -283,6 +297,21 @@ npx svelte-migrate sveltekit-2
 ---
 
 ## Astro
+
+### Astro 6.3.x → 6.3.5 (Security + Bug Fixes — May 18, 2026)
+
+**Effort:** Zero — drop-in patch upgrade
+
+⚠️ **Upgrade immediately if using SSR + Islands.** `astro@6.3.3` patched a reflected XSS where slot names on hydrated island components were not HTML-escaped in SSR output. `6.3.4` and `6.3.5` add further fixes (CSP `<Image>` prop bug, stale SSR module cache, advanced routing improvements).
+
+```bash
+npm install astro@latest          # → 6.3.5
+npx @astrojs/upgrade              # alternative
+```
+
+No API breaking changes in any 6.3.x patch.
+
+---
 
 ### Astro 6.2.x → 6.3.x (Non-Breaking Minor)
 

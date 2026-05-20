@@ -4,8 +4,8 @@
 
 ## Latest Version
 
-**4.4.5** (May 10, 2026) — Current stable (latest)  
-**3.21.5** (May 10, 2026) — Maintenance; EOL extended to **July 31, 2026**  
+**4.4.6** (May 18, 2026) — Current stable (latest) ⚠️ Security release — upgrade immediately  
+**3.21.6** (May 18, 2026) — Maintenance; EOL extended to **July 31, 2026**  
 **Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
 
 ## Key Features
@@ -49,6 +49,15 @@ The `routeRules` hybrid model is one of Nuxt's strongest differentiators — no 
 - **Deno Deploy** — via Nitro Deno preset
 
 Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, many targets.
+
+## v4.4.6 / v3.21.6 (May 18, 2026) ⚠️ Security + Bug Fixes
+
+- ⚠️ **Security advisory** — multiple vulnerabilities patched; `@nuxt/rspack-builder` also updated; teams on 4.4.5 or earlier should upgrade immediately
+- `vite`: use SPA entry for vite-node fallback; invalidate SSR module cache when modules are invalidated via plugin hooks
+- `nuxt`: match deduplicated `resolveComponent` calls in JSX blocks; prefer framework's own builder/server deps
+- `nuxt`: update `useFetch` key even when `watch: false` is set; handle errors when fetching the app manifest
+- `nitro`: mark `@babel/plugin-syntax-typescript` as optional peer dep; add `.json` extension to payload cache items
+- Maintenance backport to **v3.21.6** with same fixes
 
 ## v4.4.5 / v3.21.5 Patch (May 10, 2026)
 

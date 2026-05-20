@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: May 18, 2026. Covers Next.js 16.2.6, React Router v7.15.1 / Remix 3 beta (Remix), Nuxt 4.4.5, SvelteKit 2.59.1, Astro 6.3.3, Angular 21.2.13 (v22 RC.0 released May 13 — stable week of June 1, 2026; Angular 19 EOL May 19 has now passed; Angular 21 now in LTS).
+> Last updated: May 20, 2026. Covers Next.js 16.2.6, React Router v7.15.1 / Remix 3 beta (Remix), Nuxt 4.4.6 ⚠️ security release, SvelteKit 2.59.1, Astro 6.3.5 ⚠️ includes XSS security fix, Angular 21.2.13 (v22 RC.0 stable week of June 1, 2026; Angular 19 EOL passed; Angular 21 now in LTS).
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.6 | React Router v7.15.1 | Nuxt 4.4.5 | SvelteKit 2.59.1 | Astro 6.3.3 | Angular 21.2.13 |
+| Feature | Next.js 16.2.6 | React Router v7.15.1 | Nuxt 4.4.6 | SvelteKit 2.59.1 | Astro 6.3.5 | Angular 21.2.13 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -143,7 +143,8 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 
 ### Nuxt 4
 ✅ **Best for:** Vue teams, hybrid rendering needs, projects wanting Nuxt UI v4 components  
-❌ **Avoid for:** React-only teams, projects needing the largest ecosystem possible
+❌ **Avoid for:** React-only teams, projects needing the largest ecosystem possible  
+⚠️ **Latest: 4.4.6** (May 18, 2026) — security release; upgrade from 4.4.5 or earlier immediately
 
 ### SvelteKit 2
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  
@@ -152,7 +153,7 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Astro 6 / Astro 7 (alpha)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  
 ❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications  
-⚡ **Watch:** Astro 6.3 (May 7, 2026) — experimental advanced routing with Hono support; Astro 7 alpha ships Vite 8 + Rust-only compiler; ~2.73M weekly npm downloads and growing fast
+⚡ **Watch:** Astro 6.3.5 (May 18, 2026) — latest stable; 6.3.3 patched XSS in island slot names (upgrade immediately); 6.3.4–6.3.5 add `fetchFile` option for advanced routing, CSP fix for `<Image>`/`<Picture>`; Astro 7 alpha ships Vite 8 + Rust-only compiler; ~2.73M weekly npm downloads and growing fast
 
 ### Angular 21 → 22 (June 1, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  

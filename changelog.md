@@ -4,6 +4,55 @@
 
 ---
 
+## 2026-05-20 (run: May 20, 2026)
+
+### Nuxt 4.4.6 / 3.21.6 (May 18, 2026) + 🔒 Nuxt Security Advisory
+
+- **Nuxt 4.4.6** (May 18, 2026) — latest stable patch. Fixes:
+  - `vite`: use SPA entry for vite-node fallback
+  - `vite`: invalidate SSR module cache when modules are invalidated via plugin hooks
+  - `nuxt`: match deduplicated `resolveComponent` calls in JSX blocks
+  - `nuxt`: prefer framework's own builder/server deps over hoisted packages
+  - `nuxt`: update `useFetch` key even when `watch: false` is set
+  - `nitro`: mark `@babel/plugin-syntax-typescript` as optional peer dep
+  - `nitro`: add `.json` extension to payload cache items
+  - `nuxt`: handle errors when fetching the app manifest
+- **Nuxt 3.21.6** (May 18, 2026) — corresponding maintenance backport to the v3.21.x line
+- **🔒 Security advisory** — Netlify's changelog (May 19, 2026) discloses multiple vulnerabilities patched in Nuxt 4.4.6+ (for 4.x) and corresponding 3.x patches; `@nuxt/rspack-builder` also patched. Teams on Nuxt 4.4.5 or earlier should upgrade immediately.
+  ```bash
+  npm install nuxt@latest  # installs 4.4.6
+  ```
+
+### Nuxt Content v3.14.0 (May 18, 2026) — Full-Text Search + Type Improvements
+
+- **`useSearchCollection` composable** — new FTS5 full-text search composable; built on SQLite FTS5 under the hood; returns reactive search results against any Nuxt Content collection with zero extra config
+- **Custom properties on `ContentConfig`** — `ContentConfig` type now accepts arbitrary custom properties, enabling typed CMS-specific metadata
+- **`NOT IN` added to `SQLOperator` type** — expands the type-safe query builder
+- **Bug fixes**: slugify options now correctly passed to the transformer; preview mode skips collections without a source in the preview template
+
+### Astro 6.3.5 / 6.3.4 (May 18, 2026) — Patch Cluster
+
+**6.3.5** (May 18, 2026):
+- **CSP fix** — `position` prop on `<Image>` and `<Picture>` components was incorrectly breaking Content Security Policy hashes; now fixed
+- **Improved error messages** — more consistent, correct wording across build and runtime errors
+- **Stale SSR content fix** — dev server now properly invalidates SSR module cache when SSR-only modules change (e.g., `.astro` files outside project root in a monorepo); previously returning stale responses after module changes
+
+**6.3.4** (May 18, 2026):
+- **`experimental.advancedRouting` — `fetchFile` option** — customize or disable the app entry file path (`src/app.ts` → custom path); `fetchFile: false` disables generation
+- **`FetchState.response` property** — automatically set after `pages()` or `middleware()` completes, available for downstream inspection
+- **`App.Providers` interface** — new namespace extension point for typing custom context providers on `Astro` and `ctx`
+- **`Fetchable` type export** — new type for typing the advanced routing entrypoint (`satisfies Fetchable`)
+- **Hono cache middleware fix** — `cache()` middleware now follows the standard wrapper pattern correctly
+- **Latest stable: 6.3.5** — `npm install astro@latest` → 6.3.5
+
+### Astro 6.3.3 (May 14, 2026) 🔒 Security Fix
+
+- **🔒 XSS fix** — slot names on hydrated (island) components were not HTML-escaped in SSR output; a maliciously named slot could have resulted in a reflected XSS. Upgrade immediately if you use dynamic slot names with SSR.
+  - Affected: Astro < 6.3.3 with SSR and Islands architecture
+  - Fixed: [`astro@6.3.3`](https://github.com/withastro/astro/releases/tag/astro%406.3.3)
+
+---
+
 ## 2026-05-18 (run: May 18, 2026)
 
 ### Angular 19 EOL Has Passed — Angular 21 Now in LTS ⚠️
