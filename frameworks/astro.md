@@ -4,10 +4,11 @@
 
 ## Latest Version
 
-**6.3.5** (May 18, 2026) — Current stable (latest patch)  
-**6.3.3** (May 14, 2026) — ⚠️ Security fix (XSS in island slot names — upgrade to 6.3.5)  
+**6.3.7** (May 21, 2026) — Current stable (latest patch)  
+**6.3.6** (May 20, 2026) — Patch  
+**6.3.3** (May 14, 2026) — ⚠️ Security fix (XSS in island slot names — upgrade to 6.3.7)  
 **6.3.0** (May 7, 2026) — Latest minor release  
-**7.0.0-alpha.0** (April 30, 2026) — Pre-release preview (not production ready)  
+**7.0.0-alpha.1** (May 9, 2026) — Pre-release preview (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
 Backed by **Cloudflare** (acquired January 16, 2026)  
 **~2.73M weekly npm downloads** (May 2026)
@@ -52,6 +53,14 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Node.js** — `@astrojs/node`
 - **Deno** — `@astrojs/deno`
 - **Static** — default; output HTML to any CDN/S3
+
+## v6.3.6–6.3.7 Patches (May 20–21, 2026)
+
+**6.3.7** (May 21, 2026):
+- Routine bug fixes and dependency bumps following the 6.3.6 patch cluster
+
+**6.3.6** (May 20, 2026):
+- Bug fixes and stability improvements; no breaking changes
 
 ## v6.3.3–6.3.5 Patches (May 14–18, 2026)
 

@@ -298,14 +298,14 @@ npx svelte-migrate sveltekit-2
 
 ## Astro
 
-### Astro 6.3.x → 6.3.5 (Security + Bug Fixes — May 18, 2026)
+### Astro 6.3.x → 6.3.7 (Security + Bug Fixes — May 14–21, 2026)
 
 **Effort:** Zero — drop-in patch upgrade
 
-⚠️ **Upgrade immediately if using SSR + Islands.** `astro@6.3.3` patched a reflected XSS where slot names on hydrated island components were not HTML-escaped in SSR output. `6.3.4` and `6.3.5` add further fixes (CSP `<Image>` prop bug, stale SSR module cache, advanced routing improvements).
+⚠️ **Upgrade immediately if using SSR + Islands.** `astro@6.3.3` patched a reflected XSS where slot names on hydrated island components were not HTML-escaped in SSR output. `6.3.4` and `6.3.5` add further fixes (CSP `<Image>` prop bug, stale SSR module cache, advanced routing improvements). `6.3.6` and `6.3.7` are routine follow-up patches.
 
 ```bash
-npm install astro@latest          # → 6.3.5
+npm install astro@latest          # → 6.3.7
 npx @astrojs/upgrade              # alternative
 ```
 
@@ -406,9 +406,9 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 
 ## Angular
 
-### Angular 21 → 22 (Upcoming — Week of June 1, 2026)
+### Angular 21 → 22 (Imminent — Week of June 1, 2026 🔜 10 days away)
 
-**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026  
+**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026; feature-locked  
 **Confirmed stable in v22:** Signal Forms (officially announced May 6, 2026)  
 **Effort:** Low–Medium (breaking changes are tool-assisted via `ng update`)
 

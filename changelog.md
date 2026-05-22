@@ -4,6 +4,60 @@
 
 ---
 
+## 2026-05-22 (run: May 22, 2026)
+
+### Astro 6.3.7 / 6.3.6 (May 20–21, 2026) — Patch Cluster Continues
+
+- **6.3.7** (May 21, 2026) — Routine bug fixes and dependency updates; follows rapid release cadence of the 6.3.x line
+- **6.3.6** (May 20, 2026) — Bug fixes and stability improvements; no breaking changes
+- **Current stable**: `npm install astro@latest` → 6.3.7
+- **Astro 7.0.0-alpha.1** (May 9, 2026) — Second alpha of the Astro 7 pre-release series; Vite 8 + Rust-only compiler track; `npm install astro@alpha` to test (not production ready)
+- Note: Astro is now averaging **a new patch release every 1–2 days** in the 6.3.x cycle — high velocity signals active production use and a healthy security/quality posture
+
+---
+
+### SvelteKit 2.60.1 / 2.60.0 (May 14, 2026) 🚀 New Minor
+
+- **2.60.0** (May 14, 2026) — New minor release:
+  - **`submit` and `hidden` form fields now accept numbers and booleans** — previously only strings were accepted; reduces `toString()` boilerplate for numeric/boolean form data
+  - **Warn on unread form remote function validation issues** — when a form remote function returns validation errors that are never accessed in the component, SvelteKit now emits a console warning; reduces silent validation failure bugs
+  - **Abort navigation after async rendering if obsolete** — fix for edge case where an async render completing after a subsequent navigation would incorrectly apply its result
+  - **Skip refreshing queries on full-page reload form submissions** — prevents unnecessary query re-fetches on traditional full-page form submissions
+- **2.60.1** (May 14, 2026) — Immediate patch:
+  - **`query.batch` cross-talk prevention** — fix for a bug where batched queries could interfere with each other's response handling
+  - `svelte` and `devalue` dependency bumps
+- **Latest stable**: `npm install @sveltejs/kit@latest` → 2.60.1
+
+---
+
+### Next.js 16.3 Canary Progress (May 2026) 🔬 In Development
+
+- **No stable Next.js release** since 16.2.6 (May 7, 2026); canary builds active
+- **Notable canary features in progress** (from canary.20–canary.25, May 9–22, 2026):
+  - `experimental.appShells` — new feature flag for App Shell pattern; experimental
+  - `instrumentationClientInject` — new config for injecting client-side instrumentation code
+  - MCP `compile_route` tool — AI agent/MCP integration for compiling individual routes
+  - Turbopack: fixes for subpath imports to external packages, crashing webpack loader error reporting
+  - `bfcacheId` — opt out of back/forward cache state preservation per-navigation
+  - `next internal static-routes-info` CLI command
+  - HTTP Cache-Control headers now respected with TTL-based invalidation for `fetch()`
+  - `Honor Suspense-above-body opt-in for dynamic generateViewport`
+- **Estimated stable release**: unknown; canary pace suggests late June or July 2026 for 16.3
+
+---
+
+### Angular 22 — 10 Days to Stable (June 1, 2026)
+
+- **22.0.0-rc.0** (May 13, 2026) — Angular 22 is feature-locked in Release Candidate status
+- The RC milestone means no new features; only critical bug fixes until the **week of June 1, 2026** stable
+- Teams should begin audit/preparation now:
+  - Check for any deprecated APIs (Signal Forms replaces ReactiveFormsModule long-term; OnPush will be the new default)
+  - Review `@angular/core@22 @angular/cli@22` upgrade path via `ng update`
+  - If Zoneless was not yet adopted, Angular 22 makes it the default for **new projects** only — existing zone.js projects unaffected
+- **Angular 21.2.13** remains the latest stable on the v21 LTS line; `npm install @angular/core@21` for production
+
+---
+
 ## 2026-05-20 (run: May 20, 2026)
 
 ### Nuxt 4.4.6 / 3.21.6 (May 18, 2026) + 🔒 Nuxt Security Advisory

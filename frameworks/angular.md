@@ -7,8 +7,8 @@
 **21.2.13** (May 13, 2026) — Current stable patch  
 **21.2.0** (February 23, 2026) — Current stable minor  
 **21.0.0** (November 19, 2025) — Major release  
-**v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`)  
-**22.0.0-rc.0** (May 13, 2026) — Release Candidate; Angular 22 is now in RC 🚀  
+**v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`) — **10 days away** 🚀  
+**22.0.0-rc.0** (May 13, 2026) — Release Candidate; Angular 22 is feature-locked and in final stabilization  
 🔴 **Angular 19.x reached EOL on May 19, 2026** — Google will issue no further security patches; teams on v19 are running unsupported software  
 ⚠️ **Angular 21.x active support ended May 19, 2026** — v21 now in LTS (security patches only until May 19, 2027); Angular 22 stable expected week of June 1, 2026  
 ✅ **Signal Forms going STABLE in Angular 22** — confirmed by the Angular team (week of June 1, 2026)
