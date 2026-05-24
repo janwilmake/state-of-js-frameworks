@@ -143,6 +143,26 @@ Use future flags in Remix v1 to incrementally adopt v2 behaviors before migratin
 
 ## Nuxt
 
+### Nuxt UI v4.7.x → v4.8.0 (May 21, 2026) — InputMenu Breaking Change
+
+**Effort:** Minimal — one prop rename
+
+#### Breaking Change
+- **`InputMenu.autocomplete` prop renamed to `mode`** — the boolean `autocomplete` introduced in v4.6.0 conflicted with the standard HTML `autocomplete` attribute used for browser autofill. It is now renamed to `mode`, which accepts `'combobox' | 'autocomplete'` (defaults to `'combobox'`). The HTML `autocomplete` attribute now passes through to the inner input like other form components.
+
+```diff
+- <UInputMenu autocomplete :items="items" />
++ <UInputMenu mode="autocomplete" :items="items" />
+```
+
+No other breaking changes in v4.8.0. All other new features (`Theme` prop defaults, `ContentSearch` async search, new component props) are purely additive.
+
+```bash
+npm install @nuxt/ui@latest   # → 4.8.0
+```
+
+---
+
 ### Nuxt 4.4.5 → 4.4.6 (Security Patch — May 18, 2026)
 
 **Effort:** Near-zero — `npm install nuxt@latest`

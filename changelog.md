@@ -4,6 +4,48 @@
 
 ---
 
+## 2026-05-24 (run: May 24, 2026)
+
+### Angular 21.2.14 (May 20, 2026) — LTS Security Patch
+
+- **Latest stable patch on the Angular 21.x LTS line** — `21.2.14` released May 20, 2026; routine bug fixes and stability improvements
+- Angular 21's active support period ended May 19, 2026; it is now in **LTS** (security patches only until May 19, 2027)
+- **Angular 22 is now 8 days away** — week of June 1, 2026 stable target; RC.0 (May 13) remains the latest pre-release; feature-locked
+- **Signal Forms confirmed stable in v22** (the most impactful Angular forms change since v6 Reactive Forms)
+- Teams should upgrade to Angular 22 as soon as it ships; `ng update @angular/core@22 @angular/cli@22`
+
+---
+
+### Nuxt UI v4.8.0 (May 21, 2026) — Theme Prop Defaults + FTS5 Search 🚀
+
+- **`Theme` component prop defaults** — the `<UTheme :props="{ ... }">` component can now override default prop values for all descendant components; pass a `props` object keyed by component name; explicit per-component props always win; themes can be nested (innermost wins); propagated via Vue `provide`/`inject`
+  ```vue
+  <UTheme :props="{ button: { color: 'neutral', size: 'lg' }, tooltip: { arrow: true } }">
+    <!-- All UButton children default to neutral/lg unless explicitly overridden -->
+  </UTheme>
+  ```
+- **`ContentSearch` async FTS5 search** — the `<UContentSearch>` component now supports server-side full-text search via the `search` prop and the `useSearchCollection` composable (ships with `@nuxt/content` v3.14.0); replaces client-side Fuse.js loading-all-content approach; returns highlighted snippets; live on nuxt.com and ui.nuxt.com
+- **New component props** — `Avatar`/`AvatarGroup` and `Breadcrumb` gain a `color` prop; `Separator` gains a `position` prop; `ChatMessage` adds `body` slot and `color` prop; `ChatPrompt` adds `submitOnEnter` control; `Checkbox`/`RadioGroup`/`Switch` add `highlight` prop for error ring styling
+- **`DashboardGroup` `storageOptions` prop** — persist sidebar group state to localStorage or sessionStorage
+- **`CommandPalette` description search** — description fields are now included in search and highlighting
+- ⚠️ **Breaking: `InputMenu.autocomplete` renamed to `mode`** — the boolean `autocomplete` prop (added in v4.6.0) collided with the HTML `autocomplete` attribute; renamed to `mode` accepting `'combobox' | 'autocomplete'` (defaults to `'combobox'`)
+  ```diff
+  - <UInputMenu autocomplete :items="items" />
+  + <UInputMenu mode="autocomplete" :items="items" />
+  ```
+- Nuxt UI now has **125+ components** (up from 100+ at v4.0 launch)
+- `npm install @nuxt/ui@latest` → 4.8.0
+
+---
+
+### Svelte 5.55.9 (May 20, 2026) — Compiler Patch
+
+- Routine compiler bug fixes; no API changes
+- `npm install svelte@latest` → 5.55.9
+- SvelteKit 2.60.1 remains the latest stable kit release (May 14, 2026)
+
+---
+
 ## 2026-05-22 (run: May 22, 2026)
 
 ### Astro 6.3.7 / 6.3.6 (May 20–21, 2026) — Patch Cluster Continues
