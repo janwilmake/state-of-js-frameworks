@@ -70,7 +70,7 @@ No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 
 ## React Router v8 — Imminent
 
-React Router v8 is now expected **"in the next month or two"** per the official v7.15.0 release notes (May 5, 2026). The stabilization work in 7.15.x was the final preparation. Expected changes:
+React Router v8 is now expected **"in the next month or two"** per the official v7.15.0 release notes (May 5, 2026). The stabilization work in 7.15.x was the final preparation. A public ["React Router v8 and Beyond" talk](https://www.youtube.com/watch?v=tIhqxwyTQ2M) was published May 25, 2026 by Brooks Lybrand (maintainer), covering the upgrade path and roadmap. Expected changes:
 - **ESM only** — drop CJS builds (Vite 7+ and Node 20.19+/22.12+ `require(esm)` enable this)
 - **Drop Node 20** support (EOL April 2026)
 - **React Server Components (RSC) Framework Mode** — stabilization is the primary driver of the v8 release

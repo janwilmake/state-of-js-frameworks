@@ -7,7 +7,7 @@
 **21.2.14** (May 20, 2026) — Current stable patch  
 **21.2.0** (February 23, 2026) — Current stable minor  
 **21.0.0** (November 19, 2025) — Major release  
-**v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`) — **8 days away** 🚀  
+**v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`) — **6 days away** 🚀  
 **22.0.0-rc.0** (May 13, 2026) — Release Candidate; Angular 22 is feature-locked and in final stabilization  
 🔴 **Angular 19.x reached EOL on May 19, 2026** — Google will issue no further security patches; teams on v19 are running unsupported software  
 ⚠️ **Angular 21.x active support ended May 19, 2026** — v21 now in LTS (security patches only until May 19, 2027); Angular 22 stable expected week of June 1, 2026  
@@ -65,7 +65,7 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 
 - Stability and bug fixes on the 21.x LTS line (security patch cadence)
 - Angular 21 is now in **LTS** (active support ended May 19, 2026); only security and critical patches will ship on v21 until May 19, 2027
-- Angular 22 stable remains on track for the **week of June 1, 2026** — now 8 days away
+- Angular 22 stable remains on track for the **week of June 1, 2026** — now 6 days away
 
 ## v21.2.13 Patch (May 13, 2026)
 

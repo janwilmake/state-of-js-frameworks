@@ -122,7 +122,7 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 - All adapters and deployment targets
 - RSC Framework Mode (may graduate from unstable to stable in v8)
 
-No migration codemod announced yet. Monitor the [React Router v8 discussion](https://github.com/remix-run/react-router/discussions/14468) for timeline updates.
+No migration codemod announced yet. Watch the ["React Router v8 and Beyond" talk](https://www.youtube.com/watch?v=tIhqxwyTQ2M) (published May 25, 2026) for the full v8 roadmap. Monitor the [React Router v8 discussion](https://github.com/remix-run/react-router/discussions/14468) for timeline updates.
 
 ---
 
@@ -426,9 +426,9 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 
 ## Angular
 
-### Angular 21 → 22 (Imminent — Week of June 1, 2026 🔜 10 days away)
+### Angular 21 → 22 (Imminent — Week of June 1, 2026 🔜 6 days away)
 
-**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026; feature-locked  
+**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026 (**6 days away**); feature-locked  
 **Confirmed stable in v22:** Signal Forms (officially announced May 6, 2026)  
 **Effort:** Low–Medium (breaking changes are tool-assisted via `ng update`)
 

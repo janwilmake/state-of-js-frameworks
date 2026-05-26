@@ -4,6 +4,27 @@
 
 ---
 
+## 2026-05-26 (run: May 26, 2026)
+
+### React Router v8 — "In the Next Month or Two" Signal Strengthens 🔜
+
+- **"React Router v8 and Beyond" talk published May 25, 2026** — Brooks Lybrand (Remix/React Router maintainer) delivered a public talk covering the v8 roadmap, migration path, and what teams can expect for the future of React Router
+- No new stable v7.x release since v7.15.1 (May 14, 2026); v8 is being finalized
+- **React Router v8 confirmed feature-complete**: all future flags are stabilized; the team is in final release preparation; the "in the next month or two" timeline from May 5 stands
+- **Key v8 facts confirmed**: ESM-only; Vite 7+ minimum; RSC Framework Mode will **not** be stable in v8.0 but will stabilize in an early v8.x minor; `unstable_useRouterState()` from v7.15.1 will become `useRouterState()` in v8
+- Teams should enable all `future.v8_*` flags now (especially `v8_passThroughRequests`, `v8_viteEnvironmentApi`) to prepare for a smooth upgrade
+
+---
+
+### Angular 22 — 6 Days to Stable (June 1, 2026) ⏳
+
+- Angular 22 stable remains on track for the **week of June 1, 2026** — now 6 days away
+- `22.0.0-rc.0` remains the latest pre-release; no RC.1 has been needed — stable signal for June 1 launch
+- All confirmed v22 features remain: **stable Signal Forms**, selectorless components, OnPush as default for new projects, Zoneless as default for new projects, TypeScript 5.9 support, Vitest as default test runner
+- Teams should have `ng update @angular/core@22 @angular/cli@22` queued and ready to run the week of June 1
+
+---
+
 ## 2026-05-24 (run: May 24, 2026)
 
 ### Angular 21.2.14 (May 20, 2026) — LTS Security Patch

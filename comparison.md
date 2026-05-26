@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: May 24, 2026. Covers Next.js 16.2.6, React Router v7.15.1 / Remix 3 beta (Remix), Nuxt 4.4.6 ⚠️ security release, SvelteKit 2.60.1, Astro 6.3.7, Angular 21.2.14 (v22 RC.0 stable week of June 1, 2026 — 8 days away; Angular 19 EOL passed; Angular 21 now in LTS).
+> Last updated: May 26, 2026. Covers Next.js 16.2.6, React Router v7.15.1 / Remix 3 beta (Remix), Nuxt 4.4.6 ⚠️ security release, SvelteKit 2.60.1, Astro 6.3.7, Angular 21.2.14 (v22 RC.0 stable week of June 1, 2026 — 6 days away; Angular 19 EOL passed; Angular 21 now in LTS). React Router v8 imminent — "React Router v8 and Beyond" talk published May 25, 2026.
 
 ## Quick Decision Guide
 
@@ -158,4 +158,4 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Angular 21 → 22 (June 1, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
 ❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
-⚡ **Watch:** Angular 22 (week of June 1, 2026, **8 days away**) — RC.0 released May 13; feature-locked for final stabilization; **Signal Forms going stable** (confirmed), OnPush as default, selectorless components, Zoneless as default for new projects. ⚠️ **Angular 19.x EOL May 19, 2026 has now passed** — teams on v19 are on unsupported software; migrate to Angular 21 (now in LTS) immediately. **Angular 21 active support ended May 19** — LTS until May 2027. Latest patch: **21.2.14** (May 20, 2026).
+⚡ **Watch:** Angular 22 (week of June 1, 2026, **6 days away**) — RC.0 released May 13; feature-locked for final stabilization; **Signal Forms going stable** (confirmed), OnPush as default, selectorless components, Zoneless as default for new projects. ⚠️ **Angular 19.x EOL May 19, 2026 has now passed** — teams on v19 are on unsupported software; migrate to Angular 21 (now in LTS) immediately. **Angular 21 active support ended May 19** — LTS until May 2027. Latest patch: **21.2.14** (May 20, 2026).
