@@ -4,6 +4,32 @@
 
 ---
 
+## 2026-05-28 (run: May 28, 2026)
+
+### Angular 22 — 4 Days to Stable (June 1, 2026) 🚀
+
+- Angular 22 stable remains on track for the **week of June 1, 2026** — now **4 days away** as of today (May 28, 2026)
+- `22.0.0-rc.0` (May 13, 2026) remains the only RC; no RC.1 issued — the RC has been clean and stable, a positive signal for the June 1 landing
+- All confirmed v22 features stand: **stable Signal Forms**, selectorless components, OnPush as default for new projects, Zoneless as default for new projects, TypeScript 5.9 support, Vitest as primary test runner (stable)
+- `ng update @angular/core@22 @angular/cli@22` will be the upgrade command — teams should have dependencies audited and pre-migration checklists ready
+- Angular 21.x remains the latest stable (`21.2.14`, May 20, 2026) until v22 ships; Angular 21 is now in **LTS** (security patches only until May 19, 2027)
+
+---
+
+### Next.js 16.3 Canary — Progress Update (May 26–27, 2026)
+
+- **16.3.0-canary.29** (May 26) and **16.3.0-canary.30** (May 27) — latest pre-release builds
+- **canary.30 notable changes**:
+  - Fix Firefox refresh loop on initial load of streaming pages in dev mode
+  - React upgrade: `d5736f09-20260507` → `75b0945b-20260526` (React canary bump)
+  - **`experimental.appShells` prefetch on client** — App Shell prefetches now triggered client-side; server responds to App Shell prefetches correctly
+  - Docs: `next/root-params` API reference added; ISR with Cache Components + `experimental.partialFallbacks` guide
+- **canary.29** — no notable user-facing changes; CI and infrastructure improvements
+- **16.2.6 remains the latest stable** — no new stable patch since May 7, 2026
+- Estimated stable for 16.3: late June or July 2026 based on current canary pace
+
+---
+
 ## 2026-05-26 (run: May 26, 2026)
 
 ### React Router v8 — "In the Next Month or Two" Signal Strengthens 🔜

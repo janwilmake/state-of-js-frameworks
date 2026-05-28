@@ -426,9 +426,9 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 
 ## Angular
 
-### Angular 21 → 22 (Imminent — Week of June 1, 2026 🔜 6 days away)
+### Angular 21 → 22 (Imminent — Week of June 1, 2026 🔜 4 days away)
 
-**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026 (**6 days away**); feature-locked  
+**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026 (**4 days away**); feature-locked  
 **Confirmed stable in v22:** Signal Forms (officially announced May 6, 2026)  
 **Effort:** Low–Medium (breaking changes are tool-assisted via `ng update`)
 

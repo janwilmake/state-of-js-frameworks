@@ -39,6 +39,20 @@
 - **Static export** — `output: 'export'` for CDN/S3 deployment (limits dynamic features)
 - **OpenNext / Adapters API (stable in 16.2)** — enables deployment to any cloud (AWS, Cloudflare, etc.) via community adapters
 
+## Next.js 16.3 Canary (In Development)
+
+**16.3.0-canary.30** (May 27, 2026) — Latest pre-release build. Notable features landing in canary:
+- **`experimental.appShells`** — App Shell prefetching pattern (experimental flag)
+- **`instrumentationClientInject`** — client-side instrumentation injection config
+- **MCP `compile_route` tool** — AI/MCP agent can compile individual routes
+- **HTTP Cache-Control TTL-based invalidation** — `fetch()` now respects `Cache-Control` headers for TTL-based revalidation
+- **`next/root-params`** — new API for accessing root layout params (docs added in canary.30)
+- **ISR with Cache Components + `experimental.partialFallbacks`** — partial fallback rendering in ISR builds
+- Firefox streaming dev-mode refresh loop fix (canary.30)
+- Rust compiler (Turbopack) nightly upgraded to 2026-05-15; over 200 additional Turbopack bug fixes in progress
+
+**Estimated 16.3 stable release:** late June or July 2026 based on current canary pace.
+
 ## v16.2 Highlights (March 18, 2026)
 
 - **~400% faster `next dev` startup** with Turbopack
