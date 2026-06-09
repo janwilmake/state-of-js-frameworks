@@ -4,9 +4,9 @@
 
 ## Latest Version
 
-**16.2.6** (May 7, 2026) — Latest stable patch ⚠️ Critical security release  
+**16.2.7** (June 1, 2026) — Latest stable patch  
 **16.x** is the current LTS major (released October 21, 2025)  
-**15.5.18** (May 7, 2026) — Latest 15.x security patch (LTS until October 2026)
+**15.5.19** (June 1, 2026) — Latest 15.x patch (LTS until October 2026)
 
 ## Key Features
 
@@ -41,15 +41,15 @@
 
 ## Next.js 16.3 Canary (In Development)
 
-**16.3.0-canary.30** (May 27, 2026) — Latest pre-release build. Notable features landing in canary:
+**16.3.0-canary.45** (June 5, 2026) — Latest pre-release build. Notable features landing in canary:
 - **`experimental.appShells`** — App Shell prefetching pattern (experimental flag)
 - **`instrumentationClientInject`** — client-side instrumentation injection config
 - **MCP `compile_route` tool** — AI/MCP agent can compile individual routes
 - **HTTP Cache-Control TTL-based invalidation** — `fetch()` now respects `Cache-Control` headers for TTL-based revalidation
-- **`next/root-params`** — new API for accessing root layout params (docs added in canary.30)
+- **`next/root-params`** — new API for accessing root layout params
 - **ISR with Cache Components + `experimental.partialFallbacks`** — partial fallback rendering in ISR builds
-- Firefox streaming dev-mode refresh loop fix (canary.30)
-- Rust compiler (Turbopack) nightly upgraded to 2026-05-15; over 200 additional Turbopack bug fixes in progress
+- React canary bump: upgraded to `43bcbf80-20260603`
+- Turbopack: continued bug fixes; 200+ improvements in progress
 
 **Estimated 16.3 stable release:** late June or July 2026 based on current canary pace.
 
@@ -90,7 +90,8 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 
 ## Security Notes
 
-- **16.2.6 / 15.5.18** (May 7, 2026) — ⚠️ **UPGRADE IMMEDIATELY** — Coordinated release addressing **13 security advisories** including:
+- **16.2.7 / 15.5.19** (June 1, 2026) — Bug-fix backport patch; all users on 16.x and 15.x should upgrade
+- **16.2.6 / 15.5.18** (May 7, 2026) — ⚠️ Coordinated release addressing **13 security advisories** including:
   - **CVE-2026-23870** — High: DoS in React Server Components (upstream React issue); patched in `react-server-dom-*` 19.x.6
   - **CVE-2026-44578** — High: SSRF in applications using WebSocket upgrades
   - **CVE-2026-44574** — High: Middleware/proxy bypass via dynamic route parameter injection (no WAF mitigation possible)

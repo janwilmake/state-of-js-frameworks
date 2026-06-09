@@ -4,14 +4,12 @@
 
 ## Latest Version
 
-**21.2.14** (May 20, 2026) — Current stable patch  
-**21.2.0** (February 23, 2026) — Current stable minor  
-**21.0.0** (November 19, 2025) — Major release  
-**v22.0** — Officially scheduled week of **June 1, 2026** (confirmed per `angular.dev/reference/releases`) — **4 days away** 🚀  
-**22.0.0-rc.0** (May 13, 2026) — Release Candidate; Angular 22 is feature-locked and in final stabilization  
+**22.0.0** (June 3, 2026) — 🚀 **Current stable major** — Signal Forms stable, Angular Aria stable, async reactivity APIs stable  
+**21.2.14** (May 20, 2026) — Latest stable patch on the v21.x LTS line  
+**21.2.0** (February 23, 2026) — Current stable minor on v21  
 🔴 **Angular 19.x reached EOL on May 19, 2026** — Google will issue no further security patches; teams on v19 are running unsupported software  
-⚠️ **Angular 21.x active support ended May 19, 2026** — v21 now in LTS (security patches only until May 19, 2027); Angular 22 stable expected week of June 1, 2026  
-✅ **Signal Forms going STABLE in Angular 22** — confirmed by the Angular team (week of June 1, 2026)
+⚠️ **Angular 21.x active support ended May 19, 2026** — v21 now in LTS (security patches only until May 19, 2027)  
+✅ **Angular 22 is now stable** (released June 3, 2026) — Signal Forms stable, Angular Aria stable, async reactivity APIs stable, Angular MCP stable, TypeScript 6 support
 
 ## Key Features
 
@@ -92,20 +90,20 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 - **Resource composition** — `ResourceSnapshot` and resource composition APIs added
 - **Location strategy trailing slash** — new location strategy option for trailing slash handling
 
-## v22 Preview (Scheduled Week of June 1, 2026)
+## v22.0.0 Highlights (June 3, 2026) 🚀
 
-Based on the official Angular roadmap (`angular.dev/roadmap`), confirmed team announcements, and community signals:
-- **Stable Signal Forms** — **officially confirmed stable** (angular.love / Angular team, May 6, 2026); fine-grained updates for large forms; aligned with Zoneless change detection; replaces `ReactiveFormsModule` as the recommended form API going forward
-- **Selectorless components** — define components without a `selector`; use directly in templates; improves refactorability and type safety; reduces cognitive overhead of managing string selectors
-- **OnPush as default** — Angular CLI will generate new components with `ChangeDetectionStrategy.OnPush`; RFC discussion open; existing components unaffected
-- **Zoneless as default for new projects** — `Zone.js` removed from new project scaffolding; Zoneless was production-ready in v21; existing Zone.js projects continue to work unchanged
-- **TypeScript 5.9 support**
-- **`debounced()` signal primitive** — native debouncing for signals without bridging to RxJS; simplifies typeahead and search patterns
-- **`resource()` improvements** — stronger signal-native async data loading story; reduces `toObservable`/`toSignal` bridging
-- **Vitest as primary test runner (stable)** — Vitest graduated to stable in Angular v21; v22 will promote the Karma→Vitest migration tool to stable and make Vitest the default in new projects
-- **Angular MCP Server enhancements** — continued investment; Google AI Studio, Gemini CLI, and Antigravity IDE integrations planned
-- **`httpResource`** — new HTTP composable built on the Resource API; in "available to experiment with" status
-- **Route-level render mode** — configure SSR/pre-render/CSR per individual route (already production-ready; expected as prominent in v22 docs)
+Angular v22 is officially stable as of June 3, 2026. The Angular team described this release as bringing three significant features to **production-ready stable status** and deepening the agentic/AI development story.
+
+- **Stable Signal Forms** — fine-grained per-field reactivity replacing verbose Reactive Forms patterns; typed, signal-driven form models; full integration with Angular Material and Angular Aria; enterprise-scale composability; **this is the biggest Angular forms change since Reactive Forms in v6**
+- **Angular Aria (stable)** — a set of accessible UI patterns and primitives for building inclusive experiences; stable APIs, testing support, and full Signal Forms compatibility; previously developer preview in v21
+- **Asynchronous Reactivity APIs (stable)** — `httpResource` and `rxResource` signal-integrated data fetching utilities that replace common RxJS patterns with signal-native alternatives; previously experimental
+- **Angular MCP Server (stable)** — `devserver.start` / `devserver.stop` tools, `ai_tutor`, `modernize`, `onpush_zoneless_migration`, and more; full suite at `angular.dev/ai/mcp`; previously experimental; all testing and e2e tools graduate to stable
+- **TypeScript 6 support** — performance improvements and stronger type-checking
+- **`@boundary` API (developer preview)** — template-level error boundaries providing fallback experiences for runtime UI failures; previewed in v22
+- **Router enhancements** — navigation improvements and new service registration patterns
+- **Template authoring improvements** — cleaner dependency injection and template expression patterns
+- **Change detection modernization** — continued investment in Zoneless defaults for new projects
+- **Official v22 release event** — premiered June 5, 2026 at 9AM Pacific on the Angular YouTube channel
 
 ## npm Download Trend
 
@@ -144,7 +142,7 @@ This trajectory is genuine. Angular is no longer the "legacy enterprise choice" 
 
 | Release | Status | Active Ends | LTS Ends |
 |---|---|---|---|
-| 22.x | Expected ~June 1, 2026 | ~Nov 2026 | ~May 2028 |
+| 22.x | **Active** (since June 3, 2026) | ~Nov 2026 | ~May 2028 |
 | 21.x | **LTS** (since May 19, 2026) | May 19, 2026 | May 19, 2027 |
 | 20.x | LTS | Nov 19, 2025 | Nov 28, 2026 |
 | 19.x | **EOL** (May 19, 2026) | May 28, 2025 | May 19, 2026 |

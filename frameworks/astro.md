@@ -4,14 +4,13 @@
 
 ## Latest Version
 
-**6.3.7** (May 21, 2026) — Current stable (latest patch)  
-**6.3.6** (May 20, 2026) — Patch  
-**6.3.3** (May 14, 2026) — ⚠️ Security fix (XSS in island slot names — upgrade to 6.3.7)  
-**6.3.0** (May 7, 2026) — Latest minor release  
-**7.0.0-alpha.1** (May 9, 2026) — Pre-release preview (not production ready)  
+**6.4.4** (June 3, 2026) — Current stable (latest patch)  
+**6.4.0** (May 28, 2026) — Latest minor release: pluggable Markdown pipeline + Sätteri Rust processor  
+**6.3.7** (May 21, 2026) — Previous stable  
+**7.0.0-alpha.2** (June 2026) — Pre-release preview (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
 Backed by **Cloudflare** (acquired January 16, 2026)  
-**~2.73M weekly npm downloads** (May 2026)
+**~3.1M weekly npm downloads** (June 2026)
 
 ## Key Features
 
@@ -53,6 +52,37 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Node.js** — `@astrojs/node`
 - **Deno** — `@astrojs/deno`
 - **Static** — default; output HTML to any CDN/S3
+
+## v6.4.4 Patches (June 3, 2026)
+
+- **`App.match()` percent-sequence fix** — no longer throws on request paths containing an invalid percent-encoded sequence
+- **Client island HMR fix** — editing a `client:idle`/`client:load` component no longer causes a full backend program reload in dev
+- **`getStaticPaths` `.html` suffix fix** — endpoints using `getStaticPaths` with `.html` in dynamic param values no longer fail with `NoMatchingStaticPathFound`
+- **Domain i18n SSR fix** — `Astro.currentLocale` now correctly returns the domain's locale (not the default) on dynamic routes served from a mapped domain
+- **`Astro.routePattern` casing fix** — route patterns now preserve original casing of dynamic parameter names (e.g., `[postId]` no longer lowercased to `[postid]`)
+
+## v6.4.3 Patches (June 2, 2026)
+
+- `devalue` dependency bumped to v5.8.1
+- Dev toolbar accessibility audit fix for anchors inside closed `<details>` elements
+- Additional minor bug fixes
+
+## v6.4.0 Highlights (May 28, 2026) 🚀 New Minor
+
+- **New `markdown.processor` API** — swap out the entire Markdown pipeline via config; default remains `unified()` so existing projects work without changes; existing top-level `markdown.remarkPlugins`, `markdown.rehypePlugins`, etc. still work but are now **deprecated** (will be removed in Astro 8.0); they are now configured directly on the processor
+  ```js
+  // astro.config.mjs
+  import { unified } from '@astrojs/markdown-remark';
+  import remarkToc from 'remark-toc';
+  export default defineConfig({
+    markdown: {
+      processor: unified({ remarkPlugins: [remarkToc] }),
+    },
+  });
+  ```
+- **Sätteri — Rust-based Markdown processor** — new package providing a Markdown/MDX pipeline written in Rust; Astro's own testing showed **over 1 minute shaved off build times** for the Astro and Cloudflare docs sites; does **not** run remark/rehype plugins — if you rely on unified plugins, stay on `unified()` for now or port them to Sätteri's MDAST/HAST plugin system; **the Astro team has signaled Sätteri is the intended default in a future major release**
+- **Cloudflare routing helpers** — `@astrojs/cloudflare` ships a `cloudflare()` helper for advanced routing: handles SESSION KV binding injection, static asset serving via ASSETS binding, prerendered error pages, and client address from `CF-Connecting-IP`; works with custom fetch handlers and Hono middleware
+- **`@astrojs/mdx` 6.0** — major version of the MDX integration updated alongside Astro 6.4; includes Sätteri integration (`@astrojs/mdx@6.0.2` updates Sätteri to v0.8.0)
 
 ## v6.3.6–6.3.7 Patches (May 20–21, 2026)
 
@@ -120,7 +150,7 @@ On January 16, 2026, the Astro Technology Company team joined Cloudflare. Key im
 
 ## npm Download Trend
 
-~2.73M weekly downloads (May 2026) — growing significantly faster than most frameworks in this cohort; up from ~1.33M in March 2026. Downloads understate adoption because Astro users often build static sites that don't need frequent deploys. GitHub stars: ~59K and growing. The Cloudflare acquisition and continued major releases signal long-term viability.
+~3.1M weekly downloads (June 2026) — growing significantly faster than most frameworks in this cohort; up from ~1.33M in March 2026. Downloads understate adoption because Astro users often build static sites that don't need frequent deploys. GitHub stars: ~59K and growing. The Cloudflare acquisition and continued major releases signal long-term viability.
 
 ## Trade-Off Assessment
 

@@ -2,7 +2,7 @@
 
 > Maintained by Shopify. The framework that bet on web standards — and won. In 2024, Remix merged into React Router v7. Remix 3 is now a separate, pre-React project in active development.
 
-## Current State (April 2026)
+## Current State (June 2026)
 
 **Remix as a standalone React framework no longer exists.** The key facts:
 
@@ -13,11 +13,11 @@ For teams evaluating "Remix", the practical question is: **React Router v7 in Fr
 
 ## React Router v7 — Latest Version
 
-**v7.15.1** (May 14, 2026) — Current stable  
-**v7.15.0** (May 5, 2026) — API stabilizations; 15–30% route matching performance improvement  
+**v7.16.0** (May 28, 2026) — Current stable  
+**v7.15.1** (May 14, 2026) — `unstable_useRouterState()` hook  
 28M+ weekly npm downloads (react-router package)  
 Backed by **Shopify** (powers Hydrogen, Admin)  
-⚡ **React Router v8 expected "in the next month or two"** (per v7.15.0 release notes, May 5, 2026)
+⚡ **React Router v8 imminent** — "in the next month or two" per v7.15.0 release notes (May 5, 2026); v7.16 stabilizes `v8_trailingSlashAwareDataRequests` flag
 
 ## Key Features (React Router v7 Framework Mode)
 
@@ -60,6 +60,7 @@ No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 
 | Version | Date | Highlights |
 |---|---|---|
+| v7.16.0 | May 28, 2026 | Stabilize `future.v8_trailingSlashAwareDataRequests`; future flag warnings for v8 flags; fix `useNavigation()` discriminated union return type; Windows path fix in `react-router-serve`; Node backpressure in writable streams |
 | v7.15.1 | May 14, 2026 | `unstable_useRouterState()` hook — consolidated active + pending router state access |
 | v7.15.0 | May 5, 2026 | **API stabilizations pre-v8**; 15–30% server-side route matching perf improvement |
 | v7.14.1 | April 13, 2026 | TypeScript 6 peer dep support, race condition fix in `HydrateFallback`, normalize double-slashes in redirects |

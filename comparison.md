@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: May 28, 2026. Covers Next.js 16.2.6 (canary 16.3.0-canary.30 active), React Router v7.15.1 / Remix 3 beta (Remix), Nuxt 4.4.6 ⚠️ security release, SvelteKit 2.60.1, Astro 6.3.7, Angular 21.2.14 (v22 RC.0 stable week of June 1, 2026 — **4 days away**; Angular 19 EOL passed; Angular 21 now in LTS). React Router v8 imminent — "React Router v8 and Beyond" talk published May 25, 2026.
+> Last updated: June 9, 2026. Covers Next.js 16.2.7 (canary 16.3.0-canary.45 active), React Router v7.16.0 / Remix 3 beta, Nuxt 4.4.7 🔒 security hotfix, SvelteKit 2.64.0 (SvelteKit 3.0 pre-release started June 5), Astro 6.4.4 (Sätteri Rust Markdown processor), Angular 22.0.0 ✅ stable (released June 3, 2026 — Signal Forms stable, Angular Aria stable). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.6 | React Router v7.15.1 | Nuxt 4.4.6 | SvelteKit 2.60.1 | Astro 6.3.7 | Angular 21.2.14 |
+| Feature | Next.js 16.2.7 | React Router v7.16.0 | Nuxt 4.4.7 | SvelteKit 2.64.0 | Astro 6.4.4 | Angular 22.0.0 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -90,12 +90,12 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 
 ---
 
-## Ecosystem & Community (April 2026)
+## Ecosystem & Community (June 2026)
 
 | Metric | Next.js | React Router | Nuxt | SvelteKit | Astro | Angular |
 |---|---|---|---|---|---|---|
-| **npm weekly downloads** | ~26M | ~28M (react-router) | ~2M | ~1.5–2M | ~2.73M+ | ~2.5M |
-| **GitHub Stars** | ~138K | ~54K (RR) | ~60K | ~21K (kit) | ~57K | ~100K |
+| **npm weekly downloads** | ~39M | ~28M (react-router) | ~2M | ~1.5–2M | ~3.1M | ~2.5M |
+| **GitHub Stars** | ~140K | ~54K (RR) | ~60K | ~21K (kit) | ~59K | ~100K |
 | **Stack Overflow questions** | Very High | High | Medium | Medium | Medium | Very High |
 | **Job postings** | ⭐⭐⭐⭐ Very High | ⭐⭐⭐ High | ⭐⭐ Medium | ⭐⭐ Medium | ⭐ Low | ⭐⭐⭐⭐ Very High |
 | **Component library ecosystem** | ⭐⭐⭐⭐ Excellent | ⭐⭐⭐ Good | ⭐⭐⭐ Good (Nuxt UI v4) | ⭐⭐ Growing | ⭐⭐ Limited | ⭐⭐⭐ Good (Material) |

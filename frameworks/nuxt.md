@@ -4,8 +4,9 @@
 
 ## Latest Version
 
-**4.4.6** (May 18, 2026) — Current stable (latest) ⚠️ Security release — upgrade immediately  
-**3.21.6** (May 18, 2026) — Maintenance; EOL extended to **July 31, 2026**  
+**4.4.7** (June 2, 2026) — Current stable (latest) 🔒 Security hotfix — upgrade immediately  
+**3.21.7** (June 2, 2026) — Maintenance; EOL on **July 31, 2026**  
+**4.4.6** (May 18, 2026) — Previous stable  
 **Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
 
 ## Key Features
@@ -49,6 +50,12 @@ The `routeRules` hybrid model is one of Nuxt's strongest differentiators — no 
 - **Deno Deploy** — via Nitro Deno preset
 
 Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, many targets.
+
+## v4.4.7 / v3.21.7 (June 2, 2026) 🔒 Security Hotfix
+
+- **Security hotfix release** — check [github.com/nuxt/nuxt/security/advisories](https://github.com/nuxt/nuxt/security/advisories) for advisories resolved by this release
+- Bug fixes targeting HMR reliability in sibling local layers; test coverage improvements for JS payload rendering
+- `npm install nuxt@latest` installs **4.4.7**
 
 ## v4.4.6 / v3.21.6 (May 18, 2026) ⚠️ Security + Bug Fixes
 

@@ -4,8 +4,9 @@
 
 ## Latest Version
 
-**SvelteKit 2.60.1** (May 14, 2026) — Current stable  
-**Svelte 5.x** (May 2026) — Underlying compiler  
+**SvelteKit 2.64.0** (June 8, 2026) — Current stable  
+**SvelteKit 3.0.0-next.1** (June 5, 2026) — Pre-release preview (not production ready); Vite Environment API, faster builds  
+**Svelte 5.x** (June 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
 
 ## Key Features
@@ -49,6 +50,18 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 - **AWS Lambda** — `@sveltejs/adapter-aws` (community)
 - **Bun** — experimental via `@sveltejs/adapter-vercel` Bun runtime
 - **Auto** — `@sveltejs/adapter-auto` detects environment at deploy time
+
+## June 2026 Highlights
+
+- **SvelteKit 2.64.0** (June 8, 2026) — Commands can now receive `File` objects; fix: avoid server components being bundled when SSR is turned off for a route
+- **SvelteKit 2.63.1** (June 2026) — `query.live` now uses SSE (Server-Sent Events) instead of polling; Windows `env.d.ts` import path fix (forward slashes); `$app/environment` warning fix with `explicitEnvironmentVariables`; improved explicit env var import handling
+- **SvelteKit 3.0.0-next.1 / 3.0.0-next.0** (June 5, 2026) — **Pre-release preview of SvelteKit 3** — major changes:
+  - **Vite Environment API** — faster builds with Vite hook filters; more powerful SvelteKit adapters leveraging the Vite Environment API
+  - **`data-sveltekit-*` option `'off'` removed** — use `false` instead (breaking change)
+  - Adapters (`adapter-node`, `adapter-static`, `adapter-vercel`) bumped to v6/v7 next pre-releases requiring SvelteKit 3
+  - `adapter-node` migrates from Rollup to **Rolldown** (Rust-based bundler from VoidZero/Cloudflare)
+  - Not production ready; install with `npm install @sveltejs/kit@next`
+- **"What's New in Svelte: June 2026"** (June 1, 2026) — official monthly recap published; highlights: improved forms, new long-lived remote query APIs (`query.live`), TypeScript 6 support in language-tools, community showcases
 
 ## May 2026 Highlights
 
@@ -98,4 +111,4 @@ SvelteKit applications typically ship **20–40 KB** of JavaScript for a minimal
 
 ## Support Policy
 
-SvelteKit follows semantic versioning. The `2.x` series is currently stable. No formal LTS policy; patch releases are frequent and backward-compatible within a major version.
+SvelteKit follows semantic versioning. The `2.x` series is currently stable. **SvelteKit 3** pre-releases started June 5, 2026 — based on Vite Environment API; no stable release date announced yet. No formal LTS policy; patch releases are frequent and backward-compatible within a major version.
