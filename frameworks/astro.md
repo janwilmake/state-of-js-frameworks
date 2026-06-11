@@ -4,10 +4,10 @@
 
 ## Latest Version
 
-**6.4.4** (June 3, 2026) — Current stable (latest patch)  
+**6.4.6** (June 10, 2026) — Current stable (latest patch)  
+**6.4.5** (June 9, 2026) — Patch: `Astro.request.url` aligned with `Astro.url` behind TLS-terminating proxies; Cloudflare build-time regression fix for `isNode` detection  
 **6.4.0** (May 28, 2026) — Latest minor release: pluggable Markdown pipeline + Sätteri Rust processor  
-**6.3.7** (May 21, 2026) — Previous stable  
-**7.0.0-alpha.2** (June 2026) — Pre-release preview (not production ready)  
+**7.0.0-beta.3** (June 9, 2026) — Astro 7 has advanced from **alpha to beta** (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
 Backed by **Cloudflare** (acquired January 16, 2026)  
 **~3.1M weekly npm downloads** (June 2026)
@@ -52,6 +52,17 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Node.js** — `@astrojs/node`
 - **Deno** — `@astrojs/deno`
 - **Static** — default; output HTML to any CDN/S3
+
+## v6.4.5–6.4.6 Patches (June 9–10, 2026)
+
+**6.4.6** (June 10, 2026):
+- **Image dev-server rename fix** — renaming an image file while dev server is running no longer triggers a build error; Astro now correctly hot-reloads the image
+- **`addAttribute` hardening** — drops attribute names containing invalid HTML spec characters (`"`, `'`, `>`, `/`, `=`, whitespace) to prevent attribute injection
+- **`allowedDomains` origin validation** — validates request origin against `allowedDomains` before fetching prerendered error pages; falls back to `localhost` when no match
+
+**6.4.5** (June 9, 2026):
+- **`Astro.request.url` aligned with `Astro.url`** — previously `Astro.url` was updated with the forwarded origin while `Astro.request.url` retained the socket-derived URL, causing divergence behind TLS-terminating proxies; now both are consistent
+- **Cloudflare build-time regression revert** — reverts a change to `isNode` runtime detection that caused a significant build time regression for Cloudflare adapter users with large prerendered sites
 
 ## v6.4.4 Patches (June 3, 2026)
 
@@ -128,7 +139,7 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Astro 7 alpha launched** — `astro@7.0.0-alpha.0` released same day as 6.2:
   - **Vite 8 upgrade** — breaking for integrations depending on Vite internals; most user code unaffected
   - **Rust compiler is now the default and only compiler** — Go compiler removed; `experimental.rustCompiler` flag no longer needed; significantly faster build times
-  - Install with `npm install astro@alpha` to test
+  - **Astro 7 advanced to beta** — `7.0.0-beta.3` released June 9, 2026 (via `npm install astro@beta`); not production ready but more stable than alpha
 
 ## v6.0 Breaking Changes (March 10, 2026)
 

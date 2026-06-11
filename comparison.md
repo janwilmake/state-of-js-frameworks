@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: June 9, 2026. Covers Next.js 16.2.7 (canary 16.3.0-canary.45 active), React Router v7.16.0 / Remix 3 beta, Nuxt 4.4.7 🔒 security hotfix, SvelteKit 2.64.0 (SvelteKit 3.0 pre-release started June 5), Astro 6.4.4 (Sätteri Rust Markdown processor), Angular 22.0.0 ✅ stable (released June 3, 2026 — Signal Forms stable, Angular Aria stable). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
+> Last updated: June 11, 2026. Covers Next.js 16.2.9 (16.3.0-preview.3 active — Vercel Ship June 25), React Router v7.16.0 / Remix 3 beta, Nuxt 4.4.8 🔥 macOS hotfix, SvelteKit 2.64.0 (SvelteKit 3.0-next.1 pre-release), Astro 6.4.6 (7.0.0-beta.3 pre-release), Angular 22.0.0 ✅ stable (June 3, 2026). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.7 | React Router v7.16.0 | Nuxt 4.4.7 | SvelteKit 2.64.0 | Astro 6.4.4 | Angular 22.0.0 |
+| Feature | Next.js 16.2.9 | React Router v7.16.0 | Nuxt 4.4.8 | SvelteKit 2.64.0 | Astro 6.4.6 | Angular 22.0.0 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -144,18 +144,18 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Nuxt 4
 ✅ **Best for:** Vue teams, hybrid rendering needs, projects wanting Nuxt UI v4 components  
 ❌ **Avoid for:** React-only teams, projects needing the largest ecosystem possible  
-⚠️ **Latest: 4.4.6** (May 18, 2026) — security release; upgrade from 4.4.5 or earlier immediately
+⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue introduced in 4.4.7; upgrade immediately if on macOS
 
 ### SvelteKit 2
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  
 ❌ **Avoid for:** Large teams requiring a broad hiring pool, projects with heavy React library dependencies
 
-### Astro 6 / Astro 7 (alpha)
+### Astro 6 / Astro 7 (beta)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  
 ❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications  
-⚡ **Watch:** Astro 6.3.7 (May 21, 2026) — latest stable; 6.3.3 patched XSS in island slot names (upgrade immediately); 6.3.4–6.3.5 add `fetchFile` option for advanced routing, CSP fix for `<Image>`/`<Picture>`; **Astro 7 alpha.1** (May 9, 2026) ships Vite 8 + Rust-only compiler; ~2.73M weekly npm downloads and growing fast
+⚡ **Latest: 6.4.6** (June 10, 2026) — active patch cadence; **Astro 7.0.0-beta.3** (June 9, 2026) — Astro 7 has advanced from alpha to beta; ~3.1M weekly npm downloads and growing fast
 
-### Angular 21 → 22 (June 1, 2026)
+### Angular 22 ✅ (stable since June 3, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
 ❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
-⚡ **Watch:** Angular 22 (week of June 1, 2026, **4 days away**) — RC.0 released May 13; feature-locked for final stabilization; **Signal Forms going stable** (confirmed), OnPush as default, selectorless components, Zoneless as default for new projects. ⚠️ **Angular 19.x EOL May 19, 2026 has now passed** — teams on v19 are on unsupported software; migrate to Angular 21 (now in LTS) immediately. **Angular 21 active support ended May 19** — LTS until May 2027. Latest patch: **21.2.14** (May 20, 2026).
+⚡ **Now stable**: Angular 22.0.0 (June 3, 2026) — Signal Forms stable, Angular Aria stable, `httpResource`/`rxResource` stable, Angular MCP Server stable. Run `ng update @angular/core@22 @angular/cli@22`. ⚠️ **Angular 19.x EOL passed** (May 19, 2026) — teams on v19 are unsupported; upgrade to v21 (LTS until May 2027) and then v22 immediately.

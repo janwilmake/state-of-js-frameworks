@@ -4,7 +4,7 @@
 
 ## Latest Version
 
-**16.2.7** (June 1, 2026) — Latest stable patch  
+**16.2.9** (June 9, 2026) — Latest stable patch  
 **16.x** is the current LTS major (released October 21, 2025)  
 **15.5.19** (June 1, 2026) — Latest 15.x patch (LTS until October 2026)
 
@@ -41,7 +41,7 @@
 
 ## Next.js 16.3 Canary (In Development)
 
-**16.3.0-canary.45** (June 5, 2026) — Latest pre-release build. Notable features landing in canary:
+**16.3.0-preview.3** (June 10, 2026) — A dedicated `16.3.x-preview` release branch has been opened, signaling the team is preparing a preview/RC cycle before the stable 16.3 release. The preview tag (`npm install next@preview`) enables Turbopack filesystem cache for builds by default in non-stable releases. **Vercel Ship** is scheduled for **June 25, 2026** — a stable 16.3 announcement is likely there. Notable features landing in canary/preview:
 - **`experimental.appShells`** — App Shell prefetching pattern (experimental flag)
 - **`instrumentationClientInject`** — client-side instrumentation injection config
 - **MCP `compile_route` tool** — AI/MCP agent can compile individual routes
@@ -51,7 +51,7 @@
 - React canary bump: upgraded to `43bcbf80-20260603`
 - Turbopack: continued bug fixes; 200+ improvements in progress
 
-**Estimated 16.3 stable release:** late June or July 2026 based on current canary pace.
+**Estimated 16.3 stable release:** **Late June 2026** — a `16.3.x-preview` branch opened June 10 and Vercel Ship is June 25, strongly suggesting 16.3 stable will land around that event.
 
 ## v16.2 Highlights (March 18, 2026)
 
@@ -90,6 +90,7 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 
 ## Security Notes
 
+- **16.2.9** (June 9, 2026) — Empty release to fix `next@latest` NPM dist-tag (Trusted Publishing constraints prevent direct dist-tag updates; a new release was required); no code changes from 16.2.8
 - **16.2.7 / 15.5.19** (June 1, 2026) — Bug-fix backport patch; all users on 16.x and 15.x should upgrade
 - **16.2.6 / 15.5.18** (May 7, 2026) — ⚠️ Coordinated release addressing **13 security advisories** including:
   - **CVE-2026-23870** — High: DoS in React Server Components (upstream React issue); patched in `react-server-dom-*` 19.x.6

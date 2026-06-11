@@ -4,9 +4,9 @@
 
 ## Latest Version
 
-**4.4.7** (June 2, 2026) — Current stable (latest) 🔒 Security hotfix — upgrade immediately  
-**3.21.7** (June 2, 2026) — Maintenance; EOL on **July 31, 2026**  
-**4.4.6** (May 18, 2026) — Previous stable  
+**4.4.8** (June 8, 2026) — Current stable (latest) 🔥 Hotfix for macOS dev server  
+**3.21.8** (June 8, 2026) — Maintenance; EOL on **July 31, 2026**  
+**4.4.7** (June 2, 2026) — Previous stable  
 **Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
 
 ## Key Features
@@ -51,11 +51,15 @@ The `routeRules` hybrid model is one of Nuxt's strongest differentiators — no 
 
 Nitro's preset system means Nuxt can deploy virtually anywhere. One codebase, many targets.
 
+## v4.4.8 / v3.21.8 (June 8, 2026) 🔥 macOS Dev Server Hotfix
+
+- **Hotfix release** — addresses an issue running the dev server on macOS that was introduced in 4.4.7
+- `npm install nuxt@latest` installs **4.4.8**
+
 ## v4.4.7 / v3.21.7 (June 2, 2026) 🔒 Security Hotfix
 
 - **Security hotfix release** — check [github.com/nuxt/nuxt/security/advisories](https://github.com/nuxt/nuxt/security/advisories) for advisories resolved by this release
 - Bug fixes targeting HMR reliability in sibling local layers; test coverage improvements for JS payload rendering
-- `npm install nuxt@latest` installs **4.4.7**
 
 ## v4.4.6 / v3.21.6 (May 18, 2026) ⚠️ Security + Bug Fixes
 

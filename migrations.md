@@ -349,9 +349,9 @@ npx @astrojs/upgrade  # safe — no breaking changes
 
 ---
 
-### Astro 6.x → 7.x (Alpha — Not Yet Stable)
+### Astro 6.x → 7.x (Beta — Not Yet Stable)
 
-**Status:** Alpha preview (April 30, 2026); stable release expected mid-2026  
+**Status:** Beta (`7.0.0-beta.3` — June 9, 2026); stable release expected mid-to-late 2026  
 **Effort:** Low for most users; Medium for integration authors
 
 #### Breaking Changes (from alpha)
@@ -363,8 +363,8 @@ npx @astrojs/upgrade  # safe — no breaking changes
 
 #### Migration Steps
 ```bash
-# Test the alpha (not for production)
-npm install astro@alpha
+# Test the beta (not for production)
+npm install astro@beta
 
 # When stable: remove the old experimental flag
 # In astro.config.mjs, delete:
@@ -426,31 +426,35 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 
 ## Angular
 
-### Angular 21 → 22 (Imminent — Week of June 1, 2026 🔜 4 days away)
+### Angular 21 → 22 ✅ (Stable since June 3, 2026)
 
-**Status:** **Release Candidate** — `22.0.0-rc.0` released May 13, 2026; stable expected week of June 1, 2026 (**4 days away**); feature-locked  
-**Confirmed stable in v22:** Signal Forms (officially announced May 6, 2026)  
+**Status:** **Stable** — `22.0.0` released June 3, 2026  
 **Effort:** Low–Medium (breaking changes are tool-assisted via `ng update`)
 
-> ⚠️ Angular 19.x reached EOL on May 19, 2026. Angular 21 is now in LTS (security-only until May 2027). Teams on v19 should upgrade to v21 now; plan for v22 when it ships.
+> ⚠️ Angular 19.x reached EOL on May 19, 2026. Angular 21 is in LTS (security-only until May 2027). Teams on v19 must migrate to v21 or v22 immediately.
 
-#### Expected Breaking Changes
-- **OnPush as default change detection** — the Angular CLI will generate new components with `ChangeDetectionStrategy.OnPush`; existing components are unaffected; `ng update` schematic will handle new project templates
-- **Zoneless as default for new projects** — `zone.js` removed from new project scaffolding by default; existing projects using Zone.js continue to work; migration is opt-in
-- **Signal Forms graduation from developer preview** — if you depend on Signal Forms APIs marked `@developerPreview`, review for any API surface changes
+#### Breaking Changes
+- **OnPush as default change detection for new projects** — the Angular CLI now generates new components with `ChangeDetectionStrategy.OnPush`; **existing components are unaffected**; `ng update` schematic handles project template updates
+- **Zoneless as default for new projects** — `zone.js` removed from new project scaffolding by default; existing projects using Zone.js continue to work unchanged; migration is opt-in
+- **Signal Forms graduation from developer preview** — Signal Forms APIs previously marked `@developerPreview` are now stable; minor surface changes may exist; review Signal Forms API if you adopted them in v21
 
-#### Anticipated Migration
+#### Migration Steps
 ```bash
-# Run after Angular 22 is released
 ng update @angular/core@22 @angular/cli@22
 ```
 
-The Angular CLI schematic handles template and component updates. Review the official [Angular Update Guide](https://angular.dev/update-guide) for v21 → v22.
+The Angular CLI schematic handles template and component updates automatically. Review the official [Angular Update Guide](https://angular.dev/update-guide?v=21.0-22.0) for v21 → v22.
 
-#### What Should Stay the Same
+#### What Stays the Same
 - Existing Zone.js projects work without changes
 - Existing `ChangeDetectionStrategy.Default` components work without changes
-- All existing Signal Forms code in developer preview will continue to function (API may have minor changes)
+- All `ReactiveFormsModule` patterns continue to work (Signal Forms is additive, not a replacement)
+
+#### New Stable APIs in v22 (safe to adopt immediately)
+- `signal()` / `computed()` / `effect()` forms — **Signal Forms** fully stable
+- `httpResource()` / `rxResource()` — signal-integrated HTTP data fetching (replaces common RxJS patterns)
+- Angular Aria — accessible UI primitives
+- Angular MCP Server full suite — `devserver.start/stop`, `ai_tutor`, `modernize`, `onpush_zoneless_migration`
 
 ---
 

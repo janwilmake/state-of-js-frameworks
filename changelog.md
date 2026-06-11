@@ -4,6 +4,60 @@
 
 ---
 
+## 2026-06-11 (run: June 11, 2026)
+
+### Next.js 16.2.9 (June 9, 2026) + 16.3 Preview Branch Opens 🔜
+
+- **v16.2.9** (June 9, 2026) — Empty release to correct the `next@latest` NPM dist-tag; Vercel's Trusted Publishing setup prevents direct dist-tag manipulation, so a new release was required. No code changes from 16.2.8.
+- **16.3.0-preview.3** (June 10, 2026) — A dedicated `16.3.x-preview` release branch has been opened, with `npm install next@preview` available. Enables Turbopack filesystem cache for builds by default in non-stable releases. This is a strong signal the 16.3 release cycle is underway.
+- **Vercel Ship — June 25, 2026** — Community speculation (Reddit r/nextjs) and the preview branch timing strongly suggest a **Next.js 16.3 stable release at or around Vercel Ship on June 25, 2026**.
+- Current stable remains **16.2.9**; current 15.x remains **15.5.19** (June 1, 2026)
+
+---
+
+### Nuxt 4.4.8 / 3.21.8 (June 8, 2026) 🔥 macOS Dev Server Hotfix
+
+- **4.4.8** hotfix released to address an issue running the Nuxt dev server on **macOS** introduced in 4.4.7 (June 2, 2026); macOS users on 4.4.7 should upgrade immediately
+- **3.21.8** — corresponding maintenance patch on the v3 line
+- No API changes; no breaking changes
+  ```bash
+  npm install nuxt@latest   # → 4.4.8
+  ```
+- Nuxt 3.x EOL: **July 31, 2026** — teams still on Nuxt 3 have ~7 weeks to migrate to Nuxt 4
+
+---
+
+### Astro 7.0.0-beta.3 (June 9, 2026) 🚀 Astro 7 Advances to Beta
+
+- **Astro 7 graduated from alpha to beta** — `7.0.0-beta.3` released June 9, 2026; install with `npm install astro@beta`
+- This marks a milestone: Astro 7 is now considered stable enough for integration authors and early adopters to test; not yet production-ready
+- Key features in Astro 7 beta remain the same as alpha: Vite 8 as default, Rust compiler as the only compiler (Go compiler removed), stricter HTML parsing, `experimental.rustCompiler` flag removed
+- `@astrojs/adapter-*` beta releases for Vercel, Node, and Cloudflare are published alongside
+
+---
+
+### Astro 6.4.5 / 6.4.6 (June 9–10, 2026) — Patch Cluster
+
+**6.4.6** (June 10, 2026):
+- Image file renaming in dev server no longer triggers build errors (hot-reload fix)
+- `addAttribute` hardened — drops attribute names with invalid HTML spec characters to prevent injection
+- `allowedDomains` origin validated before fetching prerendered error pages
+
+**6.4.5** (June 9, 2026):
+- `Astro.request.url` now stays in sync with `Astro.url` behind TLS-terminating proxies (previously they could diverge)
+- Reverts a Cloudflare adapter `isNode` detection change that caused significant build time regressions on large prerendered sites
+
+- **Current stable: `npm install astro@latest` → 6.4.6**
+
+---
+
+### SvelteKit 2.64.0 (June 8, 2026) — already captured
+
+- `feat: allow commands to receive File objects` — remote function commands can now accept `File` instances directly (for file upload workflows)
+- Fix: avoid server components being bundled when SSR is disabled for a route
+
+---
+
 ## 2026-05-28 (run: May 28, 2026)
 
 ### Angular 22 — 4 Days to Stable (June 1, 2026) 🚀
