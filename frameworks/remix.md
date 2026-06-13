@@ -13,11 +13,11 @@ For teams evaluating "Remix", the practical question is: **React Router v7 in Fr
 
 ## React Router v7 — Latest Version
 
-**v7.16.0** (May 28, 2026) — Current stable  
-**v7.15.1** (May 14, 2026) — `unstable_useRouterState()` hook  
+**v7.17.0** (June 4, 2026) — Current stable  
+**v7.16.0** (May 28, 2026) — Previous stable  
 28M+ weekly npm downloads (react-router package)  
 Backed by **Shopify** (powers Hydrogen, Admin)  
-⚡ **React Router v8 imminent** — "in the next month or two" per v7.15.0 release notes (May 5, 2026); v7.16 stabilizes `v8_trailingSlashAwareDataRequests` flag
+⚡ **React Router v8 imminent** — "in the next month or two" per v7.15.0 release notes (May 5, 2026); v7.16 stabilizes `v8_trailingSlashAwareDataRequests` flag; v7.17 bundles docs for AI agents
 
 ## Key Features (React Router v7 Framework Mode)
 
@@ -60,6 +60,7 @@ No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 
 | Version | Date | Highlights |
 |---|---|---|
+| v7.17.0 | June 4, 2026 | **Bundled docs for AI agents** — official Markdown docs now shipped inside `node_modules/react-router/docs`; AI coding agents and React Router agent skills can read official docs locally without fetching from the network; RSC route module server exports excluded from client dependency optimizer when `future.unstable_optimizeDeps` is enabled; fix future flag warning URLs |
 | v7.16.0 | May 28, 2026 | Stabilize `future.v8_trailingSlashAwareDataRequests`; future flag warnings for v8 flags; fix `useNavigation()` discriminated union return type; Windows path fix in `react-router-serve`; Node backpressure in writable streams |
 | v7.15.1 | May 14, 2026 | `unstable_useRouterState()` hook — consolidated active + pending router state access |
 | v7.15.0 | May 5, 2026 | **API stabilizations pre-v8**; 15–30% server-side route matching perf improvement |

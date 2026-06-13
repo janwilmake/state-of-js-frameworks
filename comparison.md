@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: June 11, 2026. Covers Next.js 16.2.9 (16.3.0-preview.3 active — Vercel Ship June 25), React Router v7.16.0 / Remix 3 beta, Nuxt 4.4.8 🔥 macOS hotfix, SvelteKit 2.64.0 (SvelteKit 3.0-next.1 pre-release), Astro 6.4.6 (7.0.0-beta.3 pre-release), Angular 22.0.0 ✅ stable (June 3, 2026). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
+> Last updated: June 13, 2026. Covers Next.js 16.2.9 (16.3.0-preview.3 active — Vercel Ship June 25), React Router v7.17.0 / Remix 3 beta, Nuxt 4.4.8 🔥 macOS hotfix, SvelteKit 2.64.0 (SvelteKit 3.0-next.1 pre-release), Astro 6.4.6 (7.0.0-beta.3 pre-release), Angular 22.0.1 ✅ (22.1.0-next.0 pre-release). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.9 | React Router v7.16.0 | Nuxt 4.4.8 | SvelteKit 2.64.0 | Astro 6.4.6 | Angular 22.0.0 |
+| Feature | Next.js 16.2.9 | React Router v7.17.0 | Nuxt 4.4.8 | SvelteKit 2.64.0 | Astro 6.4.6 | Angular 22.0.1 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -158,4 +158,4 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Angular 22 ✅ (stable since June 3, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
 ❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
-⚡ **Now stable**: Angular 22.0.0 (June 3, 2026) — Signal Forms stable, Angular Aria stable, `httpResource`/`rxResource` stable, Angular MCP Server stable. Run `ng update @angular/core@22 @angular/cli@22`. ⚠️ **Angular 19.x EOL passed** (May 19, 2026) — teams on v19 are unsupported; upgrade to v21 (LTS until May 2027) and then v22 immediately.
+⚡ **Latest patch**: Angular 22.0.1 (June 10, 2026). Run `ng update @angular/core@22 @angular/cli@22`. Key v22 features: Signal Forms stable, Angular Aria stable, `httpResource`/`rxResource` stable, Angular MCP Server stable, `OnPush` now default change detection, HTTP client uses Fetch API by default. ⚠️ **Angular 19.x EOL passed** (May 19, 2026) — teams on v19 are unsupported; upgrade to v22 immediately. ⚠️ **Webpack deprecated in v22** — teams using `@angular-devkit/build-angular` should plan migration to the application builder.

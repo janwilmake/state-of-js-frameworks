@@ -4,9 +4,10 @@
 
 ## Latest Version
 
-**22.0.0** (June 3, 2026) — 🚀 **Current stable major** — Signal Forms stable, Angular Aria stable, async reactivity APIs stable  
-**21.2.14** (May 20, 2026) — Latest stable patch on the v21.x LTS line  
-**21.2.0** (February 23, 2026) — Current stable minor on v21  
+**22.0.1** (June 10, 2026) — 🔥 Latest stable patch  
+**22.0.0** (June 3, 2026) — Current stable major — Signal Forms stable, Angular Aria stable, async reactivity APIs stable  
+**22.1.0-next.0** (June 10, 2026) — Pre-release (next track); `linkedSignal` custom `set`, JSONP deprecated, foreign component improvements  
+**21.2.17** (June 10, 2026) — Latest stable patch on the v21.x LTS line  
 🔴 **Angular 19.x reached EOL on May 19, 2026** — Google will issue no further security patches; teams on v19 are running unsupported software  
 ⚠️ **Angular 21.x active support ended May 19, 2026** — v21 now in LTS (security patches only until May 19, 2027)  
 ✅ **Angular 22 is now stable** (released June 3, 2026) — Signal Forms stable, Angular Aria stable, async reactivity APIs stable, Angular MCP stable, TypeScript 6 support
@@ -90,6 +91,15 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 - **Resource composition** — `ResourceSnapshot` and resource composition APIs added
 - **Location strategy trailing slash** — new location strategy option for trailing slash handling
 
+## v22.0.1 Patch (June 10, 2026)
+
+- Routine bug fixes and stability improvements on the 22.0.x line; no API changes
+- `npm install @angular/core@latest` → **22.0.1**
+- **Angular 21.2.17** (June 10, 2026) — corresponding LTS security + bug fix patch on the v21 line
+- **Angular 20.3.25** (June 10, 2026) — corresponding LTS security patch on the v20 line
+- **Angular VSCode Extension 22.0.1** (June 11, 2026) — fixes relative workspace TSDK path resolution, prevents external template inlay hints from appearing in TS files, corrects TSDK configuration inspection
+- **Angular 22.1.0-next.0** (June 10, 2026) — first pre-release for the 22.1 minor; `linkedSignal` gains a custom `set` option, JSONP support deprecated in `HttpClient`, foreign component / `@content` improvements, HTTP transfer cache skips uncacheable and credentialed requests
+
 ## v22.0.0 Highlights (June 3, 2026) 🚀
 
 Angular v22 is officially stable as of June 3, 2026. The Angular team described this release as bringing three significant features to **production-ready stable status** and deepening the agentic/AI development story.
@@ -99,10 +109,14 @@ Angular v22 is officially stable as of June 3, 2026. The Angular team described 
 - **Asynchronous Reactivity APIs (stable)** — `httpResource` and `rxResource` signal-integrated data fetching utilities that replace common RxJS patterns with signal-native alternatives; previously experimental
 - **Angular MCP Server (stable)** — `devserver.start` / `devserver.stop` tools, `ai_tutor`, `modernize`, `onpush_zoneless_migration`, and more; full suite at `angular.dev/ai/mcp`; previously experimental; all testing and e2e tools graduate to stable
 - **TypeScript 6 support** — performance improvements and stronger type-checking
-- **`@boundary` API (developer preview)** — template-level error boundaries providing fallback experiences for runtime UI failures; previewed in v22
+- **`@boundary` API (developer preview)** — template-level error boundaries providing fallback experiences for runtime UI failures; `@boundary` will be generally available in Q3 2026
+- **`injectAsync()`** — new async DI utility; lazy-loads services via dynamic imports; supports default exports directly (`injectAsync(() => import('./report.service'))`)
+- **`OnPush` now the default change detection strategy** — `ChangeDetectionStrategy.Default` renamed to `Eager`; new components default to `OnPush`; `ng update` migration automatically adds `changeDetection: ChangeDetectionStrategy.Eager` to existing components that relied on the old default
+- **HTTP client uses Fetch API by default** — `withFetch()` is now the default and is deprecated (remove it); a migration adds `withXhr()` for teams that need the legacy XMLHttpRequest behavior; directly enables better SSR performance (removes the SSR-specific `withFetch()` recommendation)
+- **Router breaking changes** — `canMatch` functions now require a mandatory third parameter `currentSnapshot` (automated migration provided); `paramsInheritanceStrategy` defaults to `'always'` (manual fix required if you relied on `'emptyOnly'` behavior — **no migration provided**)
+- **`browserUrl` on `routerLink`** — new option lets you navigate to one URL while displaying a different browser URL (useful for vanity URLs)
+- **Webpack support deprecated** — `@angular-devkit/build-angular` and `@ngtools/webpack` are deprecated in v22; focus shifts to the application builder with TSGo support; full removal in a future major
 - **Router enhancements** — navigation improvements and new service registration patterns
-- **Template authoring improvements** — cleaner dependency injection and template expression patterns
-- **Change detection modernization** — continued investment in Zoneless defaults for new projects
 - **Official v22 release event** — premiered June 5, 2026 at 9AM Pacific on the Angular YouTube channel
 
 ## npm Download Trend
@@ -140,11 +154,11 @@ This trajectory is genuine. Angular is no longer the "legacy enterprise choice" 
 
 ## Support Policy
 
-| Release | Status | Active Ends | LTS Ends |
-|---|---|---|---|
-| 22.x | **Active** (since June 3, 2026) | ~Nov 2026 | ~May 2028 |
-| 21.x | **LTS** (since May 19, 2026) | May 19, 2026 | May 19, 2027 |
-| 20.x | LTS | Nov 19, 2025 | Nov 28, 2026 |
-| 19.x | **EOL** (May 19, 2026) | May 28, 2025 | May 19, 2026 |
+| Release | Status | Active Ends | LTS Ends | Latest Patch |
+|---|---|---|---|---|
+| 22.x | **Active** (since June 3, 2026) | ~Nov 2026 | ~May 2028 | 22.0.1 (June 10) |
+| 21.x | **LTS** (since May 19, 2026) | May 19, 2026 | May 19, 2027 | 21.2.17 (June 10) |
+| 20.x | LTS | Nov 19, 2025 | Nov 28, 2026 | 20.3.25 (June 10) |
+| 19.x | **EOL** (May 19, 2026) | May 28, 2025 | May 19, 2026 | 19.2.25 (June 2) |
 
 Angular releases a new major version every 6 months. Each major version receives 6 months of active support followed by 12 months of LTS (security patches only). This predictable schedule is a significant advantage for enterprise planning.

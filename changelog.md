@@ -4,6 +4,51 @@
 
 ---
 
+## 2026-06-13 (run: June 13, 2026)
+
+### Angular 22.0.1 (June 10, 2026) + 22.1.0-next.0 Pre-release Track Opens 🔧
+
+- **22.0.1** (June 10, 2026) — Routine bug fix patch on the 22.0.x line; no API changes; `npm install @angular/core@latest` → 22.0.1
+- **21.2.17** (June 10, 2026) — Latest LTS security + bug fix patch on the v21 line
+- **20.3.25** (June 10, 2026) — Latest LTS security patch on the v20 line
+- **Angular VSCode Extension 22.0.1** (June 11, 2026) — fixes relative workspace TSDK path resolution; prevents external template inlay hints from showing in `.ts` files; corrects TSDK configuration inspection
+- **22.1.0-next.0** (June 10, 2026) — First pre-release for the 22.1 minor track opens: `linkedSignal` gains a custom `set` option, JSONP support deprecated in `HttpClient`, foreign component / `@content` anchor ordering fixes, HTTP transfer cache now correctly skips uncacheable and credentialed requests
+
+---
+
+### Angular 22: Additional Breaking Changes Documented
+
+Deep-dive coverage of the v22.0.0 release (June 3) via the community blog Ninja Squad reveals additional breaking changes beyond what was initially announced:
+
+- **`ChangeDetectionStrategy.Default` → `Eager`; `OnPush` is now the default** — semantically a rename + default flip; `ng update` handles existing components automatically by adding `changeDetection: ChangeDetectionStrategy.Eager`
+- **HTTP client uses Fetch API by default** — `withFetch()` deprecated and auto-removed by `ng update`; opt back into XHR with `withXhr()`
+- **`canMatch` guards gain mandatory `currentSnapshot` parameter** — automated migration via `ng update`
+- **`paramsInheritanceStrategy` defaults to `'always'`** ⚠️ — **no automated migration**; if your app relied on the old `'emptyOnly'` default, manually set `paramsInheritanceStrategy: 'emptyOnly'` in your `RouterModule.forRoot()` or `provideRouter()` config before upgrading
+- **Webpack builders deprecated** — `@angular-devkit/build-angular` and `@ngtools/webpack` deprecated; removal in a future major; begin migration to `@angular/build:application` (esbuild + TSGo)
+- **`injectAsync()`** — new async DI utility for lazy service loading via dynamic import
+
+---
+
+### React Router v7.17.0 (June 4, 2026) — Docs Bundled for AI Agents 📦
+
+- **Official Markdown docs now shipped inside the npm package** — `node_modules/react-router/docs` now contains the official React Router documentation as Markdown files; AI coding agents (Cursor, Claude Code, Copilot etc.) and React Router agent skills can read docs locally without network access; excludes auto-generated API docs, community content, and tutorials
+- Fix future flag warning URLs (previously pointed to incorrect documentation links)
+- RSC route module server exports are excluded from client dependency optimizer when `future.unstable_optimizeDeps` is enabled (avoids incorrect server-side exports being bundled for the client)
+- **Current stable: `npm install react-router@latest` → 7.17.0**
+- React Router v8 remains imminent; v7.16–7.17 are final v7 stabilization releases
+
+---
+
+### Cloudflare Acquires VoidZero (June 4, 2026) 🌐 Ecosystem Event
+
+- **VoidZero** (the team behind Vite, Vitest, Rolldown, Oxc, and Vite+) joined Cloudflare on June 4, 2026
+- Vite remains MIT-licensed, vendor-agnostic, and built for everyone — this is the same open-governance model as the Astro acquisition in January 2026
+- Directly benefits: **SvelteKit** (Vite-native), **Astro** (uses Vite Environment API), **Nuxt** (Vite-based build), **Next.js** (Turbopack competes, but some Vite-based features), **React Router** (Vite-based dev build), and the broader npm ecosystem
+- SvelteKit 3.0 pre-release (`3.0.0-next.1`) adopts the Vite Environment API as a first-class feature
+- With Cloudflare now controlling Astro, VoidZero (Vite), and having Astro as its reference content framework, **Cloudflare is positioned as the dominant force in the JS build tooling and edge deployment ecosystem**
+
+---
+
 ## 2026-06-11 (run: June 11, 2026)
 
 ### Next.js 16.2.9 (June 9, 2026) + 16.3 Preview Branch Opens 🔜
