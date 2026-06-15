@@ -4,8 +4,8 @@
 
 ## Latest Version
 
-**SvelteKit 2.64.0** (June 8, 2026) — Current stable  
-**SvelteKit 3.0.0-next.1** (June 5, 2026) — Pre-release preview (not production ready); Vite Environment API, faster builds  
+**SvelteKit 2.65.0** (June 11, 2026) — Current stable  
+**SvelteKit 3.0.0-next.4** (June 11, 2026) — Pre-release preview (not production ready); Vite Environment API, faster builds  
 **Svelte 5.x** (June 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
 
@@ -53,15 +53,25 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 
 ## June 2026 Highlights
 
+- **SvelteKit 2.65.0** (June 11, 2026) — **New minor release**:
+  - **Queries can now refresh other queries** — a query handler can explicitly trigger a refresh of sibling queries; enables dependency-chain invalidations without manual coordination
+  - Fix: deduplicate remote data fetched across multiple instances
+  - Fix: skip client build entirely when all routes have CSR disabled (faster SSG builds)
 - **SvelteKit 2.64.0** (June 8, 2026) — Commands can now receive `File` objects; fix: avoid server components being bundled when SSR is turned off for a route
 - **SvelteKit 2.63.1** (June 2026) — `query.live` now uses SSE (Server-Sent Events) instead of polling; Windows `env.d.ts` import path fix (forward slashes); `$app/environment` warning fix with `explicitEnvironmentVariables`; improved explicit env var import handling
-- **SvelteKit 3.0.0-next.1 / 3.0.0-next.0** (June 5, 2026) — **Pre-release preview of SvelteKit 3** — major changes:
+- **SvelteKit 3.0.0-next.4 / next.3 / next.1 / next.0** (June 5–11, 2026) — **Pre-release preview of SvelteKit 3** — major changes:
   - **Vite Environment API** — faster builds with Vite hook filters; more powerful SvelteKit adapters leveraging the Vite Environment API
   - **`data-sveltekit-*` option `'off'` removed** — use `false` instead (breaking change)
+  - **Explicit env vars** — new `explicitEnvironmentVariables` feature (3.0.0-next.3)
+  - **Query deduplication** — remote data deduped across component instances (3.0.0-next.3)
+  - **Query cross-refresh** — queries can refresh other queries (3.0.0-next.3)
+  - **Reset queries before navigation** when `invalidateAll` is set (3.0.0-next.4)
   - Adapters (`adapter-node`, `adapter-static`, `adapter-vercel`) bumped to v6/v7 next pre-releases requiring SvelteKit 3
   - `adapter-node` migrates from Rollup to **Rolldown** (Rust-based bundler from VoidZero/Cloudflare)
+  - Paths resolve using Vite config `root` option instead of `process.cwd()` (better monorepo support)
+  - `Response` helpers deprecated in favour of platform-provided alternatives
   - Not production ready; install with `npm install @sveltejs/kit@next`
-- **"What's New in Svelte: June 2026"** (June 1, 2026) — official monthly recap published; highlights: improved forms, new long-lived remote query APIs (`query.live`), TypeScript 6 support in language-tools, community showcases
+- **"What's New in Svelte: June 2026"** (June 1, 2026) — official monthly recap published; highlights: improved forms, new long-lived remote query APIs (`query.live`), TypeScript 6 support in language-tools; **`run()` method removed** from remote queries in `2.61.0` — use `await query()` directly in all contexts; remote queries can now be awaited in event handlers, async callbacks, and module scope with cache deduping
 
 ## May 2026 Highlights
 

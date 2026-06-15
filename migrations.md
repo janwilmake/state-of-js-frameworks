@@ -245,6 +245,23 @@ Key changes:
 
 ## SvelteKit
 
+### SvelteKit 2.60.x → 2.61.x (Remote Functions: `.run()` Removed)
+
+**Released:** June 2026  
+**Effort:** Low (only affects projects using experimental Remote Functions that used `.run()`)
+
+#### Breaking Change
+- **`query.run()` method removed** — the `.run()` method added in kit@2.56.0 has been superseded. Use `await query()` directly in all contexts. Remote queries can now be awaited in event handlers, async callbacks, and module scope, with cache deduplication shared across reactive and non-reactive consumers.
+
+```diff
+- query(...).run();  // old pattern (kit@2.56–2.60)
++ await query(...);  // new pattern (kit@2.61+) — works everywhere
+```
+
+This change only affects code using experimental Remote Functions. Standard `load()`, form actions, and server endpoints are unaffected.
+
+---
+
 ### SvelteKit 2.55.x → 2.56.x (Remote Functions Breaking Changes)
 
 **Released:** May 2026  

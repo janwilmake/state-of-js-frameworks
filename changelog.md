@@ -4,6 +4,35 @@
 
 ---
 
+## 2026-06-15 (run: June 15, 2026)
+
+### SvelteKit 2.65.0 + SvelteKit 3.0.0-next.4 (June 11, 2026) 🚀
+
+**SvelteKit 2.65.0** (June 11, 2026) — Latest stable:
+- **Queries can now refresh other queries** — a remote query handler can trigger a refresh of other named queries; enables clean dependency-chain invalidation without manual coordination or shared state
+- Fix: deduplicate remote data fetched across multiple concurrent component instances of the same query
+- Fix: skip client-side JavaScript build entirely when all routes have CSR disabled (speeds up SSG-only builds)
+- `npm install @sveltejs/kit@latest` → **2.65.0**
+
+**SvelteKit 3.0.0-next.4** (June 11, 2026) — Pre-release (not production ready):
+- Fix: reset queries before navigating when `invalidateAll` is set — prevents stale query data from persisting across navigations that fully invalidate client state
+- Install with `npm install @sveltejs/kit@next`
+
+**SvelteKit 3.0.0-next.3** (in the same week):
+- Carries forward all 3.0.0-next.0–next.2 changes (Vite Environment API, `data-sveltekit-*: false`, Rolldown in adapter-node) plus:
+  - Remote data deduplication across component instances
+  - Queries can refresh other queries (same feature as 2.65.0 stable, landed in pre-release first)
+  - Explicit env vars support (`explicitEnvironmentVariables`)
+
+> **June 2026 SvelteKit recap** (from ["What's New in Svelte: June 2026"](https://svelte.dev/blog/whats-new-in-svelte-june-2026)):
+> - `2.61.0`: **`.run()` removed from remote queries** — breaking change; `await query()` works in all contexts now including event handlers, async callbacks, and module scope with shared cache deduplication
+> - `2.60.0`: Remote form validation warnings, number/boolean form fields, abort stale renders
+> - `2.63.1`: `query.live` switches from polling to SSE (Server-Sent Events)
+> - `2.64.0`: Commands can receive `File` objects; SSR-disabled route bundling fix
+> - `2.65.0`: Queries can refresh other queries (see above)
+
+---
+
 ## 2026-06-13 (run: June 13, 2026)
 
 ### Angular 22.0.1 (June 10, 2026) + 22.1.0-next.0 Pre-release Track Opens 🔧

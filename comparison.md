@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: June 13, 2026. Covers Next.js 16.2.9 (16.3.0-preview.3 active — Vercel Ship June 25), React Router v7.17.0 / Remix 3 beta, Nuxt 4.4.8 🔥 macOS hotfix, SvelteKit 2.64.0 (SvelteKit 3.0-next.1 pre-release), Astro 6.4.6 (7.0.0-beta.3 pre-release), Angular 22.0.1 ✅ (22.1.0-next.0 pre-release). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
+> Last updated: June 15, 2026. Covers Next.js 16.2.9 (16.3.0-preview.3 active — Vercel Ship June 25), React Router v7.17.0 / Remix 3 beta, Nuxt 4.4.8 🔥 macOS hotfix, SvelteKit 2.65.0 (SvelteKit 3.0.0-next.4 pre-release), Astro 6.4.6 (7.0.0-beta.3 pre-release), Angular 22.0.1 ✅ (22.1.0-next.0 pre-release). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.9 | React Router v7.17.0 | Nuxt 4.4.8 | SvelteKit 2.64.0 | Astro 6.4.6 | Angular 22.0.1 |
+| Feature | Next.js 16.2.9 | React Router v7.17.0 | Nuxt 4.4.8 | SvelteKit 2.65.0 | Astro 6.4.6 | Angular 22.0.1 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -146,9 +146,10 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ❌ **Avoid for:** React-only teams, projects needing the largest ecosystem possible  
 ⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue introduced in 4.4.7; upgrade immediately if on macOS
 
-### SvelteKit 2
+### SvelteKit 2 / SvelteKit 3 (next)
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  
-❌ **Avoid for:** Large teams requiring a broad hiring pool, projects with heavy React library dependencies
+❌ **Avoid for:** Large teams requiring a broad hiring pool, projects with heavy React library dependencies  
+⚡ **Latest: 2.65.0** (June 11, 2026) — queries can now refresh other queries; dedupe remote data; skip client build when all routes have CSR disabled. **SvelteKit 3.0.0-next.4** (June 11, 2026) also released — Vite Environment API, Rolldown for `adapter-node`, explicit env vars
 
 ### Astro 6 / Astro 7 (beta)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  
