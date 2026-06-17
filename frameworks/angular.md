@@ -117,6 +117,11 @@ Angular v22 is officially stable as of June 3, 2026. The Angular team described 
 - **`browserUrl` on `routerLink`** — new option lets you navigate to one URL while displaying a different browser URL (useful for vanity URLs)
 - **Webpack support deprecated** — `@angular-devkit/build-angular` and `@ngtools/webpack` are deprecated in v22; focus shifts to the application builder with TSGo support; full removal in a future major
 - **Router enhancements** — navigation improvements and new service registration patterns
+- **`@Service` decorator** — new shorthand that replaces the verbose `@Injectable({ providedIn: 'root' })` pattern in common service registration cases; supports service-level code splitting and optional prefetching for improved startup performance
+- **`debounce` on blur in Signal Forms** — Signal Forms can now debounce field value changes `'on blur'` in addition to by milliseconds; `debounce(form.password, 'blur')` triggers after the user leaves the field
+- **`FormValueControl` interface** — more ergonomic than legacy `ControlValueAccessor` for custom form components integrating with Signal Forms; legacy `ControlValueAccessor` components with `NG_VALIDATORS` now correctly propagate validation errors to Signal Forms
+- **`focusBoundControl()`** — `errorSummary()[0].fieldTree().focusBoundControl()` auto-focuses the first invalid field after a failed Signal Forms submission; previously required manual boilerplate
+- **WebMCP (developer preview)** — Angular applications and Signal Forms can be exposed as tools callable by AI agents running directly in the browser (via Web Model Context Protocol); agents can read/mutate form state, navigate routes, and call Angular services without server round-trips; positions Angular as the first major framework with native browser-based AI agent integration
 - **Official v22 release event** — premiered June 5, 2026 at 9AM Pacific on the Angular YouTube channel
 
 ## npm Download Trend

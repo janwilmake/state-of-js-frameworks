@@ -181,7 +181,8 @@ npx nuxt upgrade                  # alternative via nuxi
 
 **Released:** July 16, 2025  
 **Effort:** Low–Medium (2–4 hours; most changes are opt-in via compatibility mode)  
-**Official guide:** [nuxt.com/docs/getting-started/upgrade](https://nuxt.com/docs/getting-started/upgrade)
+**Official guide:** [nuxt.com/docs/getting-started/upgrade](https://nuxt.com/docs/getting-started/upgrade)  
+> ⚠️ **Nuxt 3 EOL is July 31, 2026 — approximately 6 weeks from today (June 17, 2026).** After this date, no further security patches or bug fixes will be issued for the Nuxt 3.x line. Upgrade now.
 
 #### Breaking Changes
 - **`app/` directory convention** — source files now default to `app/` instead of project root; configure via `srcDir`

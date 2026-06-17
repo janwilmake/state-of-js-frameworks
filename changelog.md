@@ -4,6 +4,72 @@
 
 ---
 
+## 2026-06-17 (run: June 17, 2026)
+
+### Astro 6.4.7 (June 15, 2026) — i18n + Routing Patch 🔧
+
+**Current stable: `npm install astro@latest` → 6.4.7**
+
+- **i18n locale URL trailing-slash fix** — `getRelativeLocaleUrl`, `getAbsoluteLocaleUrl`, and `getAbsoluteLocaleUrlList` now correctly strip trailing slashes when `trailingSlash: 'never'` is configured; previously they left a trailing slash on locale-prefixed paths (e.g., `/en/` instead of `/en`)
+- **Double URL-encoded paths no longer return 400** — on-demand routes now handle double-encoded characters (e.g., `%255B`, which is `[` encoded twice) correctly instead of unconditionally rejecting them with `400 Bad Request`; middleware and route handlers now run before the rejection check
+- **Shadow DOM named slot fix** — the shared JSX runtime previously treated `slot` as an Astro slot assignment and stripped it from output, breaking Shadow DOM named slot distribution in web components; now passes through correctly
+- **Stale inline CSS fix** — editing a `.css` or `.scss` file during development no longer leaves old CSS in server-rendered `<style>` tags; the FOUC on fresh page load before HMR corrected the styles is fixed
+- Additional minor bug fixes and wrangler config improvement: JSON schema added to the Wrangler config file when running `astro add cloudflare`
+
+---
+
+### Nuxt Agent Rebranded as "Nuxi" (June 9, 2026) 🤖
+
+The Nuxt team published **"Meet Nuxi"** on June 9, 2026 — the official blog post announcing the renaming of the Nuxt Agent to **Nuxi**:
+
+- **New name: Nuxi** — the Nuxt AI agent previously launched in beta (April 29, 2026) has been given a proper name and identity; "Nuxi" replaces the generic "Nuxt Agent" branding
+- The agent remains accessible via `⌘I` on any nuxt.com page or at `/chat`
+- Grounded in the Nuxt MCP server (official docs, modules catalog, blog, deployment guides, GitHub issues across `nuxt`, `nuxt-modules`, `nuxt-content`)
+- Built with the Vercel AI SDK and Nuxt UI; native tools render module/template cards, hosting providers, blog post previews, GitHub issue search, and StackBlitz playground links
+- Near-term plans: user accounts, persistent cross-device chat history, deeper nuxt.com integration
+
+> **Note:** The `nuxi` CLI tool (the Nuxt CLI, used for `nuxi dev`, `nuxi build`, etc.) is a separate existing tool — the AI agent is now sharing that name but in a different branding context (the agent vs. the CLI). Worth watching for any confusion in docs.
+
+---
+
+### Angular 22 — Additional v22.0.0 Feature Details
+
+Additional depth on Angular 22 features not fully captured in the June 13 run:
+
+- **`@Service` decorator** — new decorator that simplifies service registration; replaces the verbose `@Injectable({ providedIn: 'root' })` pattern in many common cases; improves code readability and class-level semantics; supports service-level code splitting and optional prefetching
+- **`debounce` on blur in Signal Forms** — Signal Forms now supports debouncing field value changes on blur (in addition to debouncing by milliseconds); `debounce(form.password, 'blur')` triggers after the user leaves the field
+- **`FormValueControl` interface** — more powerful and ergonomic than the legacy `ControlValueAccessor`; enables custom form components to integrate seamlessly with Signal Forms; legacy `ControlValueAccessor` components with internal `NG_VALIDATORS` now correctly propagate their validation errors to Signal Forms fields
+- **`focusBoundControl()` on Signal Forms** — `errorSummary()` + `focusBoundControl()` allows auto-focusing the first invalid field after a failed form submission — a common UX pattern that was previously boilerplate-heavy
+- **`WebMCP`** — Angular applications and Signal Forms can now be exposed as tools that AI agents running directly in the browser (via the Web Model Context Protocol) can call; allows browser-based AI agents to read and mutate form state, navigate routes, and interact with Angular services without any server round-trip
+
+---
+
+### ⚠️ Nuxt 3.x EOL: 6 Weeks Away (July 31, 2026)
+
+As of June 17, 2026, **Nuxt 3.x reaches end-of-life in approximately 6 weeks** (July 31, 2026). After this date, no further security patches, bug fixes, or updates will be issued for the Nuxt 3.x line. Teams still on Nuxt 3 should plan their migration to **Nuxt 4** immediately:
+
+```bash
+# Check migration status and enable Nuxt 4 compat mode
+# nuxt.config.ts
+export default defineNuxtConfig({
+  future: { compatibilityVersion: 4 }
+})
+npm install nuxt@latest   # → 4.4.8
+```
+
+The upgrade is generally smooth. The Nuxt team specifically extended the v3 EOL (from January 31 to July 31, 2026) to give teams more time. That buffer is now nearly exhausted. See the [Nuxt migration guide](https://nuxt.com/docs/4.x/getting-started/upgrade) for full details.
+
+---
+
+### Next.js 16.3 Canary — Continued Progress (June 16–17, 2026)
+
+- **16.3.0-canary.52** (June 16) and **canary.53** (June 17) — infrastructure and Turbopack improvements; no new user-facing features vs. the preview branch
+- `cargo binstall --locked` flag added; Turbopack `Effect` arena allocation optimizations; React compiler updated to detect and build for React 18 compatibility
+- **Vercel Ship (June 25, 2026)** — 8 days away; the `16.3.x-preview` branch is open and the preview dist-tag is live (`npm install next@preview`); stable 16.3 announcement remains highly likely at this event
+- **Current stable: 16.2.9** — no new stable release since June 9
+
+---
+
 ## 2026-06-15 (run: June 15, 2026)
 
 ### SvelteKit 2.65.0 + SvelteKit 3.0.0-next.4 (June 11, 2026) 🚀

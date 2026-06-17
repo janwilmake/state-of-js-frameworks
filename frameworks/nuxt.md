@@ -22,7 +22,7 @@
 - **Typed layout props** (new in 4.4) — type-safe props for Nuxt layouts
 - **Build profiling** (new in 4.4) — `nuxi build --profile` for bundle analysis
 - **Nuxt UI v4** — fully open-source component library (125+ components) backed by Vercel; **v4.8.0** (May 21, 2026) — latest; adds `Theme` component prop defaults (override prop defaults for all descendant components), `ContentSearch` async FTS5 full-text search via `useSearchCollection`, and new `color` props on `Avatar`/`AvatarGroup`/`Breadcrumb`; **v4.6** (March–April 2026) added `Sidebar`, AI Chat components (`ChatReasoning`, `ChatTool`, `ChatShimmer`); ⚠️ `InputMenu.autocomplete` prop renamed to `mode` in v4.8 (breaking change)
-- **Nuxt Agent** (beta, April 29, 2026) — official AI agent at nuxt.com; grounded in the Nuxt MCP server (official docs, modules catalog, blog, deployment guides, GitHub issues); built with the AI SDK and Nuxt UI; accessible via `⌘I` or `/chat`
+- **Nuxi — Nuxt AI Agent** (renamed June 9, 2026) — the Nuxt Agent (launched in beta April 29, 2026) has been officially rebranded as **Nuxi**; grounded in the Nuxt MCP server (official docs, modules catalog, blog, deployment guides, GitHub issues); built with the AI SDK and Nuxt UI; accessible via `⌘I` or `/chat` on nuxt.com; near-term roadmap: user accounts, persistent cross-device chat history
 - **NuxtLabs joins Vercel** (July 2025) — Nuxt now part of the Vercel ecosystem; development accelerated
 
 ## Rendering Modes

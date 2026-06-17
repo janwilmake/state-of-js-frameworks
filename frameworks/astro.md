@@ -4,8 +4,8 @@
 
 ## Latest Version
 
-**6.4.6** (June 10, 2026) — Current stable (latest patch)  
-**6.4.5** (June 9, 2026) — Patch: `Astro.request.url` aligned with `Astro.url` behind TLS-terminating proxies; Cloudflare build-time regression fix for `isNode` detection  
+**6.4.7** (June 15, 2026) — Current stable (latest patch)  
+**6.4.6** (June 10, 2026) — Previous patch  
 **6.4.0** (May 28, 2026) — Latest minor release: pluggable Markdown pipeline + Sätteri Rust processor  
 **7.0.0-beta.3** (June 9, 2026) — Astro 7 has advanced from **alpha to beta** (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
@@ -52,6 +52,14 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Node.js** — `@astrojs/node`
 - **Deno** — `@astrojs/deno`
 - **Static** — default; output HTML to any CDN/S3
+
+## v6.4.7 Patch (June 15, 2026)
+
+- **i18n locale URL trailing-slash fix** — `getRelativeLocaleUrl`, `getAbsoluteLocaleUrl`, and `getAbsoluteLocaleUrlList` now correctly strip trailing slashes when `trailingSlash: 'never'` is configured
+- **Double URL-encoded paths no longer 400** — on-demand routes correctly handle double-encoded characters (e.g., `%255B`) instead of rejecting with `400 Bad Request`; middleware now runs before rejection
+- **Shadow DOM named slot fix** — JSX runtime no longer strips `slot` attribute from output, fixing named slot distribution in web components
+- **Stale inline CSS fix** — editing CSS files in dev no longer leaves old styles in server-rendered `<style>` tags (FOUC fix)
+- Wrangler config now includes JSON schema when running `astro add cloudflare`
 
 ## v6.4.5–6.4.6 Patches (June 9–10, 2026)
 
