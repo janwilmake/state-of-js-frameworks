@@ -1,25 +1,27 @@
 # Remix / React Router
 
-> Maintained by Shopify. The framework that bet on web standards — and won. In 2024, Remix merged into React Router v7. Remix 3 is now a separate, pre-React project in active development.
+> Maintained by Shopify. The framework that bet on web standards — and won. In 2024, Remix merged into React Router v7. React Router v8 shipped June 17, 2026. Remix 3 is now a separate, pre-React project in active development.
 
 ## Current State (June 2026)
 
 **Remix as a standalone React framework no longer exists.** The key facts:
 
-- **React Router v7** (released November 2024) absorbed all of Remix v2's patterns — loaders, actions, nested routing, server rendering. This is the production-ready successor to Remix v2.
+- **React Router v8** (released June 17, 2026) is the current stable major, succeeding React Router v7. ESM-only, Node 22.22+, Vite 7+ required. The most boring major release ever — future flags smoothed the transition.
+- **React Router v7** (released November 2024) is now in security-update support only. Teams on v7 should upgrade to v8.
+- **React Router v6 and Remix v2 are now officially EOL** — no further security updates. Migrate to v7 or v8 now.
 - **Remix 3** is a completely separate new framework, forking Preact (not React). It is under active development and has **no migration path from Remix v2**. If you're in the React ecosystem, Remix 3 is not for you — yet.
 
-For teams evaluating "Remix", the practical question is: **React Router v7 in Framework Mode** vs. **Next.js 16**.
+For teams evaluating "Remix", the practical question is: **React Router v8 in Framework Mode** vs. **Next.js 16**.
 
-## React Router v7 — Latest Version
+## React Router — Latest Version
 
-**v7.17.0** (June 4, 2026) — Current stable  
-**v7.16.0** (May 28, 2026) — Previous stable  
+**v8.0.0** (June 17, 2026) — **Current stable** 🚀  
+**v7.18.0** (June 16, 2026) — Final v7 stable (security updates only)  
 28M+ weekly npm downloads (react-router package)  
 Backed by **Shopify** (powers Hydrogen, Admin)  
-⚡ **React Router v8 imminent** — "in the next month or two" per v7.15.0 release notes (May 5, 2026); v7.16 stabilizes `v8_trailingSlashAwareDataRequests` flag; v7.17 bundles docs for AI agents
+**Yearly major release cadence** — v9 expected around May 2027 (aligned with Node 22 EOL)
 
-## Key Features (React Router v7 Framework Mode)
+## Key Features (React Router v8 Framework Mode)
 
 - **Loaders** — async server-side data fetching per route; co-located with components
 - **Actions** — server-side mutations; forms work without JavaScript (progressive enhancement)
@@ -29,10 +31,11 @@ Backed by **Shopify** (powers Hydrogen, Admin)
 - **File-based routing** — routes directory with loader/action co-location
 - **Streaming** — built-in support via `defer()` and `<Await>`
 - **Type safety** — generated types for `params`, `loaderData`, and `actionData`
-- **Vite 8 support** (v7.14.0+) — stay current with Vite's ESM-first ecosystem
-- **TypeScript 6 support** (v7.14.1+) — peer dep range includes TypeScript 6 pre-releases
-- **Unstable RSC Framework Mode** — React Server Components support in active development; not yet production-ready
+- **Vite 7+ required** (v8) — ESM-first, aligns with the broader ecosystem
+- **TypeScript 6 support** — peer dep range includes TypeScript 6
+- **Unstable RSC Framework Mode** — React Server Components support in active development; not yet production-ready in v8.0 but expected to stabilize in an early v8.x minor
 - **Zero vendor lock-in** — deploy to any Node.js, edge, or serverless environment
+- **ESM-only** (v8) — CJS builds dropped; Node 22.22+ / Vite 7+ enables this cleanly
 
 ## Rendering Modes
 
@@ -56,27 +59,45 @@ React Router v7 does **not** have ISR or PPR equivalents. Cache invalidation is 
 
 No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 
-## React Router v7 — Recent Releases
+## React Router — Recent Releases
 
 | Version | Date | Highlights |
 |---|---|---|
-| v7.17.0 | June 4, 2026 | **Bundled docs for AI agents** — official Markdown docs now shipped inside `node_modules/react-router/docs`; AI coding agents and React Router agent skills can read official docs locally without fetching from the network; RSC route module server exports excluded from client dependency optimizer when `future.unstable_optimizeDeps` is enabled; fix future flag warning URLs |
-| v7.16.0 | May 28, 2026 | Stabilize `future.v8_trailingSlashAwareDataRequests`; future flag warnings for v8 flags; fix `useNavigation()` discriminated union return type; Windows path fix in `react-router-serve`; Node backpressure in writable streams |
+| **v8.0.0** | **June 17, 2026** | 🚀 **Current stable** — ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; yearly cadence; all `future.v8_*` flags now defaults; `tsdown` replaces `tsup` in build pipeline; v6 and Remix v2 officially EOL |
+| v7.18.0 | June 16, 2026 | Final v7 stable (security updates only going forward) |
+| v7.17.0 | June 4, 2026 | **Bundled docs for AI agents** — official Markdown docs now shipped inside `node_modules/react-router/docs`; AI coding agents can read docs locally without network |
+| v7.16.0 | May 28, 2026 | Stabilize `future.v8_trailingSlashAwareDataRequests`; future flag warnings for v8 flags |
 | v7.15.1 | May 14, 2026 | `unstable_useRouterState()` hook — consolidated active + pending router state access |
 | v7.15.0 | May 5, 2026 | **API stabilizations pre-v8**; 15–30% server-side route matching perf improvement |
-| v7.14.1 | April 13, 2026 | TypeScript 6 peer dep support, race condition fix in `HydrateFallback`, normalize double-slashes in redirects |
-| v7.14.0 | April 2, 2026 | **Vite 8 support**, memory leak fix in `turbo-stream`, pre-rendering with `v8_viteEnvironmentApi`, unstable RSC Framework Mode improvements |
-| v7.13.2 | March 23, 2026 | Bug fixes |
-| v7.13.0 | January 23, 2026 | `crossOrigin` prop on `<Links>`, origin check returns 400, glob matching fix |
-| v7.12.0 | January 7, 2026 | 🔒 Security: CSRF protection, XSS fixes, CSRF in ScrollRestoration; `allowedActionOrigins` config |
+| v7.14.1 | April 13, 2026 | TypeScript 6 peer dep support, race condition fix in `HydrateFallback` |
+| v7.14.0 | April 2, 2026 | **Vite 8 support**, memory leak fix in `turbo-stream`, RSC Framework Mode improvements |
+| v7.13.0 | January 23, 2026 | `crossOrigin` prop on `<Links>`, origin check returns 400 |
+| v7.12.0 | January 7, 2026 | 🔒 Security: CSRF protection, XSS fixes; `allowedActionOrigins` config |
 
-## React Router v8 — Imminent
+## React Router v8 — What Changed
 
-React Router v8 is now expected **"in the next month or two"** per the official v7.15.0 release notes (May 5, 2026). The stabilization work in 7.15.x was the final preparation. A public ["React Router v8 and Beyond" talk](https://www.youtube.com/watch?v=tIhqxwyTQ2M) was published May 25, 2026 by Brooks Lybrand (maintainer), covering the upgrade path and roadmap. Expected changes:
-- **ESM only** — drop CJS builds (Vite 7+ and Node 20.19+/22.12+ `require(esm)` enable this)
-- **Drop Node 20** support (EOL April 2026)
-- **React Server Components (RSC) Framework Mode** — stabilization is the primary driver of the v8 release
-- **APIs stabilized in 7.15.x** will be the final public API surface for v8; the `unstable_useRouterState()` hook added in 7.15.1 is a hint of the v8 API direction
+React Router v8 shipped June 17, 2026. It was deliberately boring — that's the point. If you've enabled all `future.v8_*` flags in your v7 project, the API surface is already v8.
+
+**Baseline changes:**
+- **ESM only** — CJS builds dropped; requires Node 22.22+ (or Bun); Vite 7+ required
+- **Node 22.22+ minimum** — Node 20 (EOL April 2026) dropped; v8 aligns Node support with Active LTS + latest Maintenance LTS branch only
+- **React 19.2.7+ required**
+- **Vite 7+ required** — Vite 6 dropped (Vite 8 is current; Vite 7 remains the minimum)
+- **ES2022 tsconfig target** — tsconfig `target`/`lib` fields updated across all packages
+
+**Going forward:**
+- **Yearly major release cadence** — v9 expected ~May 2027, aligned with Node 22 EOL
+- **RSC Framework Mode** — not yet stable in v8.0 but on track to stabilize in an early v8.x minor
+- **React Router v7 continues security updates** (just like v6 did after v7 shipped)
+- **React Router v6 and Remix v2 are now EOL** — no further security patches
+
+**Upgrade from v7:**
+```bash
+# Enable all future flags in v7 first (if not done already)
+# Then:
+npm install react-router@8
+# Remove all future.v8_* flags from your react-router.config.ts (they're now defaults)
+```
 
 ---
 
@@ -100,18 +121,20 @@ React Router (the package) has ~28M weekly downloads — more than Next.js — b
 
 ## Trade-Off Assessment
 
-**Choose React Router v7 when:**
+**Choose React Router v8 when:**
 - Web standards compliance and progressive enhancement matter (government, accessibility-critical apps)
 - You want zero vendor lock-in and true deploy-anywhere portability
 - Your team finds the Server Components mental model in Next.js too complex
 - You're building content-heavy SSR apps with clear data/mutation boundaries
 - You're already using TanStack ecosystem (excellent interop)
+- You want a predictable yearly major release cadence
 
 **Watch out for:**
 - **No ISR/PPR** — cache-busting is your responsibility; this is fine for most apps but requires discipline
 - **Smaller ecosystem** than Next.js for component libraries, CMS integrations, etc.
-- **Remix 3 confusion** — the brand split is causing real confusion; make sure your team understands the React Router v7 vs. Remix 3 distinction
+- **Remix 3 confusion** — the brand split is causing real confusion; React Router v8 = React ecosystem framework; Remix 3 = Preact-based experiment; make sure your team knows the difference
 - **Fewer batteries than Next.js** — image optimization, font optimization, etc. require third-party solutions
+- **ESM-only** in v8 — if you have legacy CJS infrastructure, test the Node 22.22+ `require(esm)` path before upgrading
 
 ## Support Policy
 

@@ -4,6 +4,81 @@
 
 ---
 
+## 2026-06-19 (run: June 19, 2026)
+
+### 🚀 React Router v8.0.0 Released (June 17, 2026) — The Most Boring Major Release Ever
+
+**React Router v8 is officially stable.** Released June 17, 2026 and announced on the [Remix blog](https://remix.run/blog/react-router-v8). The team delivered on their promise of the most boring major upgrade yet.
+
+**What changed:**
+- **ESM-only** — CJS builds dropped; React Router v8 is now published as ESM-only; Node's native `require(esm)` support (20.19+/22.12+) and Vite 7's ESM-first model made this practical
+- **Minimum versions updated** — Node **22.22.0+**, React **19.2.7+**, Vite **7+** required; tsconfig `target`/`lib` updated to **ES2022** across the board
+- **Node version support policy changed** — v8 officially supports all Active LTS Node versions and only the latest minor branch of Maintenance LTS versions (e.g., Node 22.22.x only, not all 22.x); designed to allow React Router to adopt backported security patches quickly
+- **All `future.v8_*` flags removed** — all behaviors they gated are now the default; if you've adopted all active v7 future flags, the upgrade is straightforward
+- **`tsdown` replaces `tsup`** — package builds migrated for better module artifact preservation; public APIs and documented import paths unchanged
+- **Client middleware errors now load lazy route error boundaries correctly** before bubbling
+- **`@types/react@19.x` deprecation warning fixed** — explicit `onSubmit` type override removed from `SharedFormProps`
+
+**Key note on Remix:**
+> *"With the release of React Router v8 we are officially marking React Router v6 and Remix v2 as End of Life (EOL) so they will no longer be receiving security updates. React Router v7 will continue to receive security updates."*
+
+React Router v7 (released November 2024) remains in security-update support. React Router v8 is the new current stable. **Yearly major release cadence** announced going forward.
+
+```bash
+npm install react-router@latest   # → 8.0.0
+```
+
+**Upgrade path from v7 (boring by design):**
+1. Enable all `future.v8_*` flags in your v7 app
+2. Run `npm install react-router@8`
+3. Remove all `future.v8_*` flags (now defaults)
+4. Remove CJS-specific workarounds if any
+
+No migration codemod needed for most apps — future flags handle the transition. Full upgrade guide at [reactrouter.com](https://reactrouter.com/).
+
+---
+
+### React Router v7.18.0 (June 16, 2026) — Final v7 Stable Before v8 🏁
+
+- Released the day before v8 as the final v7 release
+- `npm install react-router@7` → **7.18.0** (v7 security updates will continue)
+- Changelog: [reactrouter.com/changelog](https://reactrouter.com/changelog#v7.18.0)
+
+---
+
+### SvelteKit 2.66.0 (June 18, 2026) — Latest Stable 🚀
+
+**SvelteKit 2.66.0** is now the latest stable release (`@sveltejs/kit@latest`):
+
+**New features:**
+- **Precompress prerendered `.md` and `.mdx` files** — `adapter-node` and compatible adapters now pre-compress `.md`/`.mdx` files at build time alongside `.html`, `.css`, and `.js`; reduces TTFB for documentation sites and static Markdown pages served via CDN
+- **Boolean input optional warning** — SvelteKit now warns when boolean form inputs are not marked optional in form schemas; catches a common foot-gun where a missing checkbox silently fails validation instead of defaulting to `false`
+
+**Bug fixes:**
+- `query.live` reconnect reliability — three fixes for the `query.live` streaming API:
+  - Preserves active `for await` consumers across reconnects
+  - Settles the reconnect promise on all exit paths, preventing `invalidateAll()` from deadlocking when a live query is offline or interrupted
+  - Preserves the last yielded value when a `query.live` stream completes without yielding on reconnect
+- Blur active element before component update during navigation so blur/focusout handlers fire while old component data is still valid
+- Ensure `base` is available from `$service-worker` during development
+- Correct relative asset paths when rendering an error page for a missing `__data.json` request
+- Remove `types: ['node']` from generated tsconfig to avoid errors when `@types/node` is not installed
+- Prefer pages over endpoints when prerendering (resolves ordering issue)
+- Restore snapshots after `afterNavigate` callbacks
+- Support `ws:` / `wss:` and `trusted-types-eval` as CSP sources
+- Omit empty `file` inputs from remote form data
+- Fail early if a route with `+page` and `+server` is marked as prerenderable
+- Wait a tick before resetting forms (prevents premature reset)
+- `preflight` schemas apply correctly when chained before `for`
+- Fix blank page in SPA mode when root layout `load()` throws
+- Pass all unknown options from the `sveltekit` Vite plugin through to `vite-plugin-svelte`
+
+```bash
+npm install @sveltejs/kit@latest   # → 2.66.0
+```
+
+---
+
 ## 2026-06-17 (run: June 17, 2026)
 
 ### Astro 6.4.7 (June 15, 2026) — i18n + Routing Patch 🔧

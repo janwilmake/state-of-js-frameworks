@@ -4,7 +4,7 @@
 
 ## Latest Version
 
-**SvelteKit 2.65.0** (June 11, 2026) — Current stable  
+**SvelteKit 2.66.0** (June 18, 2026) — Current stable  
 **SvelteKit 3.0.0-next.4** (June 11, 2026) — Pre-release preview (not production ready); Vite Environment API, faster builds  
 **Svelte 5.x** (June 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
@@ -52,6 +52,21 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 - **Auto** — `@sveltejs/adapter-auto` detects environment at deploy time
 
 ## June 2026 Highlights
+
+- **SvelteKit 2.66.0** (June 18, 2026) — **Latest stable**:
+  - **Precompress prerendered `.md` and `.mdx` files** — adapters now pre-compress Markdown files at build time; meaningful for documentation sites served via `adapter-node`
+  - **Boolean input optional warning** — warns when boolean form inputs (checkboxes) are not marked optional in form schemas; catches a common foot-gun
+  - Fix: `query.live` reconnect stability — three fixes preventing deadlocks, value loss, and `for await` consumer drops during reconnection
+  - Fix: blur active element before navigation component update so blur/focusout handlers fire with valid component data
+  - Fix: `base` available in `$service-worker` during development
+  - Fix: correct relative asset paths in error pages for missing `__data.json` requests
+  - Fix: remove `types: ['node']` from generated tsconfig
+  - Fix: prefer pages over endpoints when prerendering
+  - Fix: restore snapshots after `afterNavigate` callbacks
+  - Fix: `ws:` / `wss:` and `trusted-types-eval` as valid CSP sources
+  - Fix: omit empty `file` inputs from remote form data
+  - Fix: blank page in SPA mode when root layout `load()` throws
+  - `npm install @sveltejs/kit@latest` → **2.66.0**
 
 - **SvelteKit 2.65.0** (June 11, 2026) — **New minor release**:
   - **Queries can now refresh other queries** — a query handler can explicitly trigger a refresh of sibling queries; enables dependency-chain invalidations without manual coordination

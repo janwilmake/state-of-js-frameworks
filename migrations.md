@@ -107,22 +107,54 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 
 ---
 
-### React Router v7 → v8 (Imminent — Mid-2026)
+### React Router v7 → v8 ✅ (Released June 17, 2026)
 
-**Status:** Expected "in the next month or two" per official v7.15.0 release notes (May 5, 2026); v7.15.x stabilization work is the final preparation  
-**Effort:** Low–Medium (mostly tooling changes)
+**Status:** **Stable** — `v8.0.0` released June 17, 2026  
+**Effort:** Low (the "most boring upgrade ever" — future flags smoothed the path)  
+**Official announcement:** [remix.run/blog/react-router-v8](https://remix.run/blog/react-router-v8)  
+**Upgrade guide:** [reactrouter.com](https://reactrouter.com/) — "I'm on v7 → Upgrade to v8"
 
-#### Anticipated Breaking Changes
-- **ESM only** — CJS builds dropped; requires Node 20.19+ / 22.12+ or Bun for `require(esm)` support
-- **Drop Node 20 support** — Node 20 is EOL April 2026; Node 22 becomes the minimum
-- **Vite 7+ required** — Vite 7 went ESM-only; v8 aligns with this
+#### Breaking Changes
+
+**Infrastructure / environment:**
+- **ESM only** — CJS builds dropped; requires Node 22.22+ (Node's native `require(esm)` makes this painless); Bun also supported
+- **Node 22.22+ minimum** — Node 20 (EOL April 2026) is dropped; use Node 22 LTS or Node 24
+- **React 19.2.7+ required** — React 19 has been required since React Router v7; this tightens the minimum patch
+- **Vite 7+ required** — Vite 7 is the minimum; Vite 8 (current) is fully supported
+- **ES2022 tsconfig** — `target` and `lib` fields updated to ES2022; check your TypeScript config if you target older environments
+
+**API / behavior:**
+- **All `future.v8_*` flags are now defaults and removed** — if you've enabled all v7 future flags (`v8_middleware`, `v8_trailingSlashAwareDataRequests`, `v8_viteEnvironmentApi`, `v8_splitRouteModules`, etc.), you're already running v8 behavior; just remove the flags
+- **`tsdown` build pipeline** — internal change; public APIs and import paths unchanged; no impact on userland code
 
 #### What Stays the Same
-- Loaders, actions, nested routing, file-based routing
-- All adapters and deployment targets
-- RSC Framework Mode (may graduate from unstable to stable in v8)
+- Loaders, actions, nested routing, file-based routing — identical
+- All adapters (`@react-router/cloudflare`, `@react-router/vercel`, etc.) — compatible
+- RSC Framework Mode — not yet stable; will stabilize in an early v8.x minor
+- React Router v7 continues to receive security patches (parallel to v8)
 
-No migration codemod announced yet. Watch the ["React Router v8 and Beyond" talk](https://www.youtube.com/watch?v=tIhqxwyTQ2M) (published May 25, 2026) for the full v8 roadmap. Monitor the [React Router v8 discussion](https://github.com/remix-run/react-router/discussions/14468) for timeline updates.
+#### Migration Steps
+```bash
+# Step 1: Enable all v7 future flags (if not done already)
+# In react-router.config.ts, add all future.v8_* flags
+
+# Step 2: Upgrade to v8
+npm install react-router@8
+
+# Step 3: Remove all future.v8_* flags from react-router.config.ts
+# They are now defaults and the config keys no longer exist
+
+# Step 4: Ensure Node 22.22+ is your runtime
+node --version  # should be >= 22.22.0
+```
+
+#### ⚠️ EOL Notice
+With v8 shipping:
+- **React Router v6 is now EOL** — no further security updates
+- **Remix v2 is now EOL** — no further security updates
+- **React Router v7 is in security-update mode** — no new features but patches continue
+
+Teams on v6 or Remix v2 should prioritize upgrading to v7 first (the upgrade guide is at [reactrouter.com/7.18.0/upgrading/v6](https://reactrouter.com/7.18.0/upgrading/v6)), then to v8.
 
 ---
 
@@ -245,6 +277,21 @@ Key changes:
 ---
 
 ## SvelteKit
+
+### SvelteKit 2.65.x → 2.66.0 (Non-Breaking — June 18, 2026)
+
+**Effort:** Zero — drop-in upgrade
+
+No breaking changes. New features are additive:
+- `.md`/`.mdx` precompression (automatically applied if using `adapter-node`)
+- Boolean form input optional warnings (informational only — no failures added)
+- Multiple `query.live` reliability fixes (behavioral fixes; no API changes)
+
+```bash
+npm install @sveltejs/kit@latest   # → 2.66.0
+```
+
+---
 
 ### SvelteKit 2.60.x → 2.61.x (Remote Functions: `.run()` Removed)
 
