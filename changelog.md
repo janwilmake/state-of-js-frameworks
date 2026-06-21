@@ -4,6 +4,86 @@
 
 ---
 
+## 2026-06-21 (run: June 21, 2026)
+
+### Angular 22.0.2 (June 17, 2026) — Routine Patch 🔧
+
+- **22.0.2** (June 17, 2026) — Routine bug fix patch on the 22.0.x line; no API changes
+- `npm install @angular/core@latest` → **22.0.2**
+- Confirmed via [endoflife.date/angular](https://endoflife.date/angular) (updated June 19, 2026)
+
+---
+
+### Astro 7.0.0-beta.4 (June 18, 2026) — Sätteri Is Now the Default Markdown Processor 🦀
+
+**Astro 7** advanced to **beta.4** on June 18, 2026. The headline change is a fundamental shift in Markdown handling:
+
+- **Sätteri is now the default Markdown processor** — `@astrojs/markdown-satteri` (Rust-based) replaces the unified (remark/rehype) pipeline as the default for `.md` files in Astro 7. The Astro team's own docs site saw **over 1 minute shaved off build times**.
+- **Remark/rehype is now opt-in** — install `@astrojs/markdown-remark` and set it as your processor if you rely on remark plugins; the deprecated top-level `markdown.remarkPlugins` / `markdown.rehypePlugins` options still work but require the remark processor to be active
+- **`allowedDomains` validation fix** — spurious `Astro.request.headers` warning on prerendered pages when `security.allowedDomains` is configured is now suppressed (prerendered routes use synthetic requests with no real headers)
+
+```bash
+npm install astro@beta   # → 7.0.0-beta.4
+```
+
+**Not production ready.** Watch for stable release mid-to-late 2026. Integration authors should start testing against `@beta` to catch remark plugin compatibility issues.
+
+---
+
+### Remix 3 — v3.0.0-beta.4 (June 5, 2026) 🔧
+
+**Remix 3 beta.4** released June 5, 2026 — the latest pre-release on the Remix 3 track:
+
+- **Breaking: Middleware must now explicitly `next()` or return a `Response`** — middleware previously returning `undefined` without calling `next()` would implicitly continue the chain; it now throws at runtime; update context-loading middleware to return the downstream `Response`:
+  ```ts
+  // Before (would silently continue):
+  // middleware that returned undefined
+  // After: must call next() or return a Response
+  async function myMiddleware({ request, next }) {
+    const ctx = await loadContext(request);
+    return next({ ctx });  // explicit!
+  }
+  ```
+- **`createMiddleware()` helper** — creates reusable middleware chains that preserve their tuple type without `as const` in common inference boundary cases; prefer inline arrays for ordinary `middleware` options on routers/controllers/actions
+- **`MapTarget` and `MapHandler` removed** from `remix/router` and `remix/fetch-router` exports — use the public `Router`, `RouteBuilder`, `RouteInstaller`, `Action`, and `Controller` types instead
+- **`remix/test` gains timeout + abort signal support** — tests and lifecycle hooks can pass `{ timeout, signal }`; `t.signal` aborts when a test times out; string `skip`/`todo` reasons now flow through results and reporter output
+- **`remix/assert` Node compatibility** — improved to closely match `node:assert/strict`; `assert.partialDeepEqual` available; default export is now callable as `assert.ok` alias
+
+```bash
+npx remix@next new my-remix-app   # scaffold Remix 3 beta project
+```
+
+**Status:** Not production ready. No migration path from Remix v2 or React Router. Monitor [remix.run/blog](https://remix.run/blog) for stability updates.
+
+---
+
+### SvelteKit 2.65.2 (June 16, 2026) — Security-Relevant Patch ⚠️
+
+**SvelteKit 2.65.2** was released June 16 (now superseded by 2.66.0 from June 18). Notable fixes:
+
+- **`cache-control: private, no-store` on remote function responses** — remote function (query/command) HTTP responses now include `Cache-Control: private, no-store` to prevent personalized query results from being inadvertently cached by shared caches (CDNs, proxies)
+- **Preserve HTTP status + error body** when a remote function request fails in transport
+- Fix: throw error when prerendering a root `+server.js` returning a non-HTML response
+- Fix: decode base64-serialized fetch bodies before caching for client-side replay
+- Fix: explicit dynamic public env vars now correctly accessible from prerendered pages and service workers
+- Fix: `preloadCode` can now be called during the initial page load
+
+All users on 2.65.x should upgrade to **2.66.0** (already released) which includes all of these fixes plus new minor features.
+
+```bash
+npm install @sveltejs/kit@latest   # → 2.66.0
+```
+
+---
+
+### Next.js 16.3 Canary — Vercel Ship in 4 Days (June 25, 2026) ⏳
+
+- **Current stable: 16.2.9** (no change since June 9)
+- **16.3.0-canary.58** (June 18) — latest canary; Turbopack chunk loading retry on failure, React canary bump (`b1786c31-20260618`), Playwright updated to 1.61.0
+- **Vercel Ship is June 25, 2026 — 4 days away** — the `16.3.x-preview` branch is open and a stable 16.3 announcement at Vercel Ship remains highly likely; watch [vercel.com/blog](https://vercel.com/blog) on June 25
+
+---
+
 ## 2026-06-19 (run: June 19, 2026)
 
 ### 🚀 React Router v8.0.0 Released (June 17, 2026) — The Most Boring Major Release Ever

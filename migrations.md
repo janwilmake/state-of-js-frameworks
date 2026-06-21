@@ -107,6 +107,23 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 
 ---
 
+### Remix 3 beta.3 → beta.4 (June 5, 2026) — Internal Breaking Change
+
+**Effort:** Minimal (only affects projects already using the Remix 3 beta)
+
+#### Breaking Changes
+- **Middleware must now explicitly `next()` or return a `Response`** — middleware that returned `undefined` without calling `next()` previously continued the chain implicitly; it now throws at runtime
+  ```ts
+  // Fix: explicitly return the downstream response
+  async function myMiddleware({ request, next }) {
+    const ctx = await loadContext(request);
+    return next({ ctx });  // required in beta.4+
+  }
+  ```
+- **`MapTarget` and `MapHandler` removed** from `remix/router` and `remix/fetch-router` exports — update imports to use `Router`, `RouteBuilder`, `RouteInstaller`, `Action`, `Controller` instead
+
+---
+
 ### React Router v7 → v8 ✅ (Released June 17, 2026)
 
 **Status:** **Stable** — `v8.0.0` released June 17, 2026  
@@ -414,6 +431,29 @@ npx @astrojs/upgrade  # safe — no breaking changes
 
 ---
 
+### Astro 7.0.0-beta.3 → beta.4 (June 18, 2026) — Sätteri as Default (Breaking for Remark Users)
+
+**Effort:** Low for most users; Medium if you use remark/rehype plugins
+
+#### Breaking Change
+- **Sätteri is now the default Markdown processor** — Astro 7 beta.4 makes `@astrojs/markdown-satteri` (Rust-based) the default processor for `.md` files. If your project uses `markdown.remarkPlugins`, `markdown.rehypePlugins`, or `@astrojs/mdx` in ways that depend on the remark/rehype pipeline, you must opt back in:
+
+  ```js
+  // astro.config.mjs — to keep remark/rehype in Astro 7
+  import { unified } from '@astrojs/markdown-remark';
+  export default defineConfig({
+    markdown: {
+      processor: unified(),  // back to remark/rehype
+    },
+  });
+  ```
+
+  Install the required package: `npm install @astrojs/markdown-remark`
+
+- This only affects Astro 7 beta. Astro 6.x continues to use unified (remark/rehype) by default — no action needed for production apps on Astro 6.
+
+---
+
 ### Astro 6.x → 7.x (Beta — Not Yet Stable)
 
 **Status:** Beta (`7.0.0-beta.3` — June 9, 2026); stable release expected mid-to-late 2026  
@@ -491,7 +531,11 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 
 ## Angular
 
-### Angular 21 → 22 ✅ (Stable since June 3, 2026; latest patch: 22.0.1)
+### Angular 21 → 22 ✅ (Stable since June 3, 2026; latest patch: 22.0.2)
+
+> **22.0.2** released June 17, 2026 — routine bug fix; no migration impact.
+
+
 
 **Status:** **Stable** — `22.0.1` released June 10, 2026 (patch); `22.0.0` was the major release June 3, 2026  
 **Effort:** Low–Medium (most breaking changes are tool-assisted via `ng update`)

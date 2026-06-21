@@ -5,6 +5,7 @@
 ## Latest Version
 
 **SvelteKit 2.66.0** (June 18, 2026) — Current stable  
+**SvelteKit 2.65.2** (June 16, 2026) — Previous patch (now superseded by 2.66.0)  
 **SvelteKit 3.0.0-next.4** (June 11, 2026) — Pre-release preview (not production ready); Vite Environment API, faster builds  
 **Svelte 5.x** (June 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
@@ -67,6 +68,14 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
   - Fix: omit empty `file` inputs from remote form data
   - Fix: blank page in SPA mode when root layout `load()` throws
   - `npm install @sveltejs/kit@latest` → **2.66.0**
+
+- **SvelteKit 2.65.2** (June 16, 2026) — **Patch release** (superseded by 2.66.0):
+  - Fix: throw error when prerendering a root `+server.js` that returns a non-HTML response (previously silently misbehaved)
+  - Fix: decode base64-serialized fetch bodies before caching for client-side replay
+  - Fix: correctly access explicit dynamic public env vars from prerendered pages and service workers
+  - Fix: allow `preloadCode` to be called during initial page load
+  - Fix: send `cache-control: private, no-store` on remote function responses so personalized query results can never be cached by shared caches
+  - Fix: preserve HTTP status and error body when a remote function request fails in transport
 
 - **SvelteKit 2.65.0** (June 11, 2026) — **New minor release**:
   - **Queries can now refresh other queries** — a query handler can explicitly trigger a refresh of sibling queries; enables dependency-chain invalidations without manual coordination

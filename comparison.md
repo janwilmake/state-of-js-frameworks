@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: June 19, 2026. Covers Next.js 16.2.9 (16.3.0-preview.3 active — Vercel Ship June 25 🔜), **React Router v8.0.0** 🚀 (ESM-only, Node 22.22+, Vite 7+; v6 + Remix v2 EOL) / Remix 3 beta, Nuxt 4.4.8 ⚠️ (Nuxt 3 EOL July 31 — ~6 weeks), **SvelteKit 2.66.0** (SvelteKit 3.0.0-next.4 pre-release), Astro 6.4.7 (7.0.0-beta.3 pre-release), Angular 22.0.1 ✅ (WebMCP developer preview). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
+> Last updated: June 21, 2026. Covers Next.js 16.2.9 (16.3.0-canary.58 active — Vercel Ship June 25 🔜), **React Router v8.0.0** 🚀 (ESM-only, Node 22.22+, Vite 7+; v6 + Remix v2 EOL) / **Remix 3 beta.4**, Nuxt 4.4.8 ⚠️ (Nuxt 3 EOL July 31 — ~10 days), **SvelteKit 2.66.0** (SvelteKit 3.0.0-next.4 pre-release), Astro 6.4.7 (7.0.0-beta.4 🆕 — Sätteri default Markdown processor), **Angular 22.0.2** ✅ (June 17). 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.9 | React Router v8.0.0 | Nuxt 4.4.8 | SvelteKit 2.66.0 | Astro 6.4.7 | Angular 22.0.1 |
+| Feature | Next.js 16.2.9 | React Router v8.0.0 | Nuxt 4.4.8 | SvelteKit 2.66.0 | Astro 6.4.7 | Angular 22.0.2 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -145,7 +145,7 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Nuxt 4
 ✅ **Best for:** Vue teams, hybrid rendering needs, projects wanting Nuxt UI v4 components  
 ❌ **Avoid for:** React-only teams, projects needing the largest ecosystem possible  
-⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue; **Nuxi** (June 9, 2026) — Nuxt Agent rebranded as "Nuxi"; ⚠️ **Nuxt 3 EOL: July 31, 2026** (~6 weeks away) — migrate to Nuxt 4 now
+⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue; **Nuxi** (June 9, 2026) — Nuxt Agent rebranded as "Nuxi"; ⚠️ **Nuxt 3 EOL: July 31, 2026** (~40 days away) — migrate to Nuxt 4 now
 
 ### SvelteKit 2 / SvelteKit 3 (next)
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  
@@ -155,9 +155,9 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Astro 6 / Astro 7 (beta)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  
 ❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications  
-⚡ **Latest: 6.4.7** (June 15, 2026) — i18n locale URL fix, double-encoded path fix, Shadow DOM slot fix, stale CSS fix; **Astro 7.0.0-beta.3** (June 9, 2026) — Astro 7 has advanced from alpha to beta; ~3.1M weekly npm downloads and growing fast
+⚡ **Latest: 6.4.7** (June 15, 2026) — i18n locale URL fix, double-encoded path fix, Shadow DOM slot fix, stale CSS fix; **Astro 7.0.0-beta.4** (June 18, 2026) 🆕 — Sätteri is now the default Markdown processor in Astro 7 (remark/rehype opt-in via `@astrojs/markdown-remark`); ~3.1M weekly npm downloads and growing fast
 
 ### Angular 22 ✅ (stable since June 3, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
 ❌ **Avoid for:** Small projects, teams without TypeScript expertise, content sites, performance-first consumer apps  
-⚡ **Latest patch**: Angular 22.0.1 (June 10, 2026). Run `ng update @angular/core@22 @angular/cli@22`. Key v22 features: Signal Forms stable, Angular Aria stable, `httpResource`/`rxResource` stable, Angular MCP Server stable, `OnPush` now default change detection, HTTP Fetch API default, new `@Service` decorator, `debounce-on-blur` in Signal Forms, **WebMCP** (developer preview — AI agents can call Angular forms directly in the browser). ⚠️ **Angular 19.x EOL passed** (May 19, 2026) — teams on v19 are unsupported; upgrade to v22 immediately. ⚠️ **Webpack deprecated in v22** — teams using `@angular-devkit/build-angular` should plan migration to the application builder.
+⚡ **Latest patch**: Angular 22.0.2 (June 17, 2026). Run `ng update @angular/core@22 @angular/cli@22`. Key v22 features: Signal Forms stable, Angular Aria stable, `httpResource`/`rxResource` stable, Angular MCP Server stable, `OnPush` now default change detection, HTTP Fetch API default, new `@Service` decorator, `debounce-on-blur` in Signal Forms, **WebMCP** (developer preview — AI agents can call Angular forms directly in the browser). ⚠️ **Angular 19.x EOL passed** (May 19, 2026) — teams on v19 are unsupported; upgrade to v22 immediately. ⚠️ **Webpack deprecated in v22** — teams using `@angular-devkit/build-angular` should plan migration to the application builder.

@@ -4,7 +4,8 @@
 
 ## Latest Version
 
-**22.0.1** (June 10, 2026) — 🔥 Latest stable patch  
+**22.0.2** (June 17, 2026) — 🔥 Latest stable patch  
+**22.0.1** (June 10, 2026) — Previous patch  
 **22.0.0** (June 3, 2026) — Current stable major — Signal Forms stable, Angular Aria stable, async reactivity APIs stable  
 **22.1.0-next.0** (June 10, 2026) — Pre-release (next track); `linkedSignal` custom `set`, JSONP deprecated, foreign component improvements  
 **21.2.17** (June 10, 2026) — Latest stable patch on the v21.x LTS line  
@@ -91,6 +92,11 @@ Angular's SSR story has improved dramatically in recent releases but is less mat
 - **Resource composition** — `ResourceSnapshot` and resource composition APIs added
 - **Location strategy trailing slash** — new location strategy option for trailing slash handling
 
+## v22.0.2 Patch (June 17, 2026)
+
+- Routine bug fix patch on the 22.0.x line; no API changes
+- `npm install @angular/core@latest` → **22.0.2**
+
 ## v22.0.1 Patch (June 10, 2026)
 
 - Routine bug fixes and stability improvements on the 22.0.x line; no API changes
@@ -161,7 +167,7 @@ This trajectory is genuine. Angular is no longer the "legacy enterprise choice" 
 
 | Release | Status | Active Ends | LTS Ends | Latest Patch |
 |---|---|---|---|---|
-| 22.x | **Active** (since June 3, 2026) | ~Nov 2026 | ~May 2028 | 22.0.1 (June 10) |
+| 22.x | **Active** (since June 3, 2026) | ~Nov 2026 | ~May 2028 | 22.0.2 (June 17) |
 | 21.x | **LTS** (since May 19, 2026) | May 19, 2026 | May 19, 2027 | 21.2.17 (June 10) |
 | 20.x | LTS | Nov 19, 2025 | Nov 28, 2026 | 20.3.25 (June 10) |
 | 19.x | **EOL** (May 19, 2026) | May 28, 2025 | May 19, 2026 | 19.2.25 (June 2) |

@@ -7,7 +7,7 @@
 **6.4.7** (June 15, 2026) — Current stable (latest patch)  
 **6.4.6** (June 10, 2026) — Previous patch  
 **6.4.0** (May 28, 2026) — Latest minor release: pluggable Markdown pipeline + Sätteri Rust processor  
-**7.0.0-beta.3** (June 9, 2026) — Astro 7 has advanced from **alpha to beta** (not production ready)  
+**7.0.0-beta.4** (June 18, 2026) — Latest Astro 7 beta; **Sätteri is now the default Markdown processor** in Astro 7 (not production ready)  
 **Node.js 22+** required (breaking change from Astro 6)  
 Backed by **Cloudflare** (acquired January 16, 2026)  
 **~3.1M weekly npm downloads** (June 2026)
@@ -147,7 +147,14 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
 - **Astro 7 alpha launched** — `astro@7.0.0-alpha.0` released same day as 6.2:
   - **Vite 8 upgrade** — breaking for integrations depending on Vite internals; most user code unaffected
   - **Rust compiler is now the default and only compiler** — Go compiler removed; `experimental.rustCompiler` flag no longer needed; significantly faster build times
-  - **Astro 7 advanced to beta** — `7.0.0-beta.3` released June 9, 2026 (via `npm install astro@beta`); not production ready but more stable than alpha
+  - **Astro 7 advanced to beta** — `7.0.0-beta.3` released June 9, 2026; `7.0.0-beta.4` released June 18, 2026 (via `npm install astro@beta`); not production ready but more stable than alpha
+
+## v7.0.0-beta.4 (June 18, 2026) — Sätteri Becomes the Default
+
+- **Sätteri is now the default Markdown processor in Astro 7** — the Rust-based `@astrojs/markdown-satteri` package replaces the unified (remark/rehype) pipeline as the default for `.md` files; significantly faster builds (Astro's own docs site saw over 1 minute shaved off); does **not** support remark/rehype plugins directly
+- **Switching back to remark/rehype** — install `@astrojs/markdown-remark` and explicitly set it as your processor in `astro.config.mjs` if you rely on remark plugins; the old top-level `markdown.remarkPlugins`, `markdown.rehypePlugins` options still function but require the remark processor to be active
+- **`allowedDomains` header validation fix** — spurious `Astro.request.headers` warning on prerendered pages when `security.allowedDomains` is configured now suppressed correctly (the `allowedDomains` check skips prerendered routes since they use synthetic requests)
+- `npm install astro@beta` → **7.0.0-beta.4**
 
 ## v6.0 Breaking Changes (March 10, 2026)
 
