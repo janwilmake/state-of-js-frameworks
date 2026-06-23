@@ -124,9 +124,24 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 
 ---
 
+### React Router v8.0.0 → v8.0.1 (June 18, 2026) — `AppLoadContext` Removal
+
+**Effort:** Near-zero — only affects code using the `AppLoadContext` type from `react-router`
+
+#### Breaking Change
+- **`AppLoadContext` type removed** — this export from `react-router` was an obsolete leftover from the era before middleware was always-enabled. If you were using it for typing server request context, switch to `RouterContextProvider` patterns.
+
+```bash
+npm install react-router@latest   # → 8.0.1
+```
+
+No other changes in this patch.
+
+---
+
 ### React Router v7 → v8 ✅ (Released June 17, 2026)
 
-**Status:** **Stable** — `v8.0.0` released June 17, 2026  
+**Status:** **Stable** — `v8.0.1` (June 18, 2026) is the current patch; `v8.0.0` released June 17, 2026  
 **Effort:** Low (the "most boring upgrade ever" — future flags smoothed the path)  
 **Official announcement:** [remix.run/blog/react-router-v8](https://remix.run/blog/react-router-v8)  
 **Upgrade guide:** [reactrouter.com](https://reactrouter.com/) — "I'm on v7 → Upgrade to v8"
@@ -141,6 +156,10 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 - **ES2022 tsconfig** — `target` and `lib` fields updated to ES2022; check your TypeScript config if you target older environments
 
 **API / behavior:**
+- **`react-router-dom` package removed** — the v7 compat shim that kept v6 import paths working is gone in v8; update imports: `RouterProvider`/`HydratedRouter` now come from `react-router/dom`; everything else from `react-router`; search your codebase for `from 'react-router-dom'` and update
+- **`AppLoadContext` type removed** (v8.0.1) — obsolete export from the pre-middleware era; use `RouterContextProvider` server context patterns instead
+- **`hasErrorBoundary` removed from route objects** — the router now auto-detects error boundaries; remove `hasErrorBoundary` from any `RouteObject`, `DataRouteObject`, `<Route>` JSX props, or `lazy` definitions
+- **`meta.data` removed** — use `loaderData` on `MetaArgs` and each item in `MetaArgs.matches` instead of the deprecated `data` field
 - **All `future.v8_*` flags are now defaults and removed** — if you've enabled all v7 future flags (`v8_middleware`, `v8_trailingSlashAwareDataRequests`, `v8_viteEnvironmentApi`, `v8_splitRouteModules`, etc.), you're already running v8 behavior; just remove the flags
 - **`tsdown` build pipeline** — internal change; public APIs and import paths unchanged; no impact on userland code
 

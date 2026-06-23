@@ -41,7 +41,7 @@
 
 ## Next.js 16.3 Canary (In Development)
 
-**16.3.0-preview.3** (June 10, 2026) — A dedicated `16.3.x-preview` release branch has been opened, signaling the team is preparing a preview/RC cycle before the stable 16.3 release. The preview tag (`npm install next@preview`) enables Turbopack filesystem cache for builds by default in non-stable releases. **Vercel Ship** is scheduled for **June 25, 2026** — a stable 16.3 announcement is likely there. Notable features landing in canary/preview:
+**16.3.0-canary.61** (June 23, 2026) — Latest canary. A dedicated `16.3.x-preview` release branch is open; the preview tag (`npm install next@preview`) enables Turbopack filesystem cache for builds by default in non-stable releases. **Vercel Ship Berlin is June 25, 2026** (London event was June 17 — recap at vercel.com/blog/vercel-ship-2026-recap); the London keynote focused on agentic infrastructure, eve framework, and Vercel Services (launching July 1) but did not announce Next.js 16.3 stable. **16.3 stable remains imminent** — the Berlin event (June 25) is the next likely announcement opportunity. Notable features landing in canary/preview:
 - **`experimental.appShells`** — App Shell prefetching pattern (experimental flag)
 - **`instrumentationClientInject`** — client-side instrumentation injection config
 - **MCP `compile_route` tool** — AI/MCP agent can compile individual routes

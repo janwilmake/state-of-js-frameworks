@@ -15,7 +15,8 @@ For teams evaluating "Remix", the practical question is: **React Router v8 in Fr
 
 ## React Router — Latest Version
 
-**v8.0.0** (June 17, 2026) — **Current stable** 🚀  
+**v8.0.1** (June 18, 2026) — **Current stable** 🚀 Latest patch  
+**v8.0.0** (June 17, 2026) — Initial v8 stable  
 **v7.18.0** (June 16, 2026) — Final v7 stable (security updates only)  
 28M+ weekly npm downloads (react-router package)  
 Backed by **Shopify** (powers Hydrogen, Admin)  
@@ -63,7 +64,8 @@ No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 
 | Version | Date | Highlights |
 |---|---|---|
-| **v8.0.0** | **June 17, 2026** | 🚀 **Current stable** — ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; yearly cadence; all `future.v8_*` flags now defaults; `tsdown` replaces `tsup` in build pipeline; v6 and Remix v2 officially EOL |
+| **v8.0.1** | **June 18, 2026** | 🚀 **Current stable** — Removes obsolete `AppLoadContext` type export left over from v7; `react-router-dom` package fully removed (import from `react-router` or `react-router/dom` instead) |
+| **v8.0.0** | **June 17, 2026** | Initial v8 stable — ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; yearly cadence; all `future.v8_*` flags now defaults; `tsdown` replaces `tsup` in build pipeline; v6 and Remix v2 officially EOL; `hasErrorBoundary` removed from route objects; `meta.data` removed (use `loaderData`) |
 | **Remix 3 beta.4** | **June 5, 2026** | 🔬 **Remix 3 beta** (not production ready) — Breaking: middleware must now explicitly `next()` or return a `Response`; `createMiddleware()` helper for reusable chains; `remix/test` gains timeout + abort signal support; `MapTarget`/`MapHandler` removed from public types (use `Router`, `RouteBuilder`, `Action`, `Controller` instead) |
 | v7.18.0 | June 16, 2026 | Final v7 stable (security updates only going forward) |
 | v7.17.0 | June 4, 2026 | **Bundled docs for AI agents** — official Markdown docs now shipped inside `node_modules/react-router/docs`; AI coding agents can read docs locally without network |
@@ -85,6 +87,13 @@ React Router v8 shipped June 17, 2026. It was deliberately boring — that's the
 - **React 19.2.7+ required**
 - **Vite 7+ required** — Vite 6 dropped (Vite 8 is current; Vite 7 remains the minimum)
 - **ES2022 tsconfig target** — tsconfig `target`/`lib` fields updated across all packages
+
+**Breaking API changes (v8.0.0–v8.0.1):**
+- **`react-router-dom` package removed** — the v7 compatibility shim is gone; migrate imports: `RouterProvider`/`HydratedRouter` → import from `react-router/dom`; everything else → import from `react-router`
+- **`AppLoadContext` type removed** (v8.0.1) — obsolete export from before middleware was always-enabled; use `RouterContextProvider` server context instead
+- **`hasErrorBoundary` removed from route objects** — no longer accepted on `RouteObject`, `DataRouteObject`, `<Route>` JSX props, or `lazy` definitions; the router infers error boundary presence automatically
+- **`meta.data` removed** — deprecated `data` field on `MetaArgs` removed; use `loaderData` on `MetaArgs` and each `MetaArgs.matches` item instead
+- **All `future.v8_*` flags removed** — they are now defaults; remove them from your `react-router.config.ts`
 
 **Going forward:**
 - **Yearly major release cadence** — v9 expected ~May 2027, aligned with Node 22 EOL

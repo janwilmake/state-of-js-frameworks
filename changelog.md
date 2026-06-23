@@ -4,6 +4,39 @@
 
 ---
 
+## 2026-06-23 (run: June 23, 2026)
+
+### React Router v8.0.1 (June 18, 2026) — Quick Patch After Launch 🔧
+
+Just one day after the v8.0.0 launch, **React Router v8.0.1** shipped on June 18, 2026 with one important cleanup and one notable additional breaking change that wasn't in the v8.0.0 announcement:
+
+- **`AppLoadContext` type removed** — the obsolete `AppLoadContext` export from `react-router` (a leftover from the pre-middleware era when server request context was handled differently) was accidentally left in v8.0.0 and is now removed in v8.0.1; update to `RouterContextProvider` patterns if you were using this type
+- **`react-router-dom` package removed** — this was also part of the v8.0.0 breaking changes but deserves its own callout: the `react-router-dom` compat package that v7 kept for v6 migration purposes is now fully gone; **action required for all migrators**: search your codebase for `from 'react-router-dom'` and update:
+  - `RouterProvider`, `HydratedRouter` → import from `'react-router/dom'`
+  - Everything else → import from `'react-router'`
+
+```bash
+npm install react-router@latest   # → 8.0.1
+```
+
+**Netlify confirmed day-one support** for React Router v8 on June 18, 2026.
+
+---
+
+### Next.js 16.3 Canary — Vercel Ship London (June 17, 2026) + Berlin (June 25) 🔜
+
+- **Vercel Ship London** (June 17, 2026) — the first Vercel Ship 2026 event happened in London; recap published at [vercel.com/blog/vercel-ship-2026-recap](https://vercel.com/blog/vercel-ship-2026-recap). Key announcements were focused on **agentic infrastructure**, not a Next.js major release:
+  - **eve** — Vercel's new agent framework implementing the Agent Stack in minutes in a single directory
+  - **Vercel Connect** — secure way for agents to connect with external systems
+  - **Vercel Services** — microservices as a first-class citizen on Vercel (launching July 1, 2026); backend services can communicate without touching the public internet; backend-only changes still trigger full preview builds
+  - **Agentic security** — enterprise security platform for agent deployments
+  - A **Next.js migration** case study by Currys/Elkjøp showing **40% cut in Time to First Byte** was featured, validating Next.js for enterprise e-commerce
+- **No Next.js 16.3 stable yet** — the London event did not announce Next.js 16.3; current canary is **16.3.0-canary.61** (June 23, 2026); no new stable release since 16.2.9
+- **Vercel Ship Berlin** is **June 25, 2026** — the next opportunity for a Next.js 16.3 stable announcement; watch [nextjs.org/blog](https://nextjs.org/blog)
+- **Nuxt UI v4.9.0** (June 17, 2026) — released same day as Vercel Ship London; no detailed changelog yet available but confirmed via [ui.nuxt.com/releases](https://ui.nuxt.com/releases)
+
+---
+
 ## 2026-06-21 (run: June 21, 2026)
 
 ### Angular 22.0.2 (June 17, 2026) — Routine Patch 🔧
