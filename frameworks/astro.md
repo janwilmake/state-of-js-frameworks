@@ -4,13 +4,12 @@
 
 ## Latest Version
 
-**6.4.7** (June 15, 2026) — Current stable (latest patch)  
-**6.4.6** (June 10, 2026) — Previous patch  
-**6.4.0** (May 28, 2026) — Latest minor release: pluggable Markdown pipeline + Sätteri Rust processor  
-**7.0.0-beta.4** (June 18, 2026) — Latest Astro 7 beta; **Sätteri is now the default Markdown processor** in Astro 7 (not production ready)  
-**Node.js 22+** required (breaking change from Astro 6)  
+**7.0.6** (July 2, 2026) — 🚀 **Current stable** — Astro 7 is now production-ready  
+**7.0.0** (June 22, 2026) — Initial Astro 7 stable release  
+**6.4.8** (June 17, 2026) — Final Astro 6.x stable (legacy; use Astro 7 for new projects)  
+**Node.js 22+** required  
 Backed by **Cloudflare** (acquired January 16, 2026)  
-**~3.1M weekly npm downloads** (June 2026)
+**~3.1M weekly npm downloads** (July 2026)
 
 ## Key Features
 
@@ -148,6 +147,43 @@ Astro's hybrid mode is a first-class feature: you define `prerender = true/false
   - **Vite 8 upgrade** — breaking for integrations depending on Vite internals; most user code unaffected
   - **Rust compiler is now the default and only compiler** — Go compiler removed; `experimental.rustCompiler` flag no longer needed; significantly faster build times
   - **Astro 7 advanced to beta** — `7.0.0-beta.3` released June 9, 2026; `7.0.0-beta.4` released June 18, 2026 (via `npm install astro@beta`); not production ready but more stable than alpha
+
+## Astro 7.0 Stable (June 22, 2026) 🚀
+
+Astro 7 is production-ready as of June 22, 2026. **The headline: 15–61% faster builds.** This is the biggest performance release in Astro's history, powered by three concurrent improvements: Rust compiler, Rust Markdown pipeline (Sätteri), and Vite 8 + Rolldown.
+
+**Full release highlights:**
+- **Vite 8 upgrade** — Vite 8 ships [Rolldown](https://rolldown.rs/) (Rust-based bundler replacing both esbuild and Rollup); 10–30× faster than Rollup in benchmarks; auto-converts existing `esbuild`/`rollupOptions` config via compatibility layer; most Vite plugins continue to work
+- **Rust `.astro` compiler** — the Go-based compiler is removed; the Rust compiler (`@astrojs/compiler-rs`) is now the default and only option; **strict HTML parsing** — unclosed tags now throw errors instead of being silently fixed; remove `experimental.rustCompiler: true` flag if present
+- **Sätteri Markdown processor** (default for `.md`) — Rust-based pipeline replaces unified/remark/rehype as the default; **build times cut by over 1 minute** on large docs sites; if you rely on remark plugins, opt back in explicitly:
+  ```js
+  import { unified } from '@astrojs/markdown-remark';
+  export default defineConfig({ markdown: { processor: unified() } });
+  ```
+- **Advanced Routing (stable)** — `src/fetch.ts` entrypoint with full control over Astro's request pipeline; compose handlers, use Hono/other frameworks, proxy paths to external services; API follows Cloudflare Workers `fetch` handler pattern
+- **Route Caching (stable)** — platform-agnostic caching API (`Astro.cache.set()`) with built-in `memoryCache()` provider; CDN cache providers for Netlify, Vercel, and Cloudflare ship alongside Astro 7
+- **Agent-aware dev server** — detects coding agents, runs dev server in background, outputs structured JSON logs for machine-readable feedback; integrates with Claude Code, Cursor, Codex
+- **Queued rendering** — new rendering strategy more effectively parallelizes render sections; meaningfully faster for large pages with many static sections
+
+**Breaking changes from Astro 6:**
+- **Rust compiler replaces Go compiler** — stricter HTML parsing; unclosed tags are errors; semantically invalid HTML is no longer corrected
+- **Sätteri is the default Markdown processor** — if you use `markdown.remarkPlugins` / `markdown.rehypePlugins`, you must explicitly configure `unified()` as your processor
+- **Vite 8 / Rolldown** — integrations using Vite internal APIs may need updates; project-level code largely unaffected
+
+```bash
+# Upgrade to Astro 7
+npx @astrojs/upgrade   # recommended (handles most changes)
+npm install astro@latest  # → 7.0.6
+```
+
+**v7.0.6** (July 2, 2026) — latest patch:
+- Fix: missing CSS for virtual style modules (e.g., responsive image layout styles) in dev mode when JavaScript is disabled
+- Fix: `security.checkOrigin` now applied consistently to Astro Actions and on-demand endpoints regardless of pipeline composition
+- Fix: `<Picture inferSize>` no longer fails on rate-limited remote image servers (dimensions resolved once per render)
+- Fix: `<script>` inside `Astro.slots.render()` no longer hoisted out of position
+- Fix: attribute rendering hardened for custom elements
+
+---
 
 ## v7.0.0-beta.4 (June 18, 2026) — Sätteri Becomes the Default
 

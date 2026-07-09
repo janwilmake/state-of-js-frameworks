@@ -4,9 +4,10 @@
 
 ## Latest Version
 
-**16.2.9** (June 9, 2026) — Latest stable patch  
+**16.2.10** (July 1, 2026) — Latest stable patch (republishes `@next/swc-wasm-web` missed since 16.2.4; no code changes)  
 **16.x** is the current LTS major (released October 21, 2025)  
-**15.5.19** (June 1, 2026) — Latest 15.x patch (LTS until October 2026)
+**15.5.20** (July 1, 2026) — Latest 15.x patch (LTS until October 2026)  
+**16.3** — In active preview (`npm install next@preview`); **NOT yet stable** as of July 9, 2026
 
 ## Key Features
 
@@ -39,19 +40,24 @@
 - **Static export** — `output: 'export'` for CDN/S3 deployment (limits dynamic features)
 - **OpenNext / Adapters API (stable in 16.2)** — enables deployment to any cloud (AWS, Cloudflare, etc.) via community adapters
 
-## Next.js 16.3 Canary (In Development)
+## Next.js 16.3 Preview (Active — Stable Imminent)
 
-**16.3.0-canary.61** (June 23, 2026) — Latest canary. A dedicated `16.3.x-preview` release branch is open; the preview tag (`npm install next@preview`) enables Turbopack filesystem cache for builds by default in non-stable releases. **Vercel Ship Berlin is June 25, 2026** (London event was June 17 — recap at vercel.com/blog/vercel-ship-2026-recap); the London keynote focused on agentic infrastructure, eve framework, and Vercel Services (launching July 1) but did not announce Next.js 16.3 stable. **16.3 stable remains imminent** — the Berlin event (June 25) is the next likely announcement opportunity. Notable features landing in canary/preview:
-- **`experimental.appShells`** — App Shell prefetching pattern (experimental flag)
-- **`instrumentationClientInject`** — client-side instrumentation injection config
-- **MCP `compile_route` tool** — AI/MCP agent can compile individual routes
-- **HTTP Cache-Control TTL-based invalidation** — `fetch()` now respects `Cache-Control` headers for TTL-based revalidation
+**16.3.0-canary.76** (July 8, 2026) — Latest canary. **16.3.0-preview.5** also active. `npm install next@preview` to test. **16.3 stable has NOT shipped** as of July 9, 2026, despite the features being announced at Vercel Ship Berlin (June 25); the team is working through final stabilization of Instant Navigations. Based on community feedback the canary is getting heavy production testing (users reporting memory drops from ~20 GB to ~5 GB with Turbopack improvements alone). Notable features in 16.3 preview:
+- **Instant Navigations** — Stream, Cache, or Block to make navigations SPA-fast while remaining server-driven; new `prefetch` behavior; **Partial Prefetching** for route shells
+- **Bundled docs through `AGENTS.md`** — AI agents read version-matched docs from `node_modules`
+- **First-party Skills** — agents drive multi-step workflows (dev loop, Cache Components adoption)
+- **Agent Browser with React introspection** — `agent-browser` CLI drives a real browser, inspects React state
+- **Actionable errors** — paste-ready fix prompts in the error overlay
+- **A smaller, more focused MCP server** — diagnostics in, knowledge base out
+- **Docs as Markdown** — append `.md` to any Next.js docs URL
+- **Turbopack: Memory Eviction** — reclaim compiler memory during long dev sessions (huge DX win)
+- **Turbopack: Persistent Cache for Builds** — reusable build cache across successive builds
+- **Turbopack: Rust React Compiler** (experimental `turbopackRustReactCompiler`) — 20–50% compilation wins vs Babel transform on large apps like v0
+- **`import.meta.glob`** — Vite-compatible glob imports in Turbopack
 - **`next/root-params`** — new API for accessing root layout params
-- **ISR with Cache Components + `experimental.partialFallbacks`** — partial fallback rendering in ISR builds
-- React canary bump: upgraded to `43bcbf80-20260603`
-- Turbopack: continued bug fixes; 200+ improvements in progress
+- **HTTP Cache-Control TTL-based invalidation** — `fetch()` now respects `Cache-Control` headers
 
-**Estimated 16.3 stable release:** **Late June 2026** — a `16.3.x-preview` branch opened June 10 and Vercel Ship is June 25, strongly suggesting 16.3 stable will land around that event.
+**Estimated 16.3 stable release:** **Mid-July 2026** — all major features announced; currently in final polishing.
 
 ## v16.2 Highlights (March 18, 2026)
 
@@ -90,6 +96,8 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 
 ## Security Notes
 
+- **16.2.10** (July 1, 2026) — Republishes `@next/swc-wasm-web` which was accidentally not published since 16.2.4; no other changes
+- **15.5.20** (July 1, 2026) — Same purpose: republishes `@next/swc-wasm-web` for the 15.x line
 - **16.2.9** (June 9, 2026) — Empty release to fix `next@latest` NPM dist-tag (Trusted Publishing constraints prevent direct dist-tag updates; a new release was required); no code changes from 16.2.8
 - **16.2.7 / 15.5.19** (June 1, 2026) — Bug-fix backport patch; all users on 16.x and 15.x should upgrade
 - **16.2.6 / 15.5.18** (May 7, 2026) — ⚠️ Coordinated release addressing **13 security advisories** including:
@@ -113,6 +121,6 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 | Release | Status | EOL |
 |---|---|---|
 | 16.x | Active LTS | ~Oct 2027 |
-| 15.x | LTS | Oct 21, 2026 |
+| 15.x | LTS | Oct 21, 2026 | latest: 15.5.20 |
 | 14.x | Ended | Oct 26, 2025 |
 | 13.x | Ended | Dec 21, 2024 |

@@ -4,10 +4,12 @@
 
 ## Latest Version
 
-**SvelteKit 2.66.0** (June 18, 2026) — Current stable  
-**SvelteKit 2.65.2** (June 16, 2026) — Previous patch (now superseded by 2.66.0)  
-**SvelteKit 3.0.0-next.4** (June 11, 2026) — Pre-release preview (not production ready); Vite Environment API, faster builds  
-**Svelte 5.x** (June 2026) — Underlying compiler  
+**SvelteKit 2.69.2** (July 8, 2026) — 🚀 Current stable  
+**SvelteKit 2.69.0** (July 6, 2026) — New minor: `submitted` property on remote forms  
+**SvelteKit 2.68.0** (July 2, 2026) — Previous minor  
+**SvelteKit 2.67.0** (July 2, 2026) — Previous minor  
+**SvelteKit 3.0.0-next.7** (July 7, 2026) — Pre-release preview (not production ready); Vite Environment API, Rolldown  
+**Svelte 5.x** (July 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
 
 ## Key Features
@@ -51,6 +53,38 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 - **AWS Lambda** — `@sveltejs/adapter-aws` (community)
 - **Bun** — experimental via `@sveltejs/adapter-vercel` Bun runtime
 - **Auto** — `@sveltejs/adapter-auto` detects environment at deploy time
+
+## July 2026 Highlights
+
+- **"What's New in Svelte: July 2026"** (July 1, 2026) — headline theme: configuration consolidation and SvelteKit 3 previews. Key changes that landed in June/July:
+  - **SvelteKit config in `vite.config.js`** (new in kit@2.62.0) — you can now pass your SvelteKit config directly to the Vite plugin; `svelte.config.js` is no longer required; this is a preview of how SvelteKit 3 will **require** config to live in `vite.config.js`
+  - **Experimental explicit environment variables** (new in kit@2.63.0) — declare and type env vars in one place; preview of how `$env/*` modules will work in SvelteKit 3
+  - **Svelte CLI (`sv`) updates** — `sv@0.16.0`: demo template now uses `{const ...}` declaration tags; `sv create` scaffolds against `^2.62.0` with config in the Vite plugin by default; new experimental add-on to toggle experimental flags from CLI; `drizzle` and `better-auth` add-ons support new explicit env vars; new `defineEnv` and `svelteConfig` helpers in `sv-utils@0.3.0`
+  - **Language tools** catch up with Svelte's new `{const ...}` declaration tags — whole toolchain now in sync
+
+- **SvelteKit 2.69.2** (July 8, 2026) — **Latest stable**:
+  - Fix: set `define` values on `globalThis` when running Vitest
+
+- **SvelteKit 2.69.1** (July 6, 2026):
+  - ⚠️ **Security-adjacent** — Fix: prevent prototype pollution when deleting file inputs
+  - Fix: prevent unhandled promise rejection in request handling
+
+- **SvelteKit 2.69.0** (July 6, 2026):
+  - **`submitted` property on remote forms** — `form.submitted` is now exposed as a reactive property; simplifies tracking whether a remote form has been submitted at least once (e.g., for showing validation errors only after first submit)
+  - Fix: clear issues and touched states on form reset
+  - Fix: return `undefined` from `fields.branch.issues()` when only leaf has issues
+
+- **SvelteKit 2.68.0** (July 2, 2026) — minor release with improvements to remote functions and adapters
+
+- **SvelteKit 2.67.0** (July 2, 2026) — minor release
+
+- **SvelteKit 3.0.0-next.5 / next.6 / next.7** (July 5–7, 2026) — Pre-release track active; adapters progressing to next major pre-releases (`adapter-node@6.0.0-next.2`, `adapter-cloudflare@8.0.0-next.1`, `adapter-netlify@7.0.0-next.2`); not production ready
+
+```bash
+npm install @sveltejs/kit@latest   # → 2.69.2
+```
+
+---
 
 ## June 2026 Highlights
 

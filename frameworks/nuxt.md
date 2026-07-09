@@ -4,10 +4,13 @@
 
 ## Latest Version
 
-**4.4.8** (June 8, 2026) — Current stable (latest) 🔥 Hotfix for macOS dev server  
-**3.21.8** (June 8, 2026) — Maintenance; EOL on **July 31, 2026**  
-**4.4.7** (June 2, 2026) — Previous stable  
+**4.4.8** (June 8, 2026) — Current stable (latest)  
+**3.21.8** (June 8, 2026) — Maintenance; ⚠️ **EOL on July 31, 2026 — 22 days away; migrate now**  
 **Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
+
+**Ecosystem releases (July 2026):**
+- **`@nuxt/content` v3.15.0** (July 2, 2026) — latest content module release
+- **`@nuxt/ui` v4.9.0** (June 17, 2026) — Calendar month/year selection (`type` prop: `date | month | year`; heading cycles `day→month→year` on click); new `viewControls`/`viewButton` props; range picker compatible
 
 ## Key Features
 
@@ -21,7 +24,7 @@
 - **Accessibility announcer** (new in 4.4) — built-in route-change announcements for screen readers
 - **Typed layout props** (new in 4.4) — type-safe props for Nuxt layouts
 - **Build profiling** (new in 4.4) — `nuxi build --profile` for bundle analysis
-- **Nuxt UI v4** — fully open-source component library (125+ components) backed by Vercel; **v4.9.0** (June 17, 2026) — latest; **v4.8.2** (June 4, 2026) — `Form` gains `name` attribute support, `InputMenu/SelectMenu` re-highlight fix, `InputNumber/InputDate/InputTime/Calendar` restore `locale` prop, merge custom variants into `AppConfig` type; **v4.8.0** (May 21, 2026) — adds `Theme` component prop defaults, `ContentSearch` async FTS5 full-text search, new `color` props on `Avatar`/`AvatarGroup`/`Breadcrumb`; **v4.6** (March–April 2026) added `Sidebar`, AI Chat components (`ChatReasoning`, `ChatTool`, `ChatShimmer`); ⚠️ `InputMenu.autocomplete` prop renamed to `mode` in v4.8 (breaking change)
+- **Nuxt UI v4** — fully open-source component library (125+ components) backed by Vercel; **v4.9.0** (June 17, 2026) — latest; adds Calendar `type` prop (`date | month | year`) with clickable heading cycling (`day→month→year`), new `viewControls`/`viewButton` props, range picker compatibility; **v4.8.2** (June 4, 2026) — `Form` gains `name` attribute support, `InputMenu/SelectMenu` re-highlight fix, `InputNumber/InputDate/InputTime/Calendar` restore `locale` prop; **v4.8.0** (May 21, 2026) — `Theme` component prop defaults, `ContentSearch` async FTS5 full-text search, new `color` props; ⚠️ `InputMenu.autocomplete` prop renamed to `mode` in v4.8 (breaking change)
 - **Nuxi — Nuxt AI Agent** (renamed June 9, 2026) — the Nuxt Agent (launched in beta April 29, 2026) has been officially rebranded as **Nuxi**; grounded in the Nuxt MCP server (official docs, modules catalog, blog, deployment guides, GitHub issues); built with the AI SDK and Nuxt UI; accessible via `⌘I` or `/chat` on nuxt.com; near-term roadmap: user accounts, persistent cross-device chat history
 - **NuxtLabs joins Vercel** (July 2025) — Nuxt now part of the Vercel ecosystem; development accelerated
 

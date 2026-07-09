@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: June 23, 2026. Covers Next.js 16.2.9 (16.3.0-canary.61 active — Vercel Ship Berlin June 25 🔜; London event June 17 focused on agents/eve/Vercel Services), **React Router v8.0.1** 🚀 (ESM-only, Node 22.22+, Vite 7+; `react-router-dom` removed; v6 + Remix v2 EOL) / **Remix 3 beta.4**, Nuxt 4.4.8 / Nuxt UI v4.9.0 ⚠️ (Nuxt 3 EOL July 31 — ~5.5 weeks away), **SvelteKit 2.66.0** (SvelteKit 3.0.0-next.4 pre-release), Astro 6.4.7 (7.0.0-beta.4 🆕 — Sätteri default Markdown processor), **Angular 22.0.2** ✅. 🌐 **Major ecosystem event: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc) on June 4, 2026** — Vite stays MIT-licensed and vendor-agnostic.
+> Last updated: July 9, 2026. Covers Next.js 16.2.10 (16.3 preview active — stable imminent, mid-July), **React Router v8.0.1** 🚀 (ESM-only, Node 22.22+, Vite 7+) / **Remix 3 beta.4**, Nuxt 4.4.8 / Nuxt UI v4.9.0 ⚠️ (**Nuxt 3 EOL July 31 — 22 days away**), **SvelteKit 2.69.2** 🆕 (SvelteKit 3.0.0-next.7 pre-release), **Astro 7.0.6** 🚀 (stable since June 22 — Rust compiler, Sätteri, Vite 8 + Rolldown, Route Caching stable), **Angular 22.0.2** ✅. 🌐 **Major ecosystem events: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc, June 4, 2026); Astro 7.0 goes stable (June 22, 2026).**
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.9 | React Router v8.0.1 | Nuxt 4.4.8 | SvelteKit 2.66.0 | Astro 6.4.7 | Angular 22.0.2 |
+| Feature | Next.js 16.2.10 | React Router v8.0.1 | Nuxt 4.4.8 | SvelteKit 2.69.2 | Astro 7.0.6 | Angular 22.0.2 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -51,7 +51,7 @@
 | **React Router v8** | SSR | ❌ | ❌ | ✅ (`defer`) | ✅ |
 | **Nuxt** | SSR | ✅ (`routeRules`) | ❌ | ⚠️ | ✅ |
 | **SvelteKit** | SSR | ❌ | ❌ | ⚠️ | ✅ |
-| **Astro** | SSG | ❌ | ❌ | ❌ | ✅ |
+| **Astro** | SSG | ❌ | ✅ (Route Caching stable in 7.0) | ❌ | ✅ |
 | **Angular** | SPA | ❌ | ❌ | ❌ | ⚠️ |
 
 **Winner for rendering flexibility:** Next.js  
@@ -94,7 +94,7 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 
 | Metric | Next.js | React Router | Nuxt | SvelteKit | Astro | Angular |
 |---|---|---|---|---|---|---|
-| **npm weekly downloads** | ~39M | ~28M+ (react-router) | ~2M | ~1.5–2M | ~3.1M | ~2.5M |
+| **npm weekly downloads** | ~39M | ~28M+ (react-router) | ~6.9M (monthly) | ~1.5–2M | ~3.1M+ | ~2.5M |
 | **GitHub Stars** | ~140K | ~54K (RR) | ~60K | ~21K (kit) | ~59K | ~100K |
 | **Stack Overflow questions** | Very High | High | Medium | Medium | Medium | Very High |
 | **Job postings** | ⭐⭐⭐⭐ Very High | ⭐⭐⭐ High | ⭐⭐ Medium | ⭐⭐ Medium | ⭐ Low | ⭐⭐⭐⭐ Very High |
@@ -140,7 +140,7 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### React Router v8 🚀 (stable since June 17, 2026)
 ✅ **Best for:** SSR apps prioritizing web standards, accessibility, progressive enhancement, Shopify/Hydrogen; teams wanting a predictable yearly release cadence  
 ❌ **Avoid for:** Static sites, complex caching requirements, teams expecting ISR/PPR out of the box, or projects still on CJS infrastructure (v8 is ESM-only)  
-⚡ **Latest: v8.0.1** (June 18, 2026) — removes obsolete `AppLoadContext` type; `react-router-dom` package fully removed (migrate imports to `react-router` / `react-router/dom`); ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; all `future.v8_*` flags now defaults; **React Router v6 + Remix v2 officially EOL** (no more security updates)
+⚡ **Latest: v8.0.1** (June 18, 2026) — no new releases since June 18; removes obsolete `AppLoadContext` type; `react-router-dom` package fully removed (migrate imports to `react-router` / `react-router/dom`); ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; all `future.v8_*` flags now defaults; **React Router v6 + Remix v2 officially EOL** (no more security updates)
 
 ### Nuxt 4
 ✅ **Best for:** Vue teams, hybrid rendering needs, projects wanting Nuxt UI v4 components  
@@ -150,12 +150,12 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### SvelteKit 2 / SvelteKit 3 (next)
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  
 ❌ **Avoid for:** Large teams requiring a broad hiring pool, projects with heavy React library dependencies  
-⚡ **Latest: 2.66.0** (June 18, 2026) — precompress `.md`/`.mdx` files, boolean input optional warnings, multiple `query.live` reconnect fixes. **SvelteKit 3.0.0-next.4** pre-release also active — Vite Environment API, Rolldown for `adapter-node`, explicit env vars
+⚡ **Latest: 2.69.2** (July 8, 2026) — fix: prototype pollution prevention for file input deletion; fix: unhandled promise rejection. **2.69.0** (July 6) adds `form.submitted` property. **July 2026 theme:** SvelteKit config can now live in `vite.config.js` (no `svelte.config.js` needed — preview of Kit 3 requirement). **SvelteKit 3.0.0-next.7** pre-release also active — Vite Environment API, Rolldown for `adapter-node`, explicit env vars
 
-### Astro 6 / Astro 7 (beta)
+### Astro 7 🚀 (stable since June 22, 2026)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  
 ❌ **Avoid for:** Highly interactive SPAs, real-time dashboards, complex user applications  
-⚡ **Latest: 6.4.7** (June 15, 2026) — i18n locale URL fix, double-encoded path fix, Shadow DOM slot fix, stale CSS fix; **Astro 7.0.0-beta.4** (June 18, 2026) 🆕 — Sätteri is now the default Markdown processor in Astro 7 (remark/rehype opt-in via `@astrojs/markdown-remark`); ~3.1M weekly npm downloads and growing fast
+⚡ **Latest: 7.0.6** (July 2, 2026) — **Astro 7 is production-ready.** Rust compiler + Sätteri Markdown + Vite 8 + Rolldown = 15–61% faster builds. Route Caching now stable. Advanced Routing stable. Agent-aware dev server. Run `npx @astrojs/upgrade` to migrate from Astro 6. ⚠️ Breaking: unclosed HTML tags now throw errors; Sätteri is the default Markdown processor (opt back to remark via `@astrojs/markdown-remark`). ~3.1M+ weekly npm downloads
 
 ### Angular 22 ✅ (stable since June 3, 2026)
 ✅ **Best for:** Enterprise applications, large teams, TypeScript-first codebases, Google/Firebase ecosystem  
