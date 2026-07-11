@@ -15,9 +15,12 @@ For teams evaluating "Remix", the practical question is: **React Router v8 in Fr
 
 ## React Router — Latest Version
 
-**v8.0.1** (June 18, 2026) — **Current stable** 🚀 Latest patch  
+**v8.2.0** (July 8, 2026) — **Current stable** 🚀 Latest minor  
+**v8.1.0** (June 29, 2026) — Agent Skills in `create-react-router`, Observability Metadata  
+**v8.0.1** (June 18, 2026) — `AppLoadContext` type removed; `react-router-dom` fully removed  
 **v8.0.0** (June 17, 2026) — Initial v8 stable  
-**v7.18.0** (June 16, 2026) — Final v7 stable (security updates only)  
+**v7.18.1** (June 2026) — Security/bug fix patch on v7 LTS line  
+**v7.18.0** (June 16, 2026) — Final v7 minor (security updates only)  
 28M+ weekly npm downloads (react-router package)  
 Backed by **Shopify** (powers Hydrogen, Admin)  
 **Yearly major release cadence** — v9 expected around May 2027 (aligned with Node 22 EOL)
@@ -64,7 +67,9 @@ No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 
 | Version | Date | Highlights |
 |---|---|---|
-| **v8.0.1** | **June 18, 2026** | 🚀 **Current stable** — Removes obsolete `AppLoadContext` type export left over from v7; `react-router-dom` package fully removed (import from `react-router` or `react-router/dom` instead) |
+| **v8.2.0** | **July 8, 2026** | 🚀 **Current stable** — Web Streams default server entry for non-Node Framework mode apps (non-Node runtimes now use `renderToReadableStream` without needing a custom `entry.server.tsx`); Node apps can opt in via `future.unstable_enableNodeReadableStream`; `nub` package manager detection |
+| **v8.1.0** | **June 29, 2026** | **Agent Skills** — `create-react-router` now scaffolds the React Router Agent Skill by default (prompt in interactive mode; `--no-agent-skills` to skip); **Observability Metadata** — new structured metadata on route responses for observability/tracing tools; several prerendering plugin bug fixes; Bun runtime `typegen` fix; Vite 8.1+ deprecation warning resolved |
+| **v8.0.1** | **June 18, 2026** | Removes obsolete `AppLoadContext` type export left over from v7; `react-router-dom` package fully removed (import from `react-router` or `react-router/dom` instead) |
 | **v8.0.0** | **June 17, 2026** | Initial v8 stable — ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; yearly cadence; all `future.v8_*` flags now defaults; `tsdown` replaces `tsup` in build pipeline; v6 and Remix v2 officially EOL; `hasErrorBoundary` removed from route objects; `meta.data` removed (use `loaderData`) |
 | **Remix 3 beta.4** | **June 5, 2026** | 🔬 **Remix 3 beta** (not production ready) — Breaking: middleware must now explicitly `next()` or return a `Response`; `createMiddleware()` helper for reusable chains; `remix/test` gains timeout + abort signal support; `MapTarget`/`MapHandler` removed from public types (use `Router`, `RouteBuilder`, `Action`, `Controller` instead) |
 | v7.18.0 | June 16, 2026 | Final v7 stable (security updates only going forward) |

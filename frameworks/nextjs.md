@@ -57,7 +57,7 @@
 - **`next/root-params`** — new API for accessing root layout params
 - **HTTP Cache-Control TTL-based invalidation** — `fetch()` now respects `Cache-Control` headers
 
-**Estimated 16.3 stable release:** **Mid-July 2026** — all major features announced; currently in final polishing.
+**Estimated 16.3 stable release:** **Mid-to-late July 2026** — **16.3.0-canary.83** (July 10, 2026) is the latest canary; the preview branch is active (`npm install next@preview`). No stable release date announced yet; the team continues to stabilize Instant Navigations and Turbopack Memory Eviction. Community production testing of the canary has been very positive (significant memory drops reported). Watch [nextjs.org/blog](https://nextjs.org/blog).
 
 ## v16.2 Highlights (March 18, 2026)
 

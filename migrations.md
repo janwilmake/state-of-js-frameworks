@@ -124,6 +124,39 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 
 ---
 
+### React Router v8.1.0 → v8.2.0 (July 8, 2026) — Web Streams Default Entry (Non-Breaking)
+
+**Effort:** Near-zero — purely additive; existing `entry.server.tsx` files are unaffected
+
+#### What Changed
+- **Web Streams default server entry for non-Node runtimes** — Framework mode apps that do **not** have `@react-router/node`, `@react-router/express`, or `@react-router/serve` as dependencies now get a `renderToReadableStream` default server entry automatically; previously they needed a custom `entry.server.tsx` to avoid Node-specific APIs
+- **Node opt-in** — Node-based apps can opt into Web Streams via `future.unstable_enableNodeReadableStream: true` in `react-router.config.ts`; may yield a small performance improvement since React Router internally uses Web Streams already
+
+```bash
+npm install react-router@latest   # → 8.2.0
+```
+
+No breaking changes. Non-Node apps that had a custom `entry.server.tsx` solely for `renderToReadableStream` can now delete it if they're not doing anything custom.
+
+---
+
+### React Router v8.0.0 → v8.1.0 (June 29, 2026) — Agent Skills & Observability (Non-Breaking)
+
+**Effort:** Near-zero — purely additive
+
+#### What Changed
+- **Agent Skills via `create-react-router`** — new projects are scaffolded with the React Router Agent Skill by default; `--no-agent-skills` flag to opt out; interactive prompts ask for confirmation
+- **Observability Metadata** — new structured metadata attached to route responses enabling better integration with OpenTelemetry, Datadog, and other observability tools
+- Several bug fixes: prerendering `buildEnd` timing regression, `typegen` crash under Bun, Vite 8.1+ deprecation warning
+
+```bash
+npm install react-router@latest   # → 8.1.0
+```
+
+No breaking changes.
+
+---
+
 ### React Router v8.0.0 → v8.0.1 (June 18, 2026) — `AppLoadContext` Removal
 
 **Effort:** Near-zero — only affects code using the `AppLoadContext` type from `react-router`
@@ -132,7 +165,7 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 - **`AppLoadContext` type removed** — this export from `react-router` was an obsolete leftover from the era before middleware was always-enabled. If you were using it for typing server request context, switch to `RouterContextProvider` patterns.
 
 ```bash
-npm install react-router@latest   # → 8.0.1
+npm install react-router@latest   # → 8.2.0
 ```
 
 No other changes in this patch.
@@ -313,6 +346,37 @@ Key changes:
 ---
 
 ## SvelteKit
+
+### SvelteKit 3.0.0-next — `kit.paths.origin` Breaking Change (July 6, 2026) ⚠️
+
+**Status:** Pre-release only (`@sveltejs/kit@next`); **not yet in stable 2.x**  
+**Effort:** Minimal — one config option rename (when you eventually migrate to SvelteKit 3)
+
+This change is documented here so teams evaluating SvelteKit 3 (when it eventually stabilizes) know what to expect.
+
+#### Breaking Change (SvelteKit 3 only)
+- **`kit.prerender.origin` removed** — the `origin` field under `prerender` config is gone
+- **Adapter-node `ORIGIN` environment variable removed** — the `ORIGIN` env var used by `@sveltejs/adapter-node` is no longer supported
+- **New: `kit.paths.origin`** — a single top-level `origin` config lives under `kit.paths`; replaces both of the above
+
+```diff
+// svelte.config.js — SvelteKit 3 migration
+export default {
+  kit: {
+    paths: {
++     origin: 'https://example.com',  // new location
+    },
+-   prerender: {
+-     origin: 'https://example.com',  // removed
+-   }
+  }
+};
+# Also remove ORIGIN= from adapter-node .env / deployment config
+```
+
+This change **only matters when you migrate to SvelteKit 3**. SvelteKit 2.x is unaffected.
+
+---
 
 ### SvelteKit 2.65.x → 2.66.0 (Non-Breaking — June 18, 2026)
 

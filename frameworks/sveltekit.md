@@ -64,6 +64,7 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 
 - **SvelteKit 2.69.2** (July 8, 2026) — **Latest stable**:
   - Fix: set `define` values on `globalThis` when running Vitest
+  - Note: `@sveltejs/adapter-node@6.0.0-next.2` (July 6) and `@sveltejs/kit@3.0.0-next.7` (July 7) continue the SvelteKit 3 pre-release track; the next major introduces a **breaking change** to origin configuration — **`kit.prerender.origin` and the adapter-node `ORIGIN` environment variable are removed** in favor of a new `kit.paths.origin` config option; update your configuration when migrating to SvelteKit 3.
 
 - **SvelteKit 2.69.1** (July 6, 2026):
   - ⚠️ **Security-adjacent** — Fix: prevent prototype pollution when deleting file inputs

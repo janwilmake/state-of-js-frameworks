@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: July 9, 2026. Covers Next.js 16.2.10 (16.3 preview active — stable imminent, mid-July), **React Router v8.0.1** 🚀 (ESM-only, Node 22.22+, Vite 7+) / **Remix 3 beta.4**, Nuxt 4.4.8 / Nuxt UI v4.9.0 ⚠️ (**Nuxt 3 EOL July 31 — 22 days away**), **SvelteKit 2.69.2** 🆕 (SvelteKit 3.0.0-next.7 pre-release), **Astro 7.0.6** 🚀 (stable since June 22 — Rust compiler, Sätteri, Vite 8 + Rolldown, Route Caching stable), **Angular 22.0.2** ✅. 🌐 **Major ecosystem events: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc, June 4, 2026); Astro 7.0 goes stable (June 22, 2026).**
+> Last updated: July 11, 2026. Covers Next.js 16.2.10 (16.3 canary.83 active — stable expected mid-to-late July), **React Router v8.2.0** 🚀 (July 8 — Web Streams default entry; v8.1.0 added Agent Skills) / **Remix 3 beta.4**, Nuxt 4.4.8 / Nuxt UI v4.9.0 ⚠️ (**Nuxt 3 EOL July 31 — 20 days away**), **SvelteKit 2.69.2** 🆕 (SvelteKit 3.0.0-next.7 pre-release; `kit.paths.origin` breaking change preview), **Astro 7.0.6** 🚀 (stable since June 22 — Rust compiler, Sätteri, Vite 8 + Rolldown, Route Caching stable), **Angular 22.0.2** ✅. 🌐 **Major ecosystem events: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc, June 4, 2026); Astro 7.0 goes stable (June 22, 2026); React Router v8.2.0 (July 8, 2026).**
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.10 | React Router v8.0.1 | Nuxt 4.4.8 | SvelteKit 2.69.2 | Astro 7.0.6 | Angular 22.0.2 |
+| Feature | Next.js 16.2.10 | React Router v8.2.0 | Nuxt 4.4.8 | SvelteKit 2.69.2 | Astro 7.0.6 | Angular 22.0.2 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -140,12 +140,12 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### React Router v8 🚀 (stable since June 17, 2026)
 ✅ **Best for:** SSR apps prioritizing web standards, accessibility, progressive enhancement, Shopify/Hydrogen; teams wanting a predictable yearly release cadence  
 ❌ **Avoid for:** Static sites, complex caching requirements, teams expecting ISR/PPR out of the box, or projects still on CJS infrastructure (v8 is ESM-only)  
-⚡ **Latest: v8.0.1** (June 18, 2026) — no new releases since June 18; removes obsolete `AppLoadContext` type; `react-router-dom` package fully removed (migrate imports to `react-router` / `react-router/dom`); ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; all `future.v8_*` flags now defaults; **React Router v6 + Remix v2 officially EOL** (no more security updates)
+⚡ **Latest: v8.2.0** (July 8, 2026) — Web Streams default server entry for non-Node runtimes (eliminates the need for a custom `entry.server.tsx` on Cloudflare Workers, Deno, Bun etc.); Node apps can opt in via `future.unstable_enableNodeReadableStream`; **v8.1.0** (June 29) — `create-react-router` now scaffolds Agent Skills by default; Observability Metadata on route responses; ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; **React Router v6 + Remix v2 officially EOL** (no more security updates)
 
 ### Nuxt 4
 ✅ **Best for:** Vue teams, hybrid rendering needs, projects wanting Nuxt UI v4 components  
 ❌ **Avoid for:** React-only teams, projects needing the largest ecosystem possible  
-⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue; **Nuxt UI v4.9.0** (June 17, 2026) — latest UI library release; **Nuxi** (June 9, 2026) — Nuxt Agent rebranded as "Nuxi"; ⚠️ **Nuxt 3 EOL: July 31, 2026** (~38 days away) — migrate to Nuxt 4 now
+⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue; **Nuxt UI v4.9.0** (June 17, 2026) — latest UI library release; **Nuxi** (June 9, 2026) — Nuxt Agent rebranded as "Nuxi"; ⚠️ **Nuxt 3 EOL: July 31, 2026** (**20 days away as of July 11**) — migrate to Nuxt 4 now; no new stable Nuxt 4 release since 4.4.8 (June 8)
 
 ### SvelteKit 2 / SvelteKit 3 (next)
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  

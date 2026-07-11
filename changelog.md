@@ -4,6 +4,81 @@
 
 ---
 
+## 2026-07-11 (run: July 11, 2026)
+
+### 🚀 React Router v8.2.0 (July 8, 2026) — Web Streams Default Server Entry
+
+**React Router v8.2.0** shipped July 8, 2026 — the second minor release of the v8 series, just 9 days after v8.1.0.
+
+**Headline: Web Streams default server entry for non-Node runtimes**
+
+Framework mode apps that do **not** declare a Node server adapter dependency (`@react-router/node`, `@react-router/express`, or `@react-router/serve`) now automatically get a `renderToReadableStream`-based default server entry. This means Cloudflare Workers, Deno, Bun, and other Web Standards runtimes **no longer need a custom `entry.server.tsx`** to avoid Node-only APIs.
+
+Node-based apps can also opt into Web Streams via a new future flag:
+```ts
+// react-router.config.ts
+export default {
+  future: {
+    unstable_enableNodeReadableStream: true,
+  },
+} satisfies Config;
+```
+This flag may yield a small perf improvement since React Router already uses Web Streams internally (avoids a conversion step). Custom `entry.server.tsx` files take precedence — no automatic changes.
+
+Other changes in v8.2.0:
+- `nub` package manager detection in `create-react-router` and `@react-router/dev`
+
+```bash
+npm install react-router@latest   # → 8.2.0
+```
+
+No breaking changes.
+
+---
+
+### React Router v8.1.0 (June 29, 2026) — Agent Skills + Observability Metadata 🤖
+
+**React Router v8.1.0** shipped June 29, 2026:
+
+- **Agent Skills via `create-react-router`** — scaffolding new React Router projects now includes the official [React Router Agent Skill](https://github.com/remix-run/react-router/tree/main/.agents/skills/react-router) by default; interactive mode prompts; `--no-agent-skills` flag to opt out; non-interactive `--yes` mode includes skills automatically; the skill gives AI coding agents (Claude Code, Cursor, Copilot) structured knowledge of React Router's API, patterns, and best practices
+- **Observability Metadata** — new structured metadata attached to route responses; enables cleaner integration with OpenTelemetry, Datadog, New Relic, and similar tracing/monitoring tools without custom middleware
+- **Bug fixes:**
+  - Prerendering plugin regression: `react-router.config.ts` `buildEnd` hook was firing before prerendering completed — fixed
+  - `react-router typegen` crash under Bun runtime when Babel default imports are already unwrapped — fixed
+  - `envFile: false` deprecation warning in Vite 8.1+ replaced with `envDir: false`
+  - Node server condition only added for apps that declare a Node server adapter dependency (prevents non-Node runtimes from accidentally resolving Node-specific package exports)
+
+```bash
+npm install react-router@latest   # → 8.2.0 (latest as of July 11)
+```
+
+Also: **v7.18.1** shipped on the v7 LTS line (security/bug fix patch; continue receiving security updates on v7).
+
+---
+
+### Next.js 16.3 Canary Progress (July 2026) 🔬
+
+- **Current stable: 16.2.10** (July 1, 2026) — last stable republishes `@next/swc-wasm-web` missed since 16.2.4; no code changes
+- **16.3.0-canary.83** (July 10, 2026) — latest canary; documentation and test fixes; Turbopack service worker improvements; `import.meta.glob` and Rust React Compiler remain in progress
+- **Preview dist-tag:** `npm install next@preview` → 16.3.0-preview.x
+- **16.3 stable has NOT shipped** as of July 11, 2026; team is in final stabilization of Instant Navigations; now estimated **mid-to-late July 2026** rather than "mid-July"
+- Key 16.3 features still coming: Instant Navigations (Stream/Cache/Block), Partial Prefetching, Turbopack Memory Eviction (stable), Persistent Build Cache, Rust React Compiler, `import.meta.glob`, Agent Browser
+
+---
+
+### SvelteKit 3.0.0-next.7 + adapter-node Breaking Change (July 7, 2026) ⚠️
+
+**SvelteKit 3 pre-release** continues progressing (still **not production ready**):
+
+- **`@sveltejs/adapter-node@6.0.0-next.2`** (July 6) — **breaking change** for SvelteKit 3 adopters: `kit.prerender.origin` and the adapter-node `ORIGIN` environment variable are **removed**; replaced by a new unified **`kit.paths.origin`** config option; this is a preview of a SvelteKit 3 configuration consolidation goal
+- **`@sveltejs/kit@3.0.0-next.7`** (July 7) — fix: avoid client build warning about externalising `node:async_hooks`; fix: allow reserved words (`delete`, `class`) as remote function export names
+- `adapter-netlify@7.0.0-next.2` also updated (dependency updates)
+- **SvelteKit 2.69.2 remains the stable channel** — all changes above are pre-release only
+
+⚠️ **If you're testing SvelteKit 3 pre-releases:** Update your config from `kit.prerender.origin` → `kit.paths.origin` and remove `ORIGIN=` from your `adapter-node` environment configuration.
+
+---
+
 ## 2026-06-23 (run: June 23, 2026)
 
 ### React Router v8.0.1 (June 18, 2026) — Quick Patch After Launch 🔧
