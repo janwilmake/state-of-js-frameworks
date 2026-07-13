@@ -4,6 +4,101 @@
 
 ---
 
+## 2026-07-13 (run: July 13, 2026)
+
+### Remix 3 — v3.0.0-beta.5 (July 1, 2026) — Closer to Stable 🚀
+
+**Remix 3 beta.5** released July 1, 2026 — officially announced via the [@remix_run X account](https://x.com/remix_run/status/2072399985711174136) as the release that "moves Remix 3 much closer to stable-ready." GitHub shows `remix v3.0.0-beta.5 Latest` as of July 1.
+
+**What's new in beta.5:**
+- **Improved template defaults** — the `npx remix@next new` scaffold template updated with better starting patterns
+- **Expanded first-party `remix/ui/*` components, mixins, and APIs** — the built-in component library grows; more DOM mixins for native element behavior composition
+- **Sturdier route-pattern matching + href generation** — edge cases in route pattern parsing and `href` helper generation addressed; fixes issues with dynamic segments and optional parameters
+- **Numerous bug fixes and added features** — general beta stabilization; no specific breaking changes announced vs. beta.4
+
+```bash
+npx remix@next new my-remix-app   # → Remix 3 beta.5
+```
+
+**Status:** Still **not production ready**. The "closer to stable-ready" framing is meaningful — the team is actively converging on a stable API surface. No stable release date has been announced. Monitor [remix.run/blog](https://remix.run/blog) and [github.com/remix-run/remix](https://github.com/remix-run/remix).
+
+---
+
+### Nuxt Ecosystem — `@nuxt/content` v3.15.0 + `@nuxt/icon` v2.3.0 (July 2, 2026) 📦
+
+**`@nuxt/content` v3.15.0** (July 2, 2026):
+- **Explicit Bun SQLite connector** — new `bun` connector for Bun runtime deployments (SQLite-backed content on Bun without workarounds); by `@0x77dev` and `@farnabaz`
+- **Type inference for `extraFields`** in `useSearchCollection` — `extraFields` now properly infers TypeScript types on search result objects; by `@hendrikheil`
+- **Bug fixes:** `pnpm enableGlobalVirtualStore` content validator fix; HMR now correctly updates all matching collections when a file changes; search heading-level boost curve tuned for better relevance; Vercel: use `/tmp` directory for content cloning
+- `npm install @nuxt/content@latest` → **3.15.0**
+
+**`@nuxt/icon` v2.3.0** (July 2, 2026):
+- **Standalone Vite plugin** — reusable utilities for client-side icon bundling; can be used outside full Nuxt apps; by `@antfubot`
+- `npm install @nuxt/icon@latest` → **2.3.1** (bug fix patch released same day: fixes icon scanner context for Nuxt layers)
+
+**`@nuxt/scripts` v1.3.0** (June 30, 2026):
+- **Proxy path aliases** — hide third-party hostnames behind local paths (great for ad-blocker resilience and privacy)
+- Fix: avoid server-side script use callbacks
+
+---
+
+### ⚠️ Angular Service Worker CVEs (July 8, 2026) — Security Advisory
+
+HeroDevs disclosed two Angular Service Worker security vulnerabilities on July 8, 2026:
+
+- **CVE-2026-50169** — Angular Service Worker strips client-defined `RequestInit.credentials` and `RequestInit.redirect` during asset reconstruction; applications relying on the service worker to respect `credentials: 'include'` or `redirect: 'manual'` for cached assets may have credentials leaked or unintended redirects followed
+- **CVE-2026-50184** — Related request-policy stripping affecting credentialed requests
+- **CVE-2026-54264** — Service worker discards client-defined request policy during asset reconstruction; applications using `@angular/service-worker` with sensitive cross-origin requests are affected
+
+**Current status:** The Angular team acknowledged the advisories. No patch has been confirmed in a stable Angular 22 release as of July 13, 2026 (22.0.2 from June 17 predates these disclosures). Monitor [github.com/angular/angular/security/advisories](https://github.com/angular/angular/security/advisories) for patches.
+
+**Mitigation:** If your app uses Angular Service Worker (`@angular/service-worker`) with credentialed cross-origin requests, review whether cached asset fetches bypass intended request policies. Consider disabling caching for such resources in your `ngsw-config.json` until a patch ships.
+
+---
+
+### Angular 22.1 Pre-release Track Active (late June 2026) 🔬
+
+The Angular 22.1 pre-release track is progressing:
+
+- **22.1.0-next.3** (June 26, 2026) — migration fix: resolve migration failure when `tsconfig` specifies `rootDir`; 3 impacting commits by `aparzi` and `alxhub`
+- **22.1.0-next.2** (June 25, 2026) — previous pre-release
+- **22.1.0-next.0** (June 10, 2026) — introduced: `linkedSignal` custom `set` option, JSONP deprecated in `HttpClient`, foreign component `@content` improvements, HTTP transfer cache skips uncacheable/credentialed requests
+
+Angular 22.1 stable is expected approximately November 2026 per the 6-month cadence (likely a minor with no breaking changes). No GA date announced.
+
+---
+
+### "What's New in Svelte: July 2026" — Official Monthly Recap 📖
+
+The official [July 2026 monthly recap](https://svelte.dev/blog/whats-new-in-svelte-july-2026) (published July 1, 2026) summarizes what landed in June–early July. **Theme: configuration consolidation and SvelteKit 3 previews.**
+
+**Key highlights (many already in prior changelog entries):**
+- **SvelteKit config in `vite.config.js`** (kit@2.62.0) — pass SvelteKit config directly to the Vite plugin; `svelte.config.js` is no longer required; this previews how **SvelteKit 3 will require config to live in `vite.config.js`**
+- **Experimental explicit environment variables** (kit@2.63.0) — declare and type env vars in one place; previews how `$env/*` will work in SvelteKit 3
+- **Remote function commands can receive `File` objects directly** (kit@2.64.0) — no manual `FormData` wrapping needed for file uploads
+- **Svelte CLI (`sv`) updates** (sv@0.16.0): demo template uses `{const ...}` declaration tags; `sv create` scaffolds against `^2.62.0` with config in Vite plugin; new experimental add-on to toggle experimental flags; `drizzle` and `better-auth` add-ons support explicit env vars; new `defineEnv` and `svelteConfig` helpers in `sv-utils@0.3.0`
+- **Language tools** in sync with `{const ...}` declaration tags — whole toolchain aligned
+
+**Notable SvelteKit 3.0.0-next.6 features** (landed in the pre-release track in early July):
+- **`type: 'module'` for service worker registrations** — modernizes service worker registration
+- **`dirty()` property on form fields** — reactive property tracking whether a form field has been changed from its initial value
+- **`cookies.parse` method** — parse raw `Cookie` header strings into objects
+- **`form.submitted` property** (first appeared in next.5, now in stable 2.69.0)
+
+**Current stable: SvelteKit 2.69.2** — `npm install @sveltejs/kit@latest`
+
+---
+
+### Next.js 16.3 Canary — Continued Progress Toward Stable (July 10–13, 2026) 🔬
+
+- **16.3.0-canary.83** (July 10, 2026) — Latest canary: documentation fixes (default error/not-found UI note, immutable static assets docs, progressive web apps service worker docs), Turbopack service worker e2e simplification, allow-runtime fixes for Link Server component child detection
+- **16.3 stable has NOT shipped** as of July 13, 2026
+- **Current stable: 16.2.10** (July 1, 2026); `npm install next@latest` → 16.2.10
+- **`npm install next@preview`** → latest 16.3 preview build (active)
+- Features still coming in 16.3 stable: Instant Navigations (Stream/Cache/Block modes), Partial Prefetching, Turbopack Memory Eviction, Persistent Build Cache, Rust React Compiler, `import.meta.glob`, Agent Browser
+
+---
+
 ## 2026-07-11 (run: July 11, 2026)
 
 ### 🚀 React Router v8.2.0 (July 8, 2026) — Web Streams Default Server Entry

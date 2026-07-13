@@ -7,8 +7,9 @@
 **22.0.2** (June 17, 2026) — 🔥 Latest stable patch  
 **22.0.1** (June 10, 2026) — Previous patch  
 **22.0.0** (June 3, 2026) — Current stable major — Signal Forms stable, Angular Aria stable, async reactivity APIs stable  
-**22.1.0-next.0** (June 10, 2026) — Pre-release (next track); `linkedSignal` custom `set`, JSONP deprecated, foreign component improvements  
+**22.1.0-next.3** (June 26, 2026) — Latest pre-release on next track; migration fix for `tsconfig` `rootDir`; prior: `linkedSignal` custom `set`, JSONP deprecated, foreign component improvements  
 **21.2.17** (June 10, 2026) — Latest stable patch on the v21.x LTS line  
+⚠️ **Service Worker CVEs (July 8, 2026)** — CVE-2026-50169, CVE-2026-50184, CVE-2026-54264 disclosed; `@angular/service-worker` request-policy stripping; no patch in 22.0.x yet; see Security Notes section  
 🔴 **Angular 19.x reached EOL on May 19, 2026** — Google will issue no further security patches; teams on v19 are running unsupported software  
 ⚠️ **Angular 21.x active support ended May 19, 2026** — v21 now in LTS (security patches only until May 19, 2027)  
 ✅ **Angular 22 is now stable** (released June 3, 2026) — Signal Forms stable, Angular Aria stable, async reactivity APIs stable, Angular MCP stable, TypeScript 6 support
@@ -162,6 +163,14 @@ This trajectory is genuine. Angular is no longer the "legacy enterprise choice" 
 - **Zone.js complexity** — even with Signals, Zone.js is still the default; zoneless migration requires deliberate effort
 - **Slower ecosystem** — fewer UI component libraries than React; Material Design is good but not as versatile as shadcn/Tailwind
 - **Over-engineered for small projects** — Angular's structure is a strength at scale but overhead for a CRUD MVP
+
+## Security Notes (July 2026)
+
+⚠️ **Angular Service Worker CVEs (July 8, 2026)** — HeroDevs disclosed three vulnerabilities affecting `@angular/service-worker`:
+- **CVE-2026-50169 / CVE-2026-50184** — Service worker strips `RequestInit.credentials` and `RequestInit.redirect` during asset reconstruction; credentialed cross-origin requests may have credentials leaked
+- **CVE-2026-54264** — Service worker discards client-defined request policy during asset reconstruction; affects apps using `@angular/service-worker` with sensitive cross-origin caching
+- **Status:** Acknowledged; no stable patch confirmed in 22.0.x as of July 13, 2026. Monitor [github.com/angular/angular/security/advisories](https://github.com/angular/angular/security/advisories)
+- **Mitigation:** If using `@angular/service-worker` with credentialed cross-origin requests, exclude those resources from caching in `ngsw-config.json` until patched
 
 ## Support Policy
 

@@ -71,7 +71,8 @@ No platform lock-in. Adapters are thin wrappers around `Request`/`Response`.
 | **v8.1.0** | **June 29, 2026** | **Agent Skills** — `create-react-router` now scaffolds the React Router Agent Skill by default (prompt in interactive mode; `--no-agent-skills` to skip); **Observability Metadata** — new structured metadata on route responses for observability/tracing tools; several prerendering plugin bug fixes; Bun runtime `typegen` fix; Vite 8.1+ deprecation warning resolved |
 | **v8.0.1** | **June 18, 2026** | Removes obsolete `AppLoadContext` type export left over from v7; `react-router-dom` package fully removed (import from `react-router` or `react-router/dom` instead) |
 | **v8.0.0** | **June 17, 2026** | Initial v8 stable — ESM-only, Node 22.22+, React 19.2.7+, Vite 7+; yearly cadence; all `future.v8_*` flags now defaults; `tsdown` replaces `tsup` in build pipeline; v6 and Remix v2 officially EOL; `hasErrorBoundary` removed from route objects; `meta.data` removed (use `loaderData`) |
-| **Remix 3 beta.4** | **June 5, 2026** | 🔬 **Remix 3 beta** (not production ready) — Breaking: middleware must now explicitly `next()` or return a `Response`; `createMiddleware()` helper for reusable chains; `remix/test` gains timeout + abort signal support; `MapTarget`/`MapHandler` removed from public types (use `Router`, `RouteBuilder`, `Action`, `Controller` instead) |
+| **Remix 3 beta.5** | **July 1, 2026** | 🔬 **Remix 3 beta** (not production ready) — "Closer to stable-ready": improved template defaults; expanded first-party `remix/ui/*` components, mixins, and APIs; sturdier route-pattern matching + href generation; numerous bug fixes; no new breaking changes vs. beta.4 |
+| Remix 3 beta.4 | June 5, 2026 | Breaking: middleware must now explicitly `next()` or return a `Response`; `createMiddleware()` helper for reusable chains; `remix/test` gains timeout + abort signal support; `MapTarget`/`MapHandler` removed from public types (use `Router`, `RouteBuilder`, `Action`, `Controller` instead) |
 | v7.18.0 | June 16, 2026 | Final v7 stable (security updates only going forward) |
 | v7.17.0 | June 4, 2026 | **Bundled docs for AI agents** — official Markdown docs now shipped inside `node_modules/react-router/docs`; AI coding agents can read docs locally without network |
 | v7.16.0 | May 28, 2026 | Stabilize `future.v8_trailingSlashAwareDataRequests`; future flag warnings for v8 flags |
@@ -118,7 +119,7 @@ npm install react-router@8
 
 ## Remix 3 (Beta — Not Production Ready)
 
-Remix 3 is at **beta.4** (June 5, 2026). Key points:
+Remix 3 is at **beta.5** (July 1, 2026) — described as "much closer to stable-ready." Key points:
 - **No React dependency** — built on Preact; components use web-native `EventTarget` patterns instead of React hooks
 - **No migration path** from Remix v2 or React Router v7 — this is a net-new framework
 - **Full-stack batteries-included** — routes, request handlers, middleware, sessions, auth, forms, uploads, assets, data/database management, UI components, theming, networking, tests — **one dependency**

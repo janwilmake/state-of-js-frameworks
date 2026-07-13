@@ -5,11 +5,13 @@
 ## Latest Version
 
 **4.4.8** (June 8, 2026) — Current stable (latest)  
-**3.21.8** (June 8, 2026) — Maintenance; ⚠️ **EOL on July 31, 2026 — 20 days away (as of July 11, 2026); migrate now**  
+**3.21.8** (June 8, 2026) — Maintenance; ⚠️ **EOL on July 31, 2026 — 18 days away (as of July 13, 2026); migrate now**  
 **Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
 
 **Ecosystem releases (July 2026):**
-- **`@nuxt/content` v3.15.0** (July 2, 2026) — latest content module release
+- **`@nuxt/content` v3.15.0** (July 2, 2026) — explicit Bun SQLite connector for Bun deployments; type inference for `extraFields` in `useSearchCollection`; HMR updates all matching collections on file change; tuned FTS5 search heading boost
+- **`@nuxt/icon` v2.3.1** (July 2, 2026) — standalone Vite plugin for client-side icon bundling; layer-aware icon scanner context
+- **`@nuxt/scripts` v1.3.0** (June 30, 2026) — proxy path aliases to hide third-party hostnames
 - **`@nuxt/ui` v4.9.0** (June 17, 2026) — Calendar month/year selection (`type` prop: `date | month | year`; heading cycles `day→month→year` on click); new `viewControls`/`viewButton` props; range picker compatible
 
 ## Key Features

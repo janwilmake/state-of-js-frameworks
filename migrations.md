@@ -107,6 +107,26 @@ Remix 3 is **NOT** an upgrade path from Remix v2. It is a completely separate fr
 
 ---
 
+### Remix 3 beta.4 → beta.5 (July 1, 2026) — Non-Breaking Additive Update
+
+**Effort:** Near-zero — no breaking changes vs. beta.4
+
+#### What Changed
+- **Improved template defaults** — `npx remix@next new` scaffold improvements; no existing code affected
+- **Expanded `remix/ui/*` components, mixins, and APIs** — purely additive; new components available to use
+- **Sturdier route-pattern matching + href generation** — bug fixes; if your code had broken href generation for dynamic/optional segments, this may fix it
+- No new breaking changes vs. beta.4
+
+```bash
+npx remix@next new my-remix-app   # → beta.5
+# Or to update an existing beta.4 project:
+npm install remix@next
+```
+
+**Status:** Still not production ready. No stable release date announced.
+
+---
+
 ### Remix 3 beta.3 → beta.4 (June 5, 2026) — Internal Breaking Change
 
 **Effort:** Minimal (only affects projects already using the Remix 3 beta)
@@ -613,6 +633,35 @@ Key changes: Content Layer API stabilized (replaces experimental Content Collect
 ---
 
 ## Angular
+
+### Angular 22 — Service Worker CVEs (July 8, 2026) ⚠️
+
+**Status:** Vulnerabilities disclosed; no stable patch in 22.0.x as of July 13, 2026  
+**Effort:** Low — configuration change pending patch availability
+
+#### CVEs
+- **CVE-2026-50169 / CVE-2026-50184** — `@angular/service-worker` strips `credentials` and `redirect` request policies during cached asset reconstruction; may leak credentials for cross-origin assets
+- **CVE-2026-54264** — Related request-policy stripping
+
+#### Temporary Mitigation (until a patch ships)
+If your app uses `@angular/service-worker` with credentialed cross-origin resources, add those URL patterns to the `exclude` list in `ngsw-config.json`:
+
+```json
+{
+  "dataGroups": [
+    {
+      "name": "api-credentialed",
+      "urls": ["/api/**"],
+      "cacheConfig": { "strategy": "freshness" },
+      "exclude": ["/api/auth/**"]  // exclude credentialed endpoints
+    }
+  ]
+}
+```
+
+Monitor [github.com/angular/angular/security/advisories](https://github.com/angular/angular/security/advisories) for the patched release and run `ng update @angular/core @angular/service-worker` as soon as it ships.
+
+---
 
 ### Angular 21 → 22 ✅ (Stable since June 3, 2026; latest patch: 22.0.2)
 
