@@ -62,6 +62,8 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
   - **Svelte CLI (`sv`) updates** — `sv@0.16.0`: demo template now uses `{const ...}` declaration tags; `sv create` scaffolds against `^2.62.0` with config in the Vite plugin by default; new experimental add-on to toggle experimental flags from CLI; `drizzle` and `better-auth` add-ons support new explicit env vars; new `defineEnv` and `svelteConfig` helpers in `sv-utils@0.3.0`
   - **Language tools** catch up with Svelte's new `{const ...}` declaration tags — whole toolchain now in sync
 
+- **SvelteKit 3 adapter pre-release peer dep fixes** (July 14, 2026) — multiple SvelteKit 3 adapter pre-releases patched to correctly allow `3.0.0-next.*` versions to satisfy the peer dependency range: `@sveltejs/adapter-static@4.0.0-next.1`, `@sveltejs/adapter-node@6.0.0-next.3`, `@sveltejs/adapter-netlify@7.0.0-next.3` (also includes `utils.js` in `package.json` files fix), `@sveltejs/adapter-cloudflare@8.0.0-next.2`. These do **not** affect the stable `2.69.2` line.
+
 - **SvelteKit 2.69.2** (July 8, 2026) — **Latest stable**:
   - Fix: set `define` values on `globalThis` when running Vitest
   - Note: `@sveltejs/adapter-node@6.0.0-next.2` (July 6) and `@sveltejs/kit@3.0.0-next.7` (July 7) continue the SvelteKit 3 pre-release track; the next major introduces a **breaking change** to origin configuration — **`kit.prerender.origin` and the adapter-node `ORIGIN` environment variable are removed** in favor of a new `kit.paths.origin` config option; update your configuration when migrating to SvelteKit 3.

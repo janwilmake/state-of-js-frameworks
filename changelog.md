@@ -4,6 +4,54 @@
 
 ---
 
+## 2026-07-15 (run: July 15, 2026)
+
+### ⚠️ Next.js Formal Security Release Process Announced + Patch Due July 20 (July 13, 2026)
+
+The Next.js team published a blog post on **July 13, 2026** announcing a formalised security release process:
+
+- **Regular, advance-notice security patches** — the team will now publish security patches on a predictable schedule and give advance notice before each release
+- **First patch under new process: July 20, 2026** — the first security release under the new formal process will address multiple security issues; details will be disclosed on release day
+- **All users on 16.x or 15.x should plan to upgrade on July 20** — both the 16.x and 15.x stable lines will receive patches; exact CVEs not yet disclosed
+
+This formalises what was already an active security posture (13 advisories patched in May 2026). Teams running Next.js in production should monitor [nextjs.org/blog](https://nextjs.org/blog) and plan for a patch upgrade on or immediately after July 20, 2026.
+
+---
+
+### Next.js 16.3.0-canary.86 (July 14, 2026) 🔬
+
+The latest canary continues progress toward 16.3 stable:
+
+- **Dev server request panel (5/5)** — `request insights` DevTools panel completes its 5-part rollout
+- **`addDevSync` React skill** — adds React sync development skill
+- **Docs** — immutable static assets documentation updated; `useSearchParams` example stray link fixed; `revalidateTag` with zero expiry for route handlers documented
+- **React upgrade** — canary bundles React from `5123b063-20260708` → `7023f501-20260714`
+- **TypeScript 7 CLI backend (experimental)** — `16.3.0-preview.6` added experimental TypeScript 7 CLI backend (TypeScript 7.0 released July 8, 2026; new Go-based compiler delivers significant compilation speed improvements); Next.js 16.3 is positioned to be the first major framework with day-one TypeScript 7 support in the preview track
+
+**16.3 stable has NOT shipped** as of July 15, 2026. `npm install next@preview` → latest preview build.
+
+---
+
+### @nuxt/scripts v1.3.1 (July 14, 2026) 📦
+
+Minor bug fix patch on top of v1.3.0:
+- **Bug fixes** for the proxy path alias feature and general stability improvements
+- `npm install @nuxt/scripts@latest` → **1.3.1**
+
+---
+
+### SvelteKit 3 Pre-release Adapter Peer Dep Fixes (July 14, 2026) 🔬
+
+Multiple SvelteKit 3 adapter pre-releases shipped on July 14 to fix peer dependency handling:
+- **`@sveltejs/adapter-static@4.0.0-next.1`** — fixes: allow prerelease SvelteKit 3 versions to satisfy the peer dependency range
+- **`@sveltejs/adapter-node@6.0.0-next.3`** — same peer dep fix; updated dependencies
+- **`@sveltejs/adapter-netlify@7.0.0-next.3`** — fixes: include `utils.js` in `package.json` files; peer dep fix
+- **`@sveltejs/adapter-cloudflare@8.0.0-next.2`** — peer dep fix for prerelease SvelteKit 3
+
+These patches ensure that adapter ecosystem tooling correctly resolves against the `3.0.0-next.*` pre-release range. **None of these affect the stable `@sveltejs/kit@2.69.2` line** — the SvelteKit 3 adapter track is not yet production-ready.
+
+---
+
 ## 2026-07-13 (run: July 13, 2026)
 
 ### Remix 3 — v3.0.0-beta.5 (July 1, 2026) — Closer to Stable 🚀

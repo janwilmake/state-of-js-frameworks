@@ -57,7 +57,9 @@
 - **`next/root-params`** — new API for accessing root layout params
 - **HTTP Cache-Control TTL-based invalidation** — `fetch()` now respects `Cache-Control` headers
 
-**Estimated 16.3 stable release:** **Mid-to-late July 2026** — **16.3.0-canary.83** (July 10, 2026) is the latest canary; the preview branch is active (`npm install next@preview`). No stable release date announced yet; the team continues to stabilize Instant Navigations and Turbopack Memory Eviction. Community production testing of the canary has been very positive (significant memory drops reported). Watch [nextjs.org/blog](https://nextjs.org/blog).
+**Estimated 16.3 stable release:** **Mid-to-late July 2026** — **16.3.0-canary.86** (July 14, 2026) is the latest canary; the preview branch is active (`npm install next@preview`). No stable release date announced yet; the team continues to stabilize Instant Navigations and Turbopack Memory Eviction. Community production testing of the canary has been very positive (significant memory drops reported). Watch [nextjs.org/blog](https://nextjs.org/blog).
+
+**canary.86 changes (July 14):** Dev server request panel (5/5) complete; React sync skill added; React upgraded to `7023f501-20260714`; docs improved (immutable static assets, useSearchParams, revalidateTag with zero expiry). **16.3.0-preview.6** added an experimental TypeScript 7 CLI backend — TypeScript 7.0 (the new Go-based compiler) released July 8, 2026 with major compilation speed improvements; Next.js 16.3 is on track to be the first major React framework with TypeScript 7 support out of the box.
 
 ## v16.2 Highlights (March 18, 2026)
 
@@ -95,6 +97,8 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 - **Over-engineered for simple static sites** — Astro is likely a better fit
 
 ## Security Notes
+
+- **⚠️ Upcoming security patch: July 20, 2026** — The Next.js team announced on July 13, 2026 a formal security release process. The first release under this process is scheduled for **July 20, 2026** and will address multiple security issues. Affected versions and CVE details to be disclosed on release day. All users on 16.x and 15.x should plan to upgrade immediately on or after July 20. Monitor [nextjs.org/blog](https://nextjs.org/blog).
 
 - **16.2.10** (July 1, 2026) — Republishes `@next/swc-wasm-web` which was accidentally not published since 16.2.4; no other changes
 - **15.5.20** (July 1, 2026) — Same purpose: republishes `@next/swc-wasm-web` for the 15.x line
