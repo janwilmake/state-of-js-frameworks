@@ -1,6 +1,6 @@
 # Framework Comparison Matrix
 
-> Last updated: July 15, 2026. Covers Next.js 16.2.10 (16.3 canary.86 active — ⚠️ **security patch due July 20**; stable expected imminently after) / **React Router v8.2.0** 🚀 (July 8 — Web Streams default entry) / **Remix 3 beta.5** 🔬 (July 1 — "closer to stable-ready"), Nuxt 4.4.8 / Nuxt UI v4.9.0 ⚠️ (**Nuxt 3 EOL July 31 — 16 days away**), **SvelteKit 2.69.2** (SvelteKit 3.0.0-next.7 pre-release; adapter peer dep fixes July 14), **Astro 7.0.6** 🚀 (stable since June 22 — Rust compiler, Sätteri, Vite 8 + Rolldown, Route Caching stable), **Angular 22.0.2** ✅ ⚠️ (Service Worker CVEs CVE-2026-50169/50184/54264 — patch pending). 🌐 **Major ecosystem events: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc, June 4, 2026); Astro 7.0 goes stable (June 22, 2026); React Router v8.2.0 (July 8, 2026); TypeScript 7.0 released (July 8, 2026); Nuxt 3 EOL July 31, 2026; Next.js security patch July 20, 2026.**
+> Last updated: July 17, 2026. Covers Next.js 16.2.10 (16.3 canary.87 active — ⚠️ **security patch due July 20: 4 high + 5 medium CVEs**; stable 16.3 expected after) / **React Router v8.2.0** 🚀 (July 8 — Web Streams default entry) / **Remix 3 beta.5** 🔬 (July 1 — "closer to stable-ready"), Nuxt 4.4.8 / Nuxt UI v4.9.0 ⚠️ (**Nuxt 3 EOL July 31 — 14 days away**), **SvelteKit 2.69.3** 🆕 (July 13 — Vitest `define` fix; 3.0.0-next.8 July 14 — hyphenated params/matchers, `ErrorProps` type), **Astro 7.0.6** 🚀 (stable since June 22 — Rust compiler, Sätteri, Vite 8 + Rolldown, Route Caching stable; `@astrojs/node@11.0.2` trailing-slash open redirect fix), **Angular 22.0.2** ✅ ⚠️ (Service Worker CVEs CVE-2026-50169/50184/54264 — patch pending). 🌐 **Major ecosystem events: Cloudflare acquires VoidZero (Vite/Vitest/Rolldown/Oxc, June 4, 2026); Astro 7.0 goes stable (June 22, 2026); React Router v8.2.0 (July 8, 2026); TypeScript 7.0 released (July 8, 2026); Nuxt 3 EOL July 31, 2026; Next.js security patch July 20, 2026.**
 
 ## Quick Decision Guide
 
@@ -17,7 +17,7 @@
 
 ## Feature Matrix
 
-| Feature | Next.js 16.2.10 | React Router v8.2.0 | Nuxt 4.4.8 | SvelteKit 2.69.2 | Astro 7.0.6 | Angular 22.0.2 |
+| Feature | Next.js 16.2.10 | React Router v8.2.0 | Nuxt 4.4.8 | SvelteKit 2.69.3 | Astro 7.0.6 | Angular 22.0.2 |
 |---|---|---|---|---|---|---|
 | **Language** | JS/TS | JS/TS | JS/TS | JS/TS | JS/TS | **TypeScript only** |
 | **UI Library** | React 19 | React 19 | Vue 3 | Svelte 5 | Any (React/Vue/Svelte/Solid) | Angular |
@@ -135,7 +135,8 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 
 ### Next.js 16
 ✅ **Best for:** Complex React applications, full-stack SaaS, e-commerce, teams already invested in React  
-❌ **Avoid for:** Simple static sites, teams new to React, projects needing platform independence
+❌ **Avoid for:** Simple static sites, teams new to React, projects needing platform independence  
+⚠️ **Security: July 20, 2026 patch** — 4 high + 5 medium CVEs patching for 16.2.x and 15.5.x; upgrade immediately on July 20. **16.3 canary.87** is latest pre-release; stable 16.3 expected after the security patch drop.
 
 ### React Router v8 🚀 (stable since June 17, 2026)
 ✅ **Best for:** SSR apps prioritizing web standards, accessibility, progressive enhancement, Shopify/Hydrogen; teams wanting a predictable yearly release cadence  
@@ -146,12 +147,12 @@ Approximate JavaScript delivered to the browser for a minimal "Hello World" appl
 ### Nuxt 4
 ✅ **Best for:** Vue teams, hybrid rendering needs, projects wanting Nuxt UI v4 components  
 ❌ **Avoid for:** React-only teams, projects needing the largest ecosystem possible  
-⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue; **Nuxt UI v4.9.0** (June 17, 2026) — latest UI library release; **Nuxi** (June 9, 2026) — Nuxt Agent rebranded as "Nuxi"; **`@nuxt/content` v3.15.0** (July 2) — Bun SQLite connector, `extraFields` type inference, HMR fix; **`@nuxt/icon` v2.3.1** (July 2) — standalone Vite plugin; ⚠️ **Nuxt 3 EOL: July 31, 2026** (**18 days away as of July 13**) — migrate to Nuxt 4 now; no new stable Nuxt 4 core release since 4.4.8 (June 8)
+⚡ **Latest: 4.4.8** (June 8, 2026) — hotfix for macOS dev server issue; **Nuxt UI v4.9.0** (June 17, 2026) — latest UI library release; **Nuxi** (June 9, 2026) — Nuxt Agent rebranded as "Nuxi"; **`@nuxt/content` v3.15.0** (July 2) — Bun SQLite connector, `extraFields` type inference, HMR fix; **`@nuxt/icon` v2.3.1** (July 2) — standalone Vite plugin; **`@nuxt/scripts` v1.3.1** (July 14) — proxy path alias bug fixes; ⚠️ **Nuxt 3 EOL: July 31, 2026** (**14 days away as of July 17**) — migrate to Nuxt 4 now; no new stable Nuxt 4 core release since 4.4.8 (June 8)
 
 ### SvelteKit 2 / SvelteKit 3 (next)
 ✅ **Best for:** DX-focused teams, performance-critical sites, small-to-medium projects, MVPs  
 ❌ **Avoid for:** Large teams requiring a broad hiring pool, projects with heavy React library dependencies  
-⚡ **Latest: 2.69.2** (July 8, 2026) — fix: prototype pollution prevention for file input deletion; fix: unhandled promise rejection. **2.69.0** (July 6) adds `form.submitted` property. **July 2026 theme:** SvelteKit config can now live in `vite.config.js` (no `svelte.config.js` needed — preview of Kit 3 requirement). **SvelteKit 3.0.0-next.7** pre-release also active — Vite Environment API, Rolldown for `adapter-node`, explicit env vars
+⚡ **Latest: 2.69.3** (July 13, 2026) — Fix: Vitest `define`/`globalThis` injection. **2.69.2** (July 8) — prototype pollution prevention for file inputs. **2.69.0** (July 6) adds `form.submitted` property. **July 2026 theme:** SvelteKit config can now live in `vite.config.js` (no `svelte.config.js` needed — preview of Kit 3 requirement). **SvelteKit 3.0.0-next.8** (July 14) pre-release — hyphenated param/matcher names, `ErrorProps` generated type; Vite Environment API, Rolldown for `adapter-node`, explicit env vars
 
 ### Astro 7 🚀 (stable since June 22, 2026)
 ✅ **Best for:** Marketing sites, blogs, documentation, content-heavy sites, multi-framework migrations  

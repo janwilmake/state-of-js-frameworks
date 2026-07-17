@@ -4,11 +4,12 @@
 
 ## Latest Version
 
-**SvelteKit 2.69.2** (July 8, 2026) — 🚀 Current stable  
+**SvelteKit 2.69.3** (July 13, 2026) — 🚀 Current stable  
+**SvelteKit 2.69.2** (July 8, 2026) — Previous patch  
 **SvelteKit 2.69.0** (July 6, 2026) — New minor: `submitted` property on remote forms  
 **SvelteKit 2.68.0** (July 2, 2026) — Previous minor  
-**SvelteKit 2.67.0** (July 2, 2026) — Previous minor  
-**SvelteKit 3.0.0-next.7** (July 7, 2026) — Pre-release preview (not production ready); Vite Environment API, Rolldown  
+**SvelteKit 3.0.0-next.8** (July 14, 2026) — Pre-release preview (not production ready); allow hyphens in param/matcher names, `ErrorProps` in generated types  
+**SvelteKit 3.0.0-next.7** (July 7, 2026) — Previous pre-release  
 **Svelte 5.x** (July 2026) — Underlying compiler  
 Built on **Vite 8** compatible; no webpack dependency
 
@@ -56,6 +57,15 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 
 ## July 2026 Highlights
 
+- **SvelteKit 3.0.0-next.8** (July 14, 2026) — Latest pre-release:
+  - **`feat: allow hyphens in param and matcher names`** — route parameters like `[some-id]` and matcher names are now valid with hyphens; previously restricted to alphanumeric and underscores
+  - **`feat: add ErrorProps to generated types`** — `$types.d.ts` now includes a generated `ErrorProps` type for better TypeScript coverage on custom error pages (`+error.svelte`)
+  - Additional minor patch changes; `@sveltejs/adapter-vercel@7.0.0-next.2` peer dep fix also shipped
+
+- **SvelteKit 2.69.3** (July 13, 2026) — **Latest stable**:
+  - Fix: set `define` values on `globalThis` when running Vitest — fixes Vitest environment variable injection for projects using `define` in Vite config
+  - `npm install @sveltejs/kit@latest` → **2.69.3**
+
 - **"What's New in Svelte: July 2026"** (July 1, 2026) — headline theme: configuration consolidation and SvelteKit 3 previews. Key changes that landed in June/July:
   - **SvelteKit config in `vite.config.js`** (new in kit@2.62.0) — you can now pass your SvelteKit config directly to the Vite plugin; `svelte.config.js` is no longer required; this is a preview of how SvelteKit 3 will **require** config to live in `vite.config.js`
   - **Experimental explicit environment variables** (new in kit@2.63.0) — declare and type env vars in one place; preview of how `$env/*` modules will work in SvelteKit 3
@@ -64,7 +74,7 @@ SvelteKit does not have ISR or PPR equivalents. Cache-control headers must be se
 
 - **SvelteKit 3 adapter pre-release peer dep fixes** (July 14, 2026) — multiple SvelteKit 3 adapter pre-releases patched to correctly allow `3.0.0-next.*` versions to satisfy the peer dependency range: `@sveltejs/adapter-static@4.0.0-next.1`, `@sveltejs/adapter-node@6.0.0-next.3`, `@sveltejs/adapter-netlify@7.0.0-next.3` (also includes `utils.js` in `package.json` files fix), `@sveltejs/adapter-cloudflare@8.0.0-next.2`. These do **not** affect the stable `2.69.2` line.
 
-- **SvelteKit 2.69.2** (July 8, 2026) — **Latest stable**:
+- **SvelteKit 2.69.2** (July 8, 2026) — Previous stable:
   - Fix: set `define` values on `globalThis` when running Vitest
   - Note: `@sveltejs/adapter-node@6.0.0-next.2` (July 6) and `@sveltejs/kit@3.0.0-next.7` (July 7) continue the SvelteKit 3 pre-release track; the next major introduces a **breaking change** to origin configuration — **`kit.prerender.origin` and the adapter-node `ORIGIN` environment variable are removed** in favor of a new `kit.paths.origin` config option; update your configuration when migrating to SvelteKit 3.
 

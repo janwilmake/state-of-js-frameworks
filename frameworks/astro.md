@@ -182,6 +182,10 @@ npm install astro@latest  # → 7.0.6
 - Fix: `<Picture inferSize>` no longer fails on rate-limited remote image servers (dimensions resolved once per render)
 - Fix: `<script>` inside `Astro.slots.render()` no longer hoisted out of position
 - Fix: attribute rendering hardened for custom elements
+- **`@astrojs/node@11.0.2`** 🔒 — **Trailing-slash open redirect fix**: the standalone adapter could append a trailing slash to paths beginning with `\` (e.g., `/\example.com/foo`) and echo it back in a 301 `Location` header; browsers resolve `\` as `/`, enabling an off-site redirect; now treated as an internal path. Affects projects using `@astrojs/node` in standalone mode with `trailingSlash: 'always'`. `npm install @astrojs/node@latest` → **11.0.2**
+- Fix: false deprecation warning for `markdown.gfm` and `markdown.smartypants` when using the Container API (suppressed spurious warning for users using the Container API with markdown config)
+- Fix: `getStaticPaths` no longer throws "Missing parameter" when a dynamic param's value is `0` (truthy check was incorrectly failing for zero-valued params like `paginate(posts, { params: { categoryId: 0 } })`)
+- Fix: `getViteConfig` no longer crashes when used with Vitest browser mode (e.g., Storybook); Astro now skips dev server setup inside Vitest
 
 ---
 

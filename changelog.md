@@ -4,6 +4,68 @@
 
 ---
 
+## 2026-07-17 (run: July 17, 2026)
+
+### SvelteKit 2.69.3 (July 13, 2026) + SvelteKit 3.0.0-next.8 (July 14, 2026) 🔧
+
+**SvelteKit 2.69.3** is the new stable latest (July 13, 2026):
+- Fix: set `define` values on `globalThis` when running Vitest (fixes Vitest environment variable injection for projects using `define` in Vite config)
+- Other minor bug fixes and stability improvements
+- `npm install @sveltejs/kit@latest` → **2.69.3**
+
+**SvelteKit 3.0.0-next.8** (July 14, 2026) — Pre-release progress:
+- **`feat: allow hyphens in param and matcher names`** — route parameters like `[some-id]` and matcher names with hyphens are now valid; previously only alphanumeric and underscores were accepted
+- **`feat: add ErrorProps to generated types`** — `$types.d.ts` now includes a generated `ErrorProps` type, improving TypeScript coverage for custom error pages (`+error.svelte`)
+- Additional minor patch changes
+- `npm install @sveltejs/kit@next` → **3.0.0-next.8**
+
+**`@sveltejs/adapter-vercel@7.0.0-next.2`** (July 14, 2026) — Peer dep fix for SvelteKit 3 prerelease versions (matches the fixes in other adapters from July 14).
+
+---
+
+### ⚠️ Astro `@astrojs/node@11.0.2` — Security-Adjacent Trailing Slash Fix (July 2, 2026) 🔒
+
+While the Astro `7.0.6` patch was captured previously, a notable security-adjacent fix in **`@astrojs/node@11.0.2`** deserves its own callout:
+
+- **Trailing-slash open redirect fix** — the standalone Node adapter could append a trailing slash to request paths beginning with a backslash (e.g., `/\example.com/foo`) and echo it back in the `Location` header of a 301 response; because browsers resolve a leading `\` the same as `/`, the resulting `Location` header could redirect off-site; paths beginning with `\\` are now treated as internal paths (matching the existing handling for `//`), preventing the off-site redirect
+- **Affects:** `@astrojs/node` standalone mode with `trailingSlash: 'always'`
+- `npm install @astrojs/node@latest` → **11.0.2**
+
+---
+
+### Next.js Security Patch Confirmed for July 20, 2026 — Scope Details Published 📋
+
+Building on the July 13 announcement of the formal security release program, additional context is now public (July 16, 2026):
+
+- **4 high-severity + 5 medium-severity vulnerabilities** — exact CVE IDs will be published on July 20 release day
+- **Affects:** Next.js 16.2.x and 15.5.x (patches will ship for both lines simultaneously)
+- **Action required now:**
+  1. Audit all production deployments for the Next.js version and flag apps using `middleware.ts`, `proxy.ts`, CSP nonces, `beforeInteractive` scripts, WebSocket upgrade handlers, or RSC streaming responses — these are the risk surface areas from the May 2026 patch
+  2. Pre-stage the upgrade PR now against current patch versions so CI/E2E are clean; on July 20 you change one version number, not everything at once
+  3. **Do not rely on WAF rules** — the May 2026 patch set confirmed that WAF/CDN rules cannot fully mitigate these vulnerability classes; patching is the only complete fix
+- Watch [nextjs.org/blog](https://nextjs.org/blog) on July 20
+
+---
+
+### ⚠️ Nuxt 3 EOL: 14 Days Away (July 31, 2026) 🚨
+
+As of today (July 17, 2026), **Nuxt 3 reaches end-of-life in exactly 14 days**. After July 31, 2026, no security patches, bug fixes, or updates will be released for any Nuxt 3.x version. There is no further EOL extension planned — the July 31 date is final.
+
+Teams still running Nuxt 3:
+```bash
+# Enable Nuxt 4 compatibility mode immediately (if not already done)
+# nuxt.config.ts
+export default defineNuxtConfig({
+  future: { compatibilityVersion: 4 }
+})
+# Fix any resulting errors, then:
+npm install nuxt@latest   # → 4.4.8 (current Nuxt 4 stable)
+```
+
+The migration is generally smooth and the Nuxt team has provided excellent tooling. See [nuxt.com/docs/getting-started/upgrade](https://nuxt.com/docs/getting-started/upgrade) for the full guide.
+
+---
+
 ## 2026-07-15 (run: July 15, 2026)
 
 ### ⚠️ Next.js Formal Security Release Process Announced + Patch Due July 20 (July 13, 2026)

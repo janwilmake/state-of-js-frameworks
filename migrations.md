@@ -503,6 +503,23 @@ npx svelte-migrate sveltekit-2
 
 ## Astro
 
+### `@astrojs/node@11.0.2` — Trailing-Slash Open Redirect Fix (July 2, 2026) 🔒
+
+**Effort:** Zero — drop-in patch for `@astrojs/node`
+
+**Affects:** Astro 7.x projects using `@astrojs/node` in standalone mode with `trailingSlash: 'always'`
+
+#### Issue
+The standalone Node adapter could append a trailing slash to request paths beginning with a backslash (e.g., `/\example.com/foo`) and echo the path back in the `Location` header of a 301 redirect. Because browsers resolve a leading `\` as `/`, this could redirect requests to `//example.com/foo` — an off-site redirect. The issue mirrors the existing handling for paths beginning with `//` (which was already protected).
+
+```bash
+npm install @astrojs/node@latest   # → 11.0.2
+```
+
+No other changes in this patch. Projects not using `@astrojs/node` in standalone mode are unaffected.
+
+---
+
 ### Astro 6.3.x → 6.3.7 (Security + Bug Fixes — May 14–21, 2026)
 
 **Effort:** Zero — drop-in patch upgrade
@@ -629,6 +646,32 @@ const posts = import.meta.glob('./posts/*.md', { eager: true });
 **Effort:** Medium
 
 Key changes: Content Layer API stabilized (replaces experimental Content Collections v2), Server Islands stable, simplified adapter API.
+
+---
+
+## Next.js
+
+### ⚠️ Upcoming Next.js Security Patch (July 20, 2026)
+
+**Status:** Patch NOT yet released; scheduled for **July 20, 2026**  
+**Effort:** Low — `npm install next@latest` on patch day
+
+The Next.js team has pre-announced a security patch covering **4 high + 5 medium severity vulnerabilities** in Next.js **16.2.x** and **15.5.x**. CVE IDs will not be disclosed until the patch is public.
+
+#### Recommended actions before July 20
+1. Run `npm ls next` across all repos to inventory every Next.js version
+2. Identify apps using `middleware.ts` / `proxy.ts`, CSP nonces, `beforeInteractive` scripts, WebSocket upgrade handlers, or RSC streaming — these are the highest-risk surface areas based on the May 2026 patch pattern
+3. Open a pre-staged upgrade PR against current patch versions (16.2.10 / 15.5.20) so CI is green before July 20
+4. Do **not** rely on WAF rules as a substitute for patching
+
+```bash
+# When the patch drops on July 20:
+npm install next@latest   # stable line
+# Or for 15.x:
+npm install next@15
+```
+
+**Older versions (13.x, 14.x):** Are almost certainly also affected but will NOT receive patches — teams on those versions must upgrade to 15.x or 16.x first.
 
 ---
 

@@ -5,7 +5,7 @@
 ## Latest Version
 
 **4.4.8** (June 8, 2026) — Current stable (latest)  
-**3.21.8** (June 8, 2026) — Maintenance; ⚠️ **EOL on July 31, 2026 — 18 days away (as of July 13, 2026); migrate now**  
+**3.21.8** (June 8, 2026) — Maintenance; ⚠️ **EOL on July 31, 2026 — 14 days away (as of July 17, 2026); migrate now**  
 **Nuxt 5** — in active development; powered by **Nitro v3 beta** (released March 11, 2026); no stable release date confirmed yet
 
 **Ecosystem releases (July 2026):**

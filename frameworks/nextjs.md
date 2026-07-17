@@ -42,7 +42,7 @@
 
 ## Next.js 16.3 Preview (Active — Stable Imminent)
 
-**16.3.0-canary.76** (July 8, 2026) — Latest canary. **16.3.0-preview.5** also active. `npm install next@preview` to test. **16.3 stable has NOT shipped** as of July 9, 2026, despite the features being announced at Vercel Ship Berlin (June 25); the team is working through final stabilization of Instant Navigations. Based on community feedback the canary is getting heavy production testing (users reporting memory drops from ~20 GB to ~5 GB with Turbopack improvements alone). Notable features in 16.3 preview:
+**16.3.0-canary.87** (July 14–17, 2026) — Latest canary. **16.3.0-preview.6** also active. `npm install next@preview` to test. **16.3 stable has NOT shipped** as of July 17, 2026; the team is working through final stabilization of Instant Navigations; the scheduled July 20 security patch for 16.2 and 15.5 may land before or alongside the 16.3 stable release. Based on community feedback the canary is getting heavy production testing (users reporting memory drops from ~20 GB to ~5 GB with Turbopack improvements alone). Notable features in 16.3 preview:
 - **Instant Navigations** — Stream, Cache, or Block to make navigations SPA-fast while remaining server-driven; new `prefetch` behavior; **Partial Prefetching** for route shells
 - **Bundled docs through `AGENTS.md`** — AI agents read version-matched docs from `node_modules`
 - **First-party Skills** — agents drive multi-step workflows (dev loop, Cache Components adoption)
@@ -57,7 +57,9 @@
 - **`next/root-params`** — new API for accessing root layout params
 - **HTTP Cache-Control TTL-based invalidation** — `fetch()` now respects `Cache-Control` headers
 
-**Estimated 16.3 stable release:** **Mid-to-late July 2026** — **16.3.0-canary.86** (July 14, 2026) is the latest canary; the preview branch is active (`npm install next@preview`). No stable release date announced yet; the team continues to stabilize Instant Navigations and Turbopack Memory Eviction. Community production testing of the canary has been very positive (significant memory drops reported). Watch [nextjs.org/blog](https://nextjs.org/blog).
+**Estimated 16.3 stable release:** **Late July 2026** — **16.3.0-canary.87** (July 14–17, 2026) is the latest canary; preview.6 is active (`npm install next@preview`). The July 20 security patch for 16.2/15.5 may precede or accompany the 16.3 stable drop. Community production testing is very positive (significant memory drops reported with Turbopack Memory Eviction). Watch [nextjs.org/blog](https://nextjs.org/blog).
+
+**canary.87 changes (July 14+):** Turbopack: generates component chunks for each merged group to increase cache hits; excludes stale content under 5 minutes from app shells; agent skill updated; docs fixes (cssChunking graph option); bench app extended for realistic client chunk counts; same-document traversal replay before hydration fixed.
 
 **canary.86 changes (July 14):** Dev server request panel (5/5) complete; React sync skill added; React upgraded to `7023f501-20260714`; docs improved (immutable static assets, useSearchParams, revalidateTag with zero expiry). **16.3.0-preview.6** added an experimental TypeScript 7 CLI backend — TypeScript 7.0 (the new Go-based compiler) released July 8, 2026 with major compilation speed improvements; Next.js 16.3 is on track to be the first major React framework with TypeScript 7 support out of the box.
 
@@ -98,7 +100,7 @@ Next.js is the most-downloaded React meta-framework by a wide margin. npm weekly
 
 ## Security Notes
 
-- **⚠️ Upcoming security patch: July 20, 2026** — The Next.js team announced on July 13, 2026 a formal security release process. The first release under this process is scheduled for **July 20, 2026** and will address multiple security issues. Affected versions and CVE details to be disclosed on release day. All users on 16.x and 15.x should plan to upgrade immediately on or after July 20. Monitor [nextjs.org/blog](https://nextjs.org/blog).
+- **⚠️ Upcoming security patch: July 20, 2026** — The Next.js team announced on July 13, 2026 a formal security release process. The first release is scheduled for **July 20, 2026** and will address **4 high-severity and 5 medium-severity vulnerabilities** in Next.js **16.2.x** and **15.5.x**. CVE IDs and affected code paths will be disclosed on release day. Pre-stage your upgrade PR now so you can merge immediately on July 20. WAF rules are **not sufficient mitigation** — patching is required. Monitor [nextjs.org/blog](https://nextjs.org/blog).
 
 - **16.2.10** (July 1, 2026) — Republishes `@next/swc-wasm-web` which was accidentally not published since 16.2.4; no other changes
 - **15.5.20** (July 1, 2026) — Same purpose: republishes `@next/swc-wasm-web` for the 15.x line
